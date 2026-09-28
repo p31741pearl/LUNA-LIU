@@ -10,7 +10,7 @@ React.useEffect(()=>{const f=()=>setW(window.innerWidth);window.addEventListener
 const cols=w<560?1:(w<820?2:4);
 const gridRef=React.useRef(null);const [shown,setShown]=React.useState(false);
 React.useEffect(()=>{const el=gridRef.current;if(!el)return;const io=new IntersectionObserver(es=>{if(es.some(e=>e.isIntersecting)){setShown(true);io.disconnect();}},{threshold:0.2});io.observe(el);return ()=>io.disconnect();},[]);
-return React.createElement('section',{id:'core-capabilities-section',style:{position:'sticky',top:0,zIndex:2,display:'flex',flexDirection:'column',background:'#fff',padding:'40px 48px 96px'}},
+return React.createElement('section',{id:'core-capabilities-section',style:{position:cols<4?'relative':'sticky',top:0,zIndex:2,display:'flex',flexDirection:'column',background:'#fff',padding:'40px 48px 96px'}},
 React.createElement('div',{'aria-hidden':true,style:{position:'absolute',left:0,right:0,top:-80,height:80,pointerEvents:'none',background:'linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0.7) 55%, #fff 100%)'}}),
 React.createElement('div',{style:{maxWidth:1120,margin:'0 auto',width:'100%'}},
 React.createElement('div',{style:{fontFamily:'var(--font-mono)',fontSize:28,fontWeight:600,letterSpacing:'var(--tracking-wide)',textTransform:'uppercase',color:'#A66A00',marginBottom:48,textAlign:'center'}},'Core Strengths'),
