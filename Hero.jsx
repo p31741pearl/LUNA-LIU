@@ -337,10 +337,22 @@ React.createElement('div',{style:{position:'absolute',top:'50%',left:'50%',trans
 );
 }
 function SilkLinesBackground(){
-// SMIL animateTransform instead of CSS keyframes: iOS Safari doesn't reliably repaint CSS transform animations on SVG <g>
+// Drive the flow from JS (rAF) by setting the SVG transform attribute: CSS keyframes and SMIL
+// on SVG <g> don't reliably repaint on iOS Safari, but attribute writes always do.
 const reduceMotion=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const flowDur=window.innerWidth<560?16:(window.innerWidth<860?26:45);
-const flow=l=>reduceMotion?null:React.createElement('animateTransform',{attributeName:'transform',type:'translate',from:'0 0',to:'-1120 0',dur:flowDur+'s',begin:'-'+(l.delay%flowDur).toFixed(2)+'s',repeatCount:'indefinite'});
+const rootRef=React.useRef(null);
+React.useEffect(()=>{
+if(reduceMotion)return;
+let raf=0;
+const tick=now=>{
+const root=rootRef.current;
+if(root)root.querySelectorAll('g[data-flow-delay]').forEach(g=>{const t=(now/1000+Number(g.dataset.flowDelay))%flowDur;g.setAttribute('transform','translate('+(-1120*t/flowDur).toFixed(2)+',0)');});
+raf=requestAnimationFrame(tick);
+};
+raf=requestAnimationFrame(tick);
+return ()=>cancelAnimationFrame(raf);
+},[]);
 const lines=React.useMemo(()=>{
 const n=22;
 const span=1120;
@@ -388,7 +400,7 @@ dotDur:(4+Math.random()*4).toFixed(2)
 });
 },[]);
 React.useEffect(()=>{const orbs=()=>Array.from(document.querySelectorAll('[data-hero-orb]'));orbs().forEach(el=>{if(!el.dataset.baseOpacity)el.dataset.baseOpacity=getComputedStyle(el).opacity;});let raf=0;const f=()=>{cancelAnimationFrame(raf);raf=requestAnimationFrame(()=>{const h=window.innerHeight||800;const t=Math.max(0,Math.min(1,window.scrollY/(h*0.75)));const e=t<0.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;const list=orbs();const moon=document.querySelector('[data-site-moon]');const logo=document.querySelector('[data-site-logo]');if(!list.length)return;const root=list[0].parentElement.getBoundingClientRect();const lr=logo?logo.getBoundingClientRect():{left:48,top:20,height:24};const tx=lr.left+6,ty=lr.top+lr.height/2;list.forEach(el=>{const cx=root.left+el.offsetLeft,cy=root.top+el.offsetTop;const sc=1-(1-24/Math.max(1,el.offsetWidth))*e;el.style.transform='translate(-50%,-50%) translate('+((tx-cx)*e)+'px,'+((ty-cy)*e)+'px) scale('+sc+')';const fo=e<0.86?1:Math.max(0,1-(e-0.86)/0.14);el.style.opacity=String(fo*(+el.dataset.baseOpacity||1));el.style.visibility=fo<=0?'hidden':'visible';});if(moon)moon.style.opacity=String(e<0.86?0:0.75*Math.min(1,(e-0.86)/0.14));});};f();window.addEventListener('scroll',f,{passive:true});window.addEventListener('resize',f);return ()=>{cancelAnimationFrame(raf);window.removeEventListener('scroll',f);window.removeEventListener('resize',f);const m=document.querySelector('[data-site-moon]');if(m)m.style.opacity='0';};},[]);
-return React.createElement('div',{style:{position:'absolute',inset:0,zIndex:0,overflow:'hidden',background:'linear-gradient(to bottom, #FFFFFF 0%, rgba(255,255,255,0) 18%), radial-gradient(40% 22% at 50% 38%, rgba(255,210,70,0.30), rgba(255,224,120,0) 75%), radial-gradient(85% 78% at 0% 0%, rgba(255,255,255,0.98), rgba(255,255,255,0) 78%), radial-gradient(85% 78% at 100% 0%, rgba(255,255,255,0.98), rgba(255,255,255,0) 78%), radial-gradient(85% 78% at 0% 100%, rgba(255,255,255,0.98), rgba(255,255,255,0) 78%), radial-gradient(85% 78% at 100% 100%, rgba(255,255,255,0.98), rgba(255,255,255,0) 78%), #FBFAF3'}},
+return React.createElement('div',{ref:rootRef,style:{position:'absolute',inset:0,zIndex:0,overflow:'hidden',background:'linear-gradient(to bottom, #FFFFFF 0%, rgba(255,255,255,0) 18%), radial-gradient(40% 22% at 50% 38%, rgba(255,210,70,0.30), rgba(255,224,120,0) 75%), radial-gradient(85% 78% at 0% 0%, rgba(255,255,255,0.98), rgba(255,255,255,0) 78%), radial-gradient(85% 78% at 100% 0%, rgba(255,255,255,0.98), rgba(255,255,255,0) 78%), radial-gradient(85% 78% at 0% 100%, rgba(255,255,255,0.98), rgba(255,255,255,0) 78%), radial-gradient(85% 78% at 100% 100%, rgba(255,255,255,0.98), rgba(255,255,255,0) 78%), #FBFAF3'}},
 React.createElement('div',{'aria-hidden':true,'data-hero-orb':'',style:{position:'absolute',left:'50%',top:'calc(50% - 58px)',width:'min(48vw,58vh,540px)',aspectRatio:'1/1',transform:'translate(-50%,-50%)',borderRadius:'50%',pointerEvents:'none',background:'radial-gradient(38% 22% at 50% 6%, rgba(176,150,226,0.8), rgba(176,150,226,0) 100%), radial-gradient(60% 60% at 36% 34%, rgba(245,138,48,0.9) 0%, rgba(247,168,62,0.6) 45%, rgba(249,199,82,0) 100%)',borderRadius:0,filter:'blur(60px)',opacity:0.6,marginLeft:'-3%',marginTop:'-3%'}}),
 React.createElement('div',{'aria-hidden':true,'data-hero-orb':'',style:{position:'absolute',left:'50%',top:'calc(50% - 58px)',width:'min(48vw,58vh,540px)',aspectRatio:'1/1',transform:'translate(-50%,-50%)',borderRadius:'50%',pointerEvents:'none',background:'radial-gradient(38% 22% at 50% 4%, rgba(176,150,226,0.85), rgba(176,150,226,0) 100%), linear-gradient(195deg, #F2782A 0%, #F58A30 28%, #F7A83E 55%, #F9C752 80%, #FAD767 100%)',filter:'blur(1.5px)',WebkitMaskImage:'radial-gradient(100% 100% at 80% 82%, black 36%, rgba(0,0,0,0.3) 60%, transparent 80%)',maskImage:'radial-gradient(100% 100% at 80% 82%, black 36%, rgba(0,0,0,0.3) 60%, transparent 80%)'}}),
 React.createElement('div',{'aria-hidden':true,'data-hero-orb':'',style:{position:'absolute',left:'50%',top:'calc(50% - 58px)',width:'min(48vw,58vh,540px)',aspectRatio:'1/1',transform:'translate(-50%,-50%)',borderRadius:'50%',pointerEvents:'none',backgroundImage:'url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'180\' height=\'180\'%3E%3Cfilter id=\'n\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.95\' numOctaves=\'2\' stitchTiles=\'stitch\'/%3E%3CfeColorMatrix values=\'0 0 0 0 0.86 0 0 0 0 0.62 0 0 0 0 0.32 0 0 0 1.6 -0.45\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23n)\'/%3E%3C/svg%3E")',backgroundSize:'160px 160px',opacity:0.75,mixBlendMode:'multiply',borderRadius:0,scale:'1.4',WebkitMaskImage:'radial-gradient(18% 18% at 60% 38%, black 0%, rgba(0,0,0,0.5) 45%, transparent 100%), radial-gradient(17% 17% at 47% 47%, black 0%, black 30%, rgba(0,0,0,0.45) 65%, transparent 100%)',maskImage:'radial-gradient(18% 18% at 60% 38%, black 0%, rgba(0,0,0,0.5) 45%, transparent 100%), radial-gradient(17% 17% at 47% 47%, black 0%, black 30%, rgba(0,0,0,0.45) 65%, transparent 100%)'}}),
@@ -398,8 +410,7 @@ React.createElement('linearGradient',{id:'silk-grad-orange',x1:'0%',y1:'0%',x2:'
 React.createElement('linearGradient',{id:'silk-grad-pink',x1:'0%',y1:'0%',x2:'100%',y2:'0%'},React.createElement('stop',{offset:'0%',stopColor:'#EAC85E'}),React.createElement('stop',{offset:'100%',stopColor:'#F0A8C0'})),
 React.createElement('linearGradient',{id:'silk-grad-blue',x1:'0%',y1:'0%',x2:'100%',y2:'0%'},React.createElement('stop',{offset:'0%',stopColor:'#EAC85E'}),React.createElement('stop',{offset:'100%',stopColor:'#8CBEE6'}))
 ),
-lines.map(l=>React.createElement('g',{key:l.id},
-flow(l),
+lines.map(l=>React.createElement('g',{key:l.id,'data-flow-delay':l.delay},
 [0,1].map(copy=>React.createElement('path',{key:copy,id:`silk-path-${l.id}-${copy}`,d:l.d,transform:`translate(${copy*1120},0)`,fill:'none',stroke:l.color,strokeWidth:l.width,strokeDasharray:l.dashed?'2.5 4':undefined,opacity:l.opacity,strokeLinecap:'round'})),
 false&&[0,1].map(copy=>Array.from({length:l.dotCount}).map((_,dIdx)=>React.createElement('circle',{key:'dot'+copy+'-'+dIdx,r:2.2,fill:'#C2C7CE',opacity:0.9},
 React.createElement('animateMotion',{dur:l.dotDur+'s',begin:(-dIdx*l.dotDur/l.dotCount)+'s',repeatCount:'indefinite',rotate:'auto'},
@@ -410,8 +421,7 @@ React.createElement('mpath',{href:`#silk-path-${l.id}-${copy}`})
 ),
 React.createElement('div',{style:{position:'absolute',inset:0,pointerEvents:'none',WebkitMaskImage:'radial-gradient(circle min(18vw,22vh,200px) at 50% calc(50% - 90px), black 45%, transparent 100%)',maskImage:'radial-gradient(circle min(18vw,22vh,200px) at 50% calc(50% - 90px), black 45%, transparent 100%)'}},
 React.createElement('svg',{className:'hero-silk',viewBox:'0 0 1000 560',preserveAspectRatio:'none',style:{position:'absolute',width:'110%',height:'110%',left:'-5%',top:'-5%',pointerEvents:'none',}},
-lines.map(l=>React.createElement('g',{key:'w'+l.id},
-flow(l),
+lines.map(l=>React.createElement('g',{key:'w'+l.id,'data-flow-delay':l.delay},
 [0,1].map(copy=>React.createElement('path',{key:copy,d:l.d,transform:'translate('+(copy*1120)+',0)',fill:'none',stroke:'#FFFFFF',strokeWidth:l.width,strokeDasharray:l.dashed?'2.5 4':undefined,opacity:Math.min(1,l.opacity*2.2),strokeLinecap:'round'}))
 ))
 )

@@ -1246,7 +1246,7 @@ try { (() => {
   // .frame img (clipped) and .spill (unclipped ghost + handles) share the
   // same left/top/width/height in frame-%, computed by _applyView(), so the
   // inside-mask crop and the outside-mask spill stay pixel-aligned.
-  '.frame img{position:absolute;max-width:none;transform:translate(-50%,-50%);' + '  -webkit-user-drag:none;user-select:none;touch-action:none}' +
+  '.frame img{position:absolute;max-width:none;transform:translate(-50%,-50%);' + '  -webkit-user-drag:none;user-select:none;touch-action:manipulation}' +
   // Reframe mode (double-click): the full image spills past the mask. The
   // spill layer is sized to the IMAGE bounds so its corners are where the
   // resize handles belong. The ghost <img> inside is translucent; the real
@@ -2122,9 +2122,12 @@ try { (() => {
       this.toggleAttribute('data-credit', showCredit);
     }
   }
-  if (!customElements.get('image-slot')) {
-    customElements.define('image-slot', ImageSlot);
-  }
+  // Disabled: the site ships its own newer ./image-slot.js. This older copy
+  // only accepts data: URLs, so when it won the registration race any image
+  // stored under slot-assets/ rendered as an empty placeholder.
+  // if (!customElements.get('image-slot')) {
+  //   customElements.define('image-slot', ImageSlot);
+  // }
 })();
 })(); } catch (e) { __ds_ns.__errors.push({ path: "ui_kits/portfolio/image-slot.js", error: String((e && e.message) || e) }); }
 
