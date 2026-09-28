@@ -27,6 +27,8 @@
 @media (prefers-reduced-motion: reduce){.hero-silk{animation:none!important}}
 @keyframes silkFlow{0%{transform:translateX(0)}100%{transform:translateX(-1120px)}}
 .hero-silk-flow{animation:silkFlow 45s linear infinite}
+@media (max-width: 860px){.hero-silk-flow{animation-duration:26s}}
+@media (max-width: 560px){.hero-silk-flow{animation-duration:16s}}
 @media (prefers-reduced-motion: reduce){.hero-silk-flow{animation:none!important}}
 @keyframes silkSway{0%{transform:translateX(0) rotate(0deg)}50%{transform:translateX(6px) rotate(0.4deg)}100%{transform:translateX(0) rotate(0deg)}}
 .hero-silk-vflow{animation:silkSway 8s ease-in-out infinite;transform-origin:50% 0%}
@@ -49,8 +51,8 @@
 <x-import component-from-global-scope="LunaProjectGrid" from="./ProjectGrid.jsx" onOpen="{{openProject}}" hint-size="100%,700px"></x-import>
 </sc-if>
 <sc-if value="{{isCase}}" hint-placeholder-val="{{false}}">
-<div style="position:fixed;inset:0;z-index:1100;background:rgba(20,20,22,0.45);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);animation:{{backdropAnim}}" onClick="{{backToWork}}">
-<div style="position:absolute;top:56px;left:0;right:0;bottom:0;background:var(--surface);overflow-y:auto;border-radius:20px 20px 0 0;animation:{{modalAnim}}" onClick="{{stopPropagation}}">
+<div style="position:fixed;inset:0;z-index:1100;overscroll-behavior:none;background:rgba(20,20,22,0.45);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);animation:{{backdropAnim}}" onClick="{{backToWork}}">
+<div style="position:absolute;top:56px;left:0;right:0;bottom:0;background:var(--surface);overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;border-radius:20px 20px 0 0;animation:{{modalAnim}}" onClick="{{stopPropagation}}">
 <x-import component-from-global-scope="PortfolioCaseStudy" from="./CaseStudy.jsx" project="{{project}}" onBack="{{backToWork}}" onOpenOther="{{openProject}}" hint-size="100%,800px"></x-import>
 </div>
 </div>
@@ -66,8 +68,26 @@
 class Component extends DCLogic {
   state = { screen: 'Home', project: null, closing: false };
   savedScrollY = 0;
+  scrollLocked = false;
+
+  // Freeze the page behind the case study modal (position:fixed also works on iOS Safari)
+  lockScroll = () => {
+    if (this.scrollLocked) return;
+    this.scrollLocked = true;
+    this.savedScrollY = window.scrollY;
+    const b = document.body.style;
+    b.position = 'fixed'; b.top = -this.savedScrollY + 'px'; b.left = '0'; b.right = '0'; b.overflow = 'hidden';
+  };
+  unlockScroll = () => {
+    if (!this.scrollLocked) return;
+    this.scrollLocked = false;
+    const b = document.body.style;
+    b.position = ''; b.top = ''; b.left = ''; b.right = ''; b.overflow = '';
+    window.scrollTo(0, this.savedScrollY);
+  };
 
   nav = (s) => {
+    this.unlockScroll();
     if (s === 'Work') {
       const go = () => { const el = document.getElementById('project-grid-section'); if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 64, behavior: 'smooth' }); };
       if (this.state.screen !== 'Home' && this.state.screen !== 'Work' || this.state.project) { this.setState({ screen: 'Home', project: null, closing: false }, () => setTimeout(go, 80)); }
@@ -77,13 +97,12 @@ class Component extends DCLogic {
     this.setState({ screen: s, project: null, closing: false }); window.scrollTo(0, 0);
   };
   stopPropagation = (e) => { e.stopPropagation(); };
-  openProject = (p) => { this.savedScrollY = window.scrollY; this.setState({ project: p, closing: false }); };
+  openProject = (p) => { this.lockScroll(); this.setState({ project: p, closing: false }); };
   backToWork = () => {
     this.setState({ closing: true });
-    const target = this.savedScrollY;
     setTimeout(() => {
       this.setState({ project: null, closing: false });
-      window.scrollTo(0, target);
+      this.unlockScroll();
     }, 1100);
   };
 
