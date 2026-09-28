@@ -337,6 +337,10 @@ React.createElement('div',{style:{position:'absolute',top:'50%',left:'50%',trans
 );
 }
 function SilkLinesBackground(){
+// SMIL animateTransform instead of CSS keyframes: iOS Safari doesn't reliably repaint CSS transform animations on SVG <g>
+const reduceMotion=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const flowDur=window.innerWidth<560?16:(window.innerWidth<860?26:45);
+const flow=l=>reduceMotion?null:React.createElement('animateTransform',{attributeName:'transform',type:'translate',from:'0 0',to:'-1120 0',dur:flowDur+'s',begin:'-'+(l.delay%flowDur).toFixed(2)+'s',repeatCount:'indefinite'});
 const lines=React.useMemo(()=>{
 const n=22;
 const span=1120;
@@ -394,7 +398,8 @@ React.createElement('linearGradient',{id:'silk-grad-orange',x1:'0%',y1:'0%',x2:'
 React.createElement('linearGradient',{id:'silk-grad-pink',x1:'0%',y1:'0%',x2:'100%',y2:'0%'},React.createElement('stop',{offset:'0%',stopColor:'#EAC85E'}),React.createElement('stop',{offset:'100%',stopColor:'#F0A8C0'})),
 React.createElement('linearGradient',{id:'silk-grad-blue',x1:'0%',y1:'0%',x2:'100%',y2:'0%'},React.createElement('stop',{offset:'0%',stopColor:'#EAC85E'}),React.createElement('stop',{offset:'100%',stopColor:'#8CBEE6'}))
 ),
-lines.map(l=>React.createElement('g',{key:l.id,className:'hero-silk-flow',style:{animationDelay:'-'+l.delay+'s',willChange:'transform'}},
+lines.map(l=>React.createElement('g',{key:l.id},
+flow(l),
 [0,1].map(copy=>React.createElement('path',{key:copy,id:`silk-path-${l.id}-${copy}`,d:l.d,transform:`translate(${copy*1120},0)`,fill:'none',stroke:l.color,strokeWidth:l.width,strokeDasharray:l.dashed?'2.5 4':undefined,opacity:l.opacity,strokeLinecap:'round'})),
 false&&[0,1].map(copy=>Array.from({length:l.dotCount}).map((_,dIdx)=>React.createElement('circle',{key:'dot'+copy+'-'+dIdx,r:2.2,fill:'#C2C7CE',opacity:0.9},
 React.createElement('animateMotion',{dur:l.dotDur+'s',begin:(-dIdx*l.dotDur/l.dotCount)+'s',repeatCount:'indefinite',rotate:'auto'},
@@ -405,7 +410,8 @@ React.createElement('mpath',{href:`#silk-path-${l.id}-${copy}`})
 ),
 React.createElement('div',{style:{position:'absolute',inset:0,pointerEvents:'none',WebkitMaskImage:'radial-gradient(circle min(18vw,22vh,200px) at 50% calc(50% - 90px), black 45%, transparent 100%)',maskImage:'radial-gradient(circle min(18vw,22vh,200px) at 50% calc(50% - 90px), black 45%, transparent 100%)'}},
 React.createElement('svg',{className:'hero-silk',viewBox:'0 0 1000 560',preserveAspectRatio:'none',style:{position:'absolute',width:'110%',height:'110%',left:'-5%',top:'-5%',pointerEvents:'none',}},
-lines.map(l=>React.createElement('g',{key:'w'+l.id,className:'hero-silk-flow',style:{animationDelay:'-'+l.delay+'s',willChange:'transform'}},
+lines.map(l=>React.createElement('g',{key:'w'+l.id},
+flow(l),
 [0,1].map(copy=>React.createElement('path',{key:copy,d:l.d,transform:'translate('+(copy*1120)+',0)',fill:'none',stroke:'#FFFFFF',strokeWidth:l.width,strokeDasharray:l.dashed?'2.5 4':undefined,opacity:Math.min(1,l.opacity*2.2),strokeLinecap:'round'}))
 ))
 )
