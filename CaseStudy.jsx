@@ -1,0 +1,161 @@
+function splitLead(text){
+const m=text.match(/^(.*?[：;;。])/);
+if(m&&m[1].length<text.length) return [m[1],text.slice(m[1].length)];
+const idx=text.indexOf(',');
+if(idx>2&&idx<text.length-2) return [text.slice(0,idx+1),text.slice(idx+1)];
+return [text,''];
+}
+
+function BarRow(bar,j){
+return React.createElement('div',{key:j,style:{display:'flex',alignItems:'center',gap:12}},
+React.createElement('span',{style:{width:140,flexShrink:0,fontSize:13,fontFamily:"'Albert Sans',var(--font-sans,sans-serif)",color:bar.bold?'#0b0b0b':'#52514e',textAlign:'right',fontWeight:bar.bold?500:400}},bar.label),
+React.createElement('div',{style:{flex:1,background:'#E3E3E5',borderRadius:4,height:11,position:'relative'}},
+React.createElement('div',{style:{width:bar.pct+'%',height:'100%',background:bar.color,borderRadius:4}})
+),
+React.createElement('span',{style:{width:34,flexShrink:0,fontSize:13,fontFamily:"'Albert Sans',var(--font-sans,sans-serif)",fontWeight:500,color:'#0b0b0b',textAlign:'right'}},bar.value)
+);
+}
+function BarChart(bars){
+return React.createElement('div',{style:{maxWidth:420,margin:'0 auto',display:'flex',flexDirection:'column',gap:14,width:'100%'}},
+bars.map(BarRow)
+);
+}
+function CaseBlock(b,i,pid){
+const cont=!b.heading;
+const uid=(j,suf)=>'block-'+(pid||'p')+'-'+i+'-'+j+(suf||'');
+return React.createElement('div',{key:i,style:{marginBottom:40,marginTop:cont?-24:0}},
+b.heading&&React.createElement('div',{style:{fontFamily:'var(--font-mono)',fontSize:16,letterSpacing:'var(--tracking-wide)',textTransform:'uppercase',color:'#A66A00',marginBottom:14}},b.heading),
+b.type==='text'&&b.title&&React.createElement('div',{style:{fontSize:19,fontWeight:600,color:'var(--text)',marginBottom:14,lineHeight:1.5}},b.title),
+React.createElement('div',{style:(b.sideImgId||b.sideChart)?{display:'flex',flexDirection:window.__csNarrow?'column':'row',gap:window.__csNarrow?24:32,alignItems:'stretch'}:null},
+React.createElement('div',{style:{flex:1,minWidth:0}},
+b.type==='text'&&b.items.map((t,j)=>{
+const isObj=typeof t==='object';
+const text=isObj?t.text:t;
+if(isObj&&t.imgId)return React.createElement('div',{key:j,style:{display:'flex',flexWrap:'wrap',gap:20,alignItems:'flex-start',marginBottom:12}},
+React.createElement('div',{style:{flex:'1 1 200px',maxWidth:window.__csPhone?'100%':200}},
+React.createElement('image-slot',{id:'block-'+t.imgId,shape:'rect',fit:'contain',placeholder:'Add illustration'})
+),
+React.createElement('p',{style:{fontSize:16,lineHeight:1.7,color:'var(--text)',margin:0,flex:1}},text)
+);
+return React.createElement('p',{key:j,style:{fontSize:16,lineHeight:1.7,color:'var(--text)',marginBottom:12,whiteSpace:'pre-line'}},text);
+}),
+b.type==='bullets'&&React.createElement('ul',{style:{margin:0,paddingLeft:20,display:'flex',flexDirection:'column',gap:12}},b.items.map((t,j)=>{
+const [lead,rest]=splitLead(t);
+return React.createElement('li',{key:j,style:{fontSize:16,lineHeight:1.7,color:'var(--text)'}},lead,rest);
+})),
+b.type==='cards'&&React.createElement('div',{style:{display:'flex',flexDirection:'column',gap:16}},b.items.map((it,j)=>React.createElement('div',{key:j,style:{background:'#FFFFFF',border:'1px solid color-mix(in srgb, var(--ink-900) 7%, transparent)',borderRadius:16,padding:'22px 24px',display:'flex',flexWrap:'wrap',alignItems:'center',gap:'12px 32px',boxShadow:'inset 0 1px 0 rgba(255,255,255,0.8), 0 4px 14px -8px color-mix(in srgb, var(--ink-900) 14%, transparent)'}},
+React.createElement('div',{style:{flex:'1 1 240px',minWidth:0,display:'flex',flexDirection:'column',gap:6}},
+React.createElement('div',{style:{fontSize:18,fontWeight:600,color:'var(--text)',lineHeight:1.3}},it.title),
+React.createElement('div',{style:{fontSize:15,lineHeight:1.65,color:'var(--text-muted)'}},it.text)
+),
+it.detail&&React.createElement('div',{style:{flex:'1 1 280px',minWidth:0,paddingLeft:window.__csNarrow?0:20,borderLeft:window.__csNarrow?'none':'1px solid color-mix(in srgb, var(--ink-900) 10%, transparent)',fontSize:14,lineHeight:1.7,color:'var(--text)',whiteSpace:'pre-line'}},it.detail)
+))),
+b.type==='text-image'&&b.items.map((it,j)=>{const nx=b.items[j+1];const imgOnly=x=>x&&!x.title&&!x.text&&!x.noImage;return React.createElement('div',{key:j,style:{marginBottom:(imgOnly(nx)&&!it.noImage&&!it.caption)?16:28}},
+it.sideImgId?React.createElement('div',{style:{display:'flex',flexWrap:'wrap',gap:24,alignItems:'flex-start',marginBottom:16}},
+React.createElement('div',{style:{flex:'1 1 280px',minWidth:0}},
+it.title&&React.createElement('div',{style:{fontSize:(it.small||it.title.startsWith('\u2022'))?16:19,fontWeight:600,color:'var(--text)',marginBottom:it.compact?0:8,lineHeight:it.compact?1.25:1.5}},it.title),
+it.text&&React.createElement('p',{style:{fontSize:16,lineHeight:1.7,color:'var(--text)',marginBottom:0,whiteSpace:'pre-line'}},it.text)
+),
+React.createElement('div',{style:{flex:'1 1 240px',minWidth:0,borderRadius:'var(--radius-lg,16px)',overflow:'hidden'}},
+React.createElement('image-slot',{id:'block-'+it.sideImgId,shape:'rect',fit:'contain','natural-ratio':'',placeholder:'Add illustration'})
+)
+):React.createElement(React.Fragment,null,
+it.title&&React.createElement('div',{style:{fontSize:(it.small||it.title.startsWith('\u2022'))?16:19,fontWeight:600,color:'var(--text)',marginBottom:it.compact?0:8,lineHeight:it.compact?1.25:1.5}},it.title),
+it.text&&React.createElement('p',{style:{fontSize:16,lineHeight:1.7,color:'var(--text)',marginBottom:16,whiteSpace:'pre-line'}},it.text)
+),
+it.extraImgId&&React.createElement('div',{style:{display:'flex',gap:16,marginBottom:16,alignItems:'stretch',height:340,maxWidth:'100%'}},
+React.createElement('div',{style:{flex:'1 1 0',minWidth:0,borderRadius:'var(--radius-lg,16px)',overflow:'hidden',height:'100%'}},
+React.createElement('image-slot',{id:'block-'+it.extraImgId,shape:'rect',fit:'contain',placeholder:'Add illustration'})
+),
+React.createElement('div',{style:{flex:'1.6 1 260px',minWidth:0,borderRadius:'var(--radius-lg,16px)',overflow:'hidden',height:'100%'}},
+React.createElement('image-slot',{id:it.imgId?'block-'+it.imgId:uid(j),shape:'rect',fit:'contain',placeholder:'Add illustration'})
+)
+),
+it.pairIds&&React.createElement('div',{style:{display:'grid',gridTemplateColumns:window.__csPhone?'minmax(0,1fr)':(it.pairCols||'repeat(2,minmax(0,1fr))'),gap:16,alignItems:'stretch'}},it.pairIds.map(pid=>React.createElement('div',{key:pid,style:{aspectRatio:it.pairCols?'auto':'4/3',height:it.pairCols?'clamp(220px,30vw,360px)':'auto',borderRadius:'var(--radius-lg,16px)',overflow:'hidden',background:'#FFFFFF'}},React.createElement('image-slot',{id:'block-'+pid,shape:'rect',fit:'contain',placeholder:'Add illustration'})))),
+!it.pairIds&&!it.extraImgId&&!it.noImage&&(it.natural?(it.imgId2?React.createElement('div',{style:{display:'flex',flexDirection:window.__csNarrow?'column':'row',gap:16,alignItems:window.__csNarrow?'stretch':'flex-start'}},
+React.createElement('div',{style:{flex:window.__csNarrow?'none':(it.flex1||1)+' 1 0',minWidth:0,borderRadius:'var(--radius-lg,16px)',overflow:'hidden'}},
+React.createElement('image-slot',{id:it.imgId?'block-'+it.imgId:uid(j),shape:'rect',fit:'contain','natural-ratio':'',placeholder:'Add illustration'})
+),
+React.createElement('div',{style:{flex:window.__csNarrow?'none':(it.flex2||1)+' 1 0',minWidth:0,borderRadius:'var(--radius-lg,16px)',overflow:'hidden'}},
+React.createElement('image-slot',{id:it.imgId2?'block-'+it.imgId2:uid(j,'-b'),shape:'rect',fit:'contain','natural-ratio':'',placeholder:'Add illustration'})
+)
+):React.createElement('div',{style:{borderRadius:'var(--radius-lg,16px)',overflow:'hidden',maxWidth:it.smallImg?'60%':'100%'}},
+React.createElement('image-slot',{id:it.imgId?'block-'+it.imgId:uid(j),shape:'rect',fit:'contain','natural-ratio':'',placeholder:'Add illustration'})
+)):React.createElement('div',{style:{aspectRatio:it.ratio||'16/9',borderRadius:'var(--radius-lg,16px)',overflow:'hidden',background:'#FFFFFF'}},
+React.createElement('image-slot',{id:it.imgId?'block-'+it.imgId:uid(j),shape:'rect',placeholder:'Add illustration'})
+)),
+it.caption&&React.createElement('div',{style:{fontSize:14,lineHeight:1.6,color:'var(--text-muted)',marginTop:10,textAlign:'center'}},it.caption)
+);}),
+b.type==='quotes'&&(()=>{
+const [main,...rest]=b.items;
+return React.createElement('div',null,
+React.createElement('div',{style:{borderLeft:'3px solid var(--primary-strong)',paddingLeft:20}},
+React.createElement('div',{style:{fontSize:20,lineHeight:1.5,fontWeight:500,color:'var(--text)',fontStyle:'italic'}},'“'+main.text+'”'),
+React.createElement('div',{style:{fontFamily:'var(--font-mono)',fontSize:12,color:'var(--text-muted)',marginTop:10}},'— '+main.source)
+),
+rest.length>0&&React.createElement('p',{style:{fontSize:13,lineHeight:1.7,color:'var(--text-faint)',marginTop:16}},
+rest.map(q=>'“'+q.text+'” — '+q.source).join(' ')
+)
+);
+})()
+),
+b.sideChart&&React.createElement('div',{style:{flex:window.__csNarrow?'none':'0 0 33.33%',alignSelf:window.__csNarrow?'stretch':'flex-start',display:'flex',justifyContent:'center',background:'#F2F2F4',borderRadius:'var(--radius-lg,16px)',padding:24}},BarChart(b.sideChart)),
+b.sideImgId&&React.createElement('div',{style:{flex:window.__csNarrow?'none':'0 0 33.33%',aspectRatio:'341/400',borderRadius:'var(--radius-lg,16px)',overflow:'hidden',alignSelf:'flex-start'}},
+React.createElement('image-slot',{id:'block-'+b.sideImgId,shape:'rect',fit:'cover',placeholder:'Add illustration'})
+)
+)
+);
+}
+
+function SideItem(label,value){
+if(!value)return null;
+return React.createElement('div',null,
+React.createElement('div',{style:{fontFamily:'var(--font-mono)',fontSize:13,letterSpacing:'var(--tracking-wide)',textTransform:'uppercase',color:'var(--text-faint)',marginBottom:window.__csNarrow?2:4}},label),
+React.createElement('div',{style:{fontSize:14,lineHeight:window.__csNarrow?1.5:1.6,color:'var(--text)',whiteSpace:'pre-line'}},value)
+);
+}
+
+function CaseStudy({project,onBack,hideCover,onOpenOther}){
+const rootRef=React.useRef(null);
+React.useEffect(()=>{let el=rootRef.current&&rootRef.current.parentElement;while(el&&el!==document.body){const oy=getComputedStyle(el).overflowY;if(oy==='auto'||oy==='scroll'){el.scrollTop=0;break;}el=el.parentElement;}},[project&&project.id]);
+const [vw,setVw]=React.useState(window.innerWidth);
+React.useEffect(()=>{const f=()=>setVw(window.innerWidth);window.addEventListener('resize',f);return ()=>window.removeEventListener('resize',f);},[]);
+window.__csNarrow=vw<820;window.__csPhone=vw<560;
+if(!project)return null;
+const narrow=vw<820;
+const {Button}=window.LunaLiuDesignSystem_29754e;
+return React.createElement('div',{ref:rootRef},
+React.createElement('section',{style:{padding:narrow?'32px 20px 72px':'56px 48px 96px',maxWidth:1120,margin:'0 auto',display:'grid',gridTemplateColumns:narrow?'minmax(0,1fr)':'240px minmax(0,1fr)',gap:narrow?32:56,alignItems:'start',animation:'caseTextFadeIn 0.5s ease-in-out 0.15s both'}},
+React.createElement('div',{style:{position:narrow?'static':'sticky',top:56,minHeight:narrow?0:'calc(100vh - 112px)',display:'flex',flexDirection:'column',gap:narrow?12:20}},
+React.createElement('div',{style:{fontSize:26,fontWeight:600,letterSpacing:'-0.02em',color:'var(--ink-900)',lineHeight:1.3}},project.title),
+SideItem('Project Type',project.projectType||'UX Design · Data Analysis'),
+project.timelineFirst?SideItem('Timeline',project.timeline):SideItem('Platform',project.platform),
+project.timelineFirst?SideItem('Platform',project.platform):SideItem('Timeline',project.timeline),
+SideItem('Collaborators',project.collaborators),
+SideItem('My Role',project.scope),
+!narrow&&React.createElement(Button,{variant:'ghost',size:'sm',onClick:onBack,style:{alignSelf:'flex-start',padding:'10px 14px',marginTop:'auto',marginBottom:16}},'← Back to all work')
+),
+React.createElement('div',{style:{minWidth:0}},
+!hideCover&&React.createElement('div',{style:{position:'relative',width:'100%',height:(project.coverNatural||project.coverRatio||narrow)?'auto':(project.id==='guestweb'?'clamp(340px,58vh,580px)':'clamp(280px,44vh,440px)'),aspectRatio:narrow?undefined:(project.coverRatio||undefined),overflow:'hidden',borderRadius:16,marginBottom:40,opacity:0,animation:'caseImgSlideIn 0.6s cubic-bezier(0.16,1,0.3,1) both'}},
+React.createElement('image-slot',{key:'cv'+(narrow?1:0),id:'modal-cover-'+project.id,shape:'rect','natural-ratio':(project.coverNatural||narrow)?'':undefined,placeholder:'Add a lifestyle photo for '+project.title})
+),
+project.coverHeadline&&React.createElement('div',{style:{fontSize:'clamp(26px,3vw,36px)',fontWeight:600,letterSpacing:'-0.03em',lineHeight:1.25,color:'var(--ink-900)',marginTop:-8,marginBottom:40,textWrap:'pretty'}},project.coverHeadline),
+project.blocks.map((b,i)=>CaseBlock(b,i,project.id)),
+onOpenOther&&React.createElement('div',{style:{marginTop:24,paddingTop:40,borderTop:'1px solid var(--border)'}},
+React.createElement('div',{style:{fontFamily:'var(--font-mono)',fontSize:16,letterSpacing:'var(--tracking-wide)',textTransform:'uppercase',color:'#A66A00',marginBottom:20}},'Keep Reading'),
+React.createElement('div',{style:{display:'grid',gridTemplateColumns:window.__csPhone?'minmax(0,1fr)':'repeat(2,minmax(0,1fr))',gap:24}},
+['guestweb','aca-ai','ai-butler'].filter(id=>id!==project.id).map(id=>(window.PROJECTS_DATA||[]).find(p=>p.id===id)).filter(Boolean).map(p=>React.createElement('div',{key:p.id,onClick:()=>onOpenOther(p),style:{cursor:'pointer',display:'flex',flexDirection:'column',gap:12},onMouseEnter:e=>{e.currentTarget.style.transform='translateY(-4px)';},onMouseLeave:e=>{e.currentTarget.style.transform='translateY(0)';}},
+React.createElement('div',{style:{position:'relative',width:'100%',aspectRatio:'4/3',overflow:'hidden',borderRadius:16,background:'#F4F4F6',boxShadow:'0 6px 18px -12px color-mix(in srgb, var(--ink-900) 18%, transparent)',pointerEvents:'none'}},
+React.createElement('image-slot',{id:'cover-'+p.id+(p.id==='aca-ai'?'-v3':''),shape:'rect',src:p.id==='aca-ai'?'uploads/39706.jpg':undefined,placeholder:'Add a lifestyle photo for '+p.title})
+),
+React.createElement('div',{style:{display:'flex',flexWrap:'wrap',gap:6}},(p.labels||[]).map(l=>React.createElement('div',{key:l,style:{fontSize:12,fontWeight:500,color:'var(--ink-700,#3a3935)',background:'color-mix(in srgb, var(--ink-900) 6%, transparent)',padding:'5px 10px',borderRadius:8,whiteSpace:'nowrap'}},l))),
+React.createElement('div',{style:{fontSize:17,fontWeight:600,letterSpacing:'-0.01em',color:'var(--ink-900)',lineHeight:1.4}},p.title)
+))
+)
+)
+)
+)
+);
+}
+window.PortfolioCaseStudy=CaseStudy;
+window.LunaCaseBlock=CaseBlock;

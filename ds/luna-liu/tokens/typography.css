@@ -1,0 +1,19 @@
+:root{
+--fs-display:88px;
+--fs-h1:56px;
+--fs-h2:36px;
+--fs-h3:24px;
+--fs-body-lg:20px;
+--fs-body:16px;
+--fs-small:14px;
+--fs-label:12px;
+--fw-regular:400; /* @kind other */
+--fw-medium:500; /* @kind other */
+--fw-semibold:600; /* @kind other */
+--tracking-tight:-0.03em; /* @kind other */
+--tracking-normal:0em; /* @kind other */
+--tracking-wide:0.12em; /* @kind other */
+--lh-tight:1.05; /* @kind other */
+--lh-snug:1.25; /* @kind other */
+--lh-relaxed:1.6; /* @kind other */
+}
