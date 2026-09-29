@@ -15,7 +15,10 @@ blocks:[
 scope:'Data analysis, requirements translation, VUI flow planning',collaborators:'PM · Backend engineers',
 oneLiner:'I analyzed thousands of real phone calls, then broke down and rebuilt human agents’ ordering logic into service guidelines an AI can execute reliably — so every call sounds like it’s being handled by a seasoned agent.',
 blocks:[
-{heading:'Results at a Glance',type:'text',items:['Smoother conversations, fewer unnecessary questions from the AI, and an engineering team that can implement faster from the guidelines while spending less time on regression testing.']},
+{heading:'Results at a Glance',type:'cards',items:[
+{compact:true,title:'92% pass rate in internal stress testing',text:'46 of 50 test calls successfully created a complete in-room dining order',noImage:true},
+{compact:true,title:'Smoother conversations, faster delivery',text:'The AI asks fewer unnecessary questions, and engineers implement directly from the guidelines, shortening regression testing',noImage:true}
+]},
 {heading:'Background',type:'text',title:'Phone ordering was the feature hotels cared about most — yet it still hadn’t been built',sideChart:[
 {label:'Human agent request',pct:100,value:'27%',color:'#B0B0B4'},
 {label:'In-room dining',pct:59,value:'16%',color:'#85B7EB',bold:true},
