@@ -92,3 +92,17 @@ blocks:[
 {heading:'Reflection',type:'text',items:['Only through interviews and on-site visits can you truly understand how users work and solve problems effectively. At the same time, hotel managers and frontline staff often care about different things, and design needs to find a balance between the two.']}
 ]}
 ];
+// Page variant, picked by URL: ?focus=ai leads with the AI voice work; no param = default site.
+window.SITE_VARIANT=(()=>{
+const focus=new URLSearchParams(window.location.search).get('focus');
+if(focus==='ai') return {
+order:['aca-ai','ai-butler','guestweb'],
+headline:'Designing AI that\nlistens, then acts.',
+tagline:'Luna・UI/UX Designer・Conversational AI & Smart Devices'
+};
+return {
+order:['guestweb','aca-ai','ai-butler'],
+headline:'Clarity between\nguests, staff, and AI.',
+tagline:'Luna・UI/UX Designer・AI SaaS Products'
+};
+})();

@@ -241,7 +241,7 @@ return box;
 }
 function Title({tilt,titleRef,h1Ref}){
 const fontSize='clamp(34px,4.6vw,62px)';
-const name='Clarity between\nguests, staff, and AI.';
+const name=window.SITE_VARIANT.headline;
 const tags=['AI Voice','Smart Hardware','SaaS'];
 const sharedTextStyle={position:'relative',margin:0,fontSize,fontWeight:400,fontFamily:"'Valley Sans',var(--font-sans,sans-serif)",letterSpacing:'0.02em',lineHeight:1.35,whiteSpace:'pre-line',maxWidth:'20ch'};
 return React.createElement('div',{ref:titleRef,style:{position:'relative',zIndex:2,maxWidth:'100%',width:'fit-content',marginTop:-260,willChange:'filter,opacity'}},
@@ -286,7 +286,7 @@ React.createElement(NetworkSphere,{tilt,progress:sphereBox.progress})
 ),
 React.createElement(MemoStars,null),
 React.createElement(Title,{tilt,titleRef,h1Ref}),
-React.createElement('p',{ref:pRef,style:{position:'relative',zIndex:1,fontSize:'clamp(20px,2vw,28px)',lineHeight:1.5,fontFamily:"'Albert Sans',var(--font-sans,sans-serif)",color:'rgba(36,29,24,0.7)',margin:0,marginTop:16,willChange:'filter,opacity'}},'Luna・UI/UX Designer・AI SaaS Products'),
+React.createElement('p',{ref:pRef,style:{position:'relative',zIndex:1,fontSize:'clamp(20px,2vw,28px)',lineHeight:1.5,fontFamily:"'Albert Sans',var(--font-sans,sans-serif)",color:'rgba(36,29,24,0.7)',margin:0,marginTop:16,willChange:'filter,opacity'}},window.SITE_VARIANT.tagline),
 );
 }
 function StarTwinkleOverlay(){

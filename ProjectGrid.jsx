@@ -37,7 +37,7 @@ return ()=>window.removeEventListener('resize',check);
 const refs=React.useRef({});
 if(!ready) return React.createElement('section',{style:{minHeight:400}});
 const data=window.PROJECTS_DATA;
-const order=['guestweb','aca-ai','ai-butler'];
+const order=window.SITE_VARIANT.order;
 const items=order.map(id=>data.find(p=>p.id===id)).filter(Boolean);
 return React.createElement('section',{id:'project-grid-section',style:{position:'relative',zIndex:1}},
 React.createElement('div',{style:{position:'absolute',inset:0,zIndex:0,background:'radial-gradient(85% 78% at 0% 0%, rgba(255,255,255,0.82), rgba(255,255,255,0) 78%), radial-gradient(85% 78% at 100% 0%, rgba(255,255,255,0.82), rgba(255,255,255,0) 78%), radial-gradient(85% 78% at 0% 100%, rgba(255,255,255,0.82), rgba(255,255,255,0) 78%), radial-gradient(85% 78% at 100% 100%, rgba(255,255,255,0.82), rgba(255,255,255,0) 78%), rgba(246,247,248,0.42)',WebkitMaskImage:'linear-gradient(to bottom, transparent 0, #000 120px, #000 calc(100% - 160px), transparent 100%)',maskImage:'linear-gradient(to bottom, transparent 0, #000 120px, #000 calc(100% - 160px), transparent 100%)'}}),
