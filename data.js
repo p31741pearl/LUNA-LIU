@@ -105,7 +105,7 @@ tagline:'Luna・UI/UX Designer・Conversational AI & Smart Devices'
 };
 return {
 order:['guestweb','aca-ai','ai-butler'],
-headline:'Clarity between\nguests, staff, and AI.',
+headline:'Clarity between\npeople and AI.',
 tagline:'Luna・UI/UX Designer・AI SaaS Products'
 };
 })();
