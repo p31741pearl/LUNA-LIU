@@ -12,7 +12,7 @@ React.createElement('span',{'data-site-moon':'','aria-hidden':true,style:{positi
 'Luna Liu'),
 React.createElement('nav',{style:{display:'flex',alignItems:'center',gap:narrow?18:32}},
 links.map(l=>React.createElement('span',{key:l,onClick:()=>onNav(l),style:{fontSize:14,fontWeight:500,cursor:'pointer',color:active===l?'var(--text)':'var(--text-muted)',transition:'color var(--dur-fast) var(--ease-expo-out)'}},l)),
-React.createElement('a',{href:'https://drive.google.com/drive/folders/1XALJ8GZUo-nuZVn3wBFxr7idXlIw1IAG?usp=sharing',target:'_blank',rel:'noopener noreferrer',style:{fontSize:14,fontWeight:500,color:'#FFFFFF',background:'var(--ink-900)',padding:'8px 18px',borderRadius:999,textDecoration:'none',lineHeight:1.2}},'Resume')
+React.createElement('a',{href:window.SITE_VARIANT.resumeUrl,target:'_blank',rel:'noopener noreferrer',style:{fontSize:14,fontWeight:500,color:'#FFFFFF',background:'var(--ink-900)',padding:'8px 18px',borderRadius:999,textDecoration:'none',lineHeight:1.2}},'Resume')
 )
 ),
 React.createElement('div',{style:{height:home?0:64}})

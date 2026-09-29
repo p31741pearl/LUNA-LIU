@@ -101,11 +101,13 @@ const focus=new URLSearchParams(window.location.search).get('focus');
 if(focus==='ai') return {
 order:['aca-ai','ai-butler','guestweb'],
 headline:'Designing AI that\nlistens, then acts.',
-tagline:'Luna・UI/UX Designer・Conversational AI & Smart Devices'
+tagline:'Luna・UI/UX Designer・Conversational AI & Smart Devices',
+resumeUrl:'https://drive.google.com/drive/folders/1kColvmaOikbEV8f8Nej0tayngMJpFT3f?usp=sharing'
 };
 return {
 order:['guestweb','aca-ai','ai-butler'],
 headline:'Clarity between\npeople and AI.',
-tagline:'Luna・UI/UX Designer・AI SaaS Products'
+tagline:'Luna・UI/UX Designer・AI SaaS Products',
+resumeUrl:'https://drive.google.com/drive/folders/1XALJ8GZUo-nuZVn3wBFxr7idXlIw1IAG?usp=sharing'
 };
 })();
