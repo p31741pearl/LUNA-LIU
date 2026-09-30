@@ -22,24 +22,24 @@ return React.createElement('section',{style:{padding:narrow?'64px 24px':'80px 48
 narrow?React.createElement('div',{style:{display:'flex',alignItems:'center',justifyContent:'space-between',gap:24}},title,photoEl):photoEl,
 React.createElement('div',{style:{minWidth:0}},
 narrow?null:title,
-React.createElement('p',{style:{margin:'0 0 36px',fontSize:17,lineHeight:1.7,color:'var(--text)',textWrap:'pretty'}},'5 years of UI/UX experience, focused on AI voice and hospitality SaaS products. I specialize in translating engineering constraints and real-world usage into scalable design systems.'),
-React.createElement('h3',{style:{fontSize:20,fontWeight:600,letterSpacing:'-0.01em',margin:'0 0 20px'}},'Working at the intersection of hardware and software'),
+React.createElement('p',{style:{margin:'0 0 36px',fontSize:17,lineHeight:1.7,color:'var(--text)',textWrap:'pretty'}},window.t('5 years of UI/UX experience, focused on AI voice and hospitality SaaS products. I specialize in translating engineering constraints and real-world usage into scalable design systems.')),
+React.createElement('h3',{style:{fontSize:20,fontWeight:600,letterSpacing:'-0.01em',margin:'0 0 20px'}},window.t('Working at the intersection of hardware and software')),
 React.createElement('div',{style:{display:'flex',flexDirection:'column',gap:20,marginBottom:48}},career.map(c=>React.createElement('div',{key:c.co,style:{display:'grid',gridTemplateColumns:narrow?'minmax(0,1fr)':'96px minmax(0,1fr)',gap:narrow?4:20}},
-React.createElement('div',{style:{fontFamily:"'Albert Sans',var(--font-sans,sans-serif)",fontSize:14,color:'#A66A00',paddingTop:2}},c.y),
-React.createElement('div',{style:{fontSize:16,lineHeight:1.6,color:'var(--text)',textWrap:'pretty'}},React.createElement('span',{style:{fontWeight:600,display:'block',marginBottom:2}},c.co),c.d)
+React.createElement('div',{style:{fontFamily:"'Albert Sans',var(--font-sans,sans-serif)",fontSize:14,color:'#A66A00',paddingTop:2}},window.t(c.y)),
+React.createElement('div',{style:{fontSize:16,lineHeight:1.6,color:'var(--text)',textWrap:'pretty'}},React.createElement('span',{style:{fontWeight:600,display:'block',marginBottom:2}},c.co),window.t(c.d))
 ))),
-React.createElement('div',{style:{fontSize:14,fontWeight:500,color:'var(--text-muted)',marginBottom:12}},'Tools'),
+React.createElement('div',{style:{fontSize:14,fontWeight:500,color:'var(--text-muted)',marginBottom:12}},window.t('Tools')),
 React.createElement('div',{style:{display:'flex',gap:10,flexWrap:'wrap',marginBottom:64}},tools.map(t=>React.createElement(Badge,{key:t,variant:'outline',style:{fontFamily:"'Albert Sans',var(--font-sans,sans-serif)",fontSize:12}},t))),
 
-React.createElement('h2',{style:{fontSize:20,fontWeight:600,letterSpacing:'-0.01em',marginBottom:28}},'How I Work'),
+React.createElement('h2',{style:{fontSize:20,fontWeight:600,letterSpacing:'-0.01em',marginBottom:28}},window.t('How I Work')),
 React.createElement('div',{style:{display:'flex',flexDirection:'column',gap:20,marginBottom:64}},steps.map(s=>React.createElement('div',{key:s.n,style:{display:'flex',gap:20}},
 React.createElement('div',{style:{fontFamily:"'Albert Sans',var(--font-sans,sans-serif)",fontSize:14,color:'var(--primary-strong)',flexShrink:0,paddingTop:1}},s.n),
 React.createElement('div',null,
-React.createElement('div',{style:{fontSize:16,fontWeight:600,marginBottom:4}},s.title),
-React.createElement('div',{style:{fontSize:14,lineHeight:1.6,color:'var(--text-muted)'}},s.desc)
+React.createElement('div',{style:{fontSize:16,fontWeight:600,marginBottom:4}},window.t(s.title)),
+React.createElement('div',{style:{fontSize:14,lineHeight:1.6,color:'var(--text-muted)'}},window.t(s.desc))
 )
 ))),
-React.createElement('a',{href:window.SITE_VARIANT.resumeUrl,target:'_blank',rel:'noopener noreferrer',style:{display:'inline-block',fontSize:14,fontWeight:500,color:'#FFFFFF',background:'var(--ink-900)',padding:'8px 18px',borderRadius:999,textDecoration:'none',lineHeight:1.2}},'Resume')
+React.createElement('a',{href:window.SITE_VARIANT.resumeUrl,target:'_blank',rel:'noopener noreferrer',style:{display:'inline-block',fontSize:14,fontWeight:500,color:'#FFFFFF',background:'var(--ink-900)',padding:'8px 18px',borderRadius:999,textDecoration:'none',lineHeight:1.2}},window.t('Resume'))
 )
 );
 }
