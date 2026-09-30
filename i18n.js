@@ -262,6 +262,14 @@ return window.location.pathname+(s?'?'+s:'')+window.location.hash;
 };
 if(window.SITE_LANG==='zh'){
 document.documentElement.lang='zh-Hant';
+// Chinese glyphs use Noto Sans TC everywhere. Every font stack on the site ends in var(--font-sans), and the
+// Latin fonts before it have no CJK glyphs, so putting Noto ahead of the system fonts is enough.
+const font=document.createElement('link');font.rel='stylesheet';
+font.href='https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&display=swap';
+document.head.appendChild(font);
+const fontVar=document.createElement('style');
+fontVar.textContent="html[lang='zh-Hant']{--font-sans:'Inter','Noto Sans TC',system-ui,-apple-system,sans-serif}";
+document.head.appendChild(fontVar);
 // Only string values found in the table are replaced, so ids, image ids, colors and numbers stay as they are.
 const tr=(v)=>typeof v==='string'?window.t(v):Array.isArray(v)?v.map(tr):(v&&typeof v==='object')?Object.fromEntries(Object.entries(v).map(([k,x])=>[k,tr(x)])):v;
 if(window.PROJECTS_DATA) window.PROJECTS_DATA=tr(window.PROJECTS_DATA);
