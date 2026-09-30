@@ -54,7 +54,7 @@ window.ZH_TEXT={
 'Hardware × software experience design (smart speakers, in-room smart devices)':'軟硬體整合體驗設計（智慧音箱、客房智慧裝置）',
 'Data-driven conversation flow optimization (call log analysis, data interpretation)':'數據驅動的對話流程優化（通話紀錄分析、數據解讀）',
 '5 years of UI/UX experience, focused on AI voice and hospitality SaaS products. I specialize in translating engineering constraints and real-world usage into scalable design systems.':'5 年 UI/UX 經驗，專注於 AI 語音與飯店 SaaS 產品。擅長將工程限制與真實使用情境，轉化為可擴展的設計系統。',
-'Working at the intersection of hardware and software':'在軟體與硬體的交會處工作',
+'Working at the intersection of hardware and software':'橫跨軟硬體整合的工作經歷',
 'Tools':'工具',
 'How I Work':'我的工作方式',
 
