@@ -5,9 +5,8 @@
 window.SITE_LANG=new URLSearchParams(window.location.search).get('lang')==='zh'?'zh':'en';
 window.ZH_TEXT={
 // ---- Site variant (data.js) ----
-'Designing AI that\nlistens, then acts.':'設計會傾聽、\n也會行動的 AI。',
+// The hero headline stays in English on purpose, so it has no entry here.
 'Luna・UI/UX Designer・Conversational AI & Smart Devices':'Luna・UI/UX 設計師・對話式 AI 與智慧裝置',
-'Clarity between\npeople and AI.':'讓人與 AI 之間\n清晰無礙。',
 'Luna・UI/UX Designer・AI SaaS Products':'Luna・UI/UX 設計師・AI SaaS 產品',
 
 // ---- Header / Footer / Contact ----
