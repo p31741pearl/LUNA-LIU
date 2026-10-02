@@ -182,7 +182,7 @@ tagline:'Luna・UI/UX Designer・Hardware–Software Experiences',
 resumeUrl:'https://drive.google.com/drive/folders/1U047kGSj6b7uZfmoTVgLbatRQR5mA4kY?usp=sharing'
 };
 if(focus==='ai') return {
-order:['aca-ai','ai-butler','guestweb'],
+order:['aca-ai','ai-butler','guestweb','17backstage','1177pay'],
 headline:'Designing AI that\nlistens, then acts.',
 tagline:'Luna・UI/UX Designer・Conversational AI & Smart Devices',
 resumeUrl:'https://drive.google.com/drive/folders/1kColvmaOikbEV8f8Nej0tayngMJpFT3f?usp=sharing'
