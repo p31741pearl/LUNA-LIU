@@ -280,6 +280,10 @@ window.ZH_TEXT={
 'Taking the controller’s knobs as the concept and pairing them with the software’s signature orange, I drew the app icon in 9 sizes, from 16 px to 1024 px, so it reads clearly at every size.':'以直播控制器上的旋鈕為概念，結合軟體主色的橘，繪製從 16 px 到 1024 px 共 9 種尺寸的 App Icon，讓它在每種尺寸下都清楚可辨。',
 'On a device people use mid-broadcast, a state they have to look for is a state they will miss. Working within a small screen taught me to let color, contrast and motion carry the meaning instead of detail. Once those rules were clear, they left plenty of room for the bold visual style a streaming product calls for.':'對於在直播中使用的裝置，需要「找」的狀態，就是會被錯過的狀態。在小螢幕的限制下，我學會讓色彩、對比與動態承載意義，而不是依賴細節；而當這些規則清楚之後，反而為直播產品需要的強烈視覺風格留下了充分的空間。',
 
+// ---- Reflections: what I would do differently ----
+'If I did it again, I would test the hotkeys in real live-streaming sessions rather than relying on design reviews alone, and track how they are used after launch, to validate that the dimmed off state stays readable under real lighting and in the middle of a stream.':'如果重做，我會在真實的直播情境中測試 Hotkey，而不只依賴設計審查，並追蹤上線後的使用數據，驗證暗色的關閉狀態在實際燈光下、直播進行中是否依然清楚。',
+'Looking back, I would also track data after the redesigned call flow went live, such as how often guests repeat themselves or interrupt the device, to measure how much the clearer states actually closed the gap.':'回頭看，我也會追蹤通話流程改版上線後的數據，例如住客重複說話或打斷裝置的頻率，量化更清楚的狀態設計實際減少了多少落差。',
+
 // ---- Project: TMS ----
 'Research-Driven Product Design':'研究驅動的產品設計',
 'Research Methods':'研究方法',
