@@ -44,7 +44,7 @@ React.createElement('div',{style:{position:'absolute',inset:0,zIndex:0,backgroun
 React.createElement('div',{style:{position:'relative',zIndex:1,padding:isMobile?'64px 24px':'88px 48px',maxWidth:1120,margin:'0 auto'}},
 React.createElement('div',{style:{fontFamily:'var(--font-mono)',fontSize:28,fontWeight:600,letterSpacing:'var(--tracking-wide)',textTransform:'uppercase',color:'#A66A00',marginBottom:40,lineHeight:1.05}},window.t('Selected Work')),
 React.createElement('div',{style:{display:'grid',gridTemplateColumns:isMobile?'minmax(0,1fr)':'repeat(2,minmax(0,1fr))',gap:isMobile?32:40,alignItems:'stretch'}},
-items.map((project,i)=>React.createElement('div',{key:project.id,style:{gridColumn:(!isMobile&&i===0)?'1 / -1':'auto'}},React.createElement(ProjectCard,{project,onOpen,isMobile,wide:i===0,setRef:el=>{refs.current[project.id]=el;}})))
+items.map((project,i)=>React.createElement('div',{key:project.id,style:{gridColumn:(!isMobile&&(i===0||(i===items.length-1&&i%2===1)))?'1 / -1':'auto'}},React.createElement(ProjectCard,{project,onOpen,isMobile,wide:i===0||(i===items.length-1&&i%2===1),setRef:el=>{refs.current[project.id]=el;}})))
 )
 )
 );

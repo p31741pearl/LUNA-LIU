@@ -94,15 +94,35 @@ blocks:[
 {heading:'Results & Impact',type:'text',items:['Improved screen presentation reduced mistaps when staff report task status; a reworked task management view sped up managers’ shift scheduling and cleaning assignments.']},
 {heading:'Reflection',type:'text',items:['Only through interviews and on-site visits can you truly understand how users work and solve problems effectively. At the same time, hotel managers and frontline staff often care about different things, and design needs to find a balance between the two.']}
 ]},
+{id:'nexus',coverNatural:true,projectType:'UI Design · Hardware–Software Integration',timeline:'2020',platform:'Streaming controller panel + desktop software',timelineFirst:true,labels:['UI Design','Hardware–Software Integration','Animated Icons'],title:'Live Streamer NEXUS',
+scope:'Dynamic UI components for the hardware panel and desktop software, boot animation, LED lighting scripts, icon library, UI string translation',
+blocks:[
+{heading:'Background',type:'text',items:['NEXUS is live-streaming software that works with a streaming controller. It lets streamers easily switch which PC screen to capture, and set the hotkeys and styles shown on the controller’s panel.']},
+{heading:'Goals',type:'bullets',items:['Design dynamic UI components that appear on both the hardware panel and the desktop software','Concept and produce the boot animation','Write the color-change scripts for the hardware lighting','Build an icon library','Translate multilingual UI strings from Chinese to English']},
+{heading:'Product Positioning',type:'text',items:['During a live stream, streamers constantly open and close all kinds of software — games, browsers, drawing tools and more — and have to keep window sizes and volume under control to give viewers a good experience. NEXUS supports custom hotkeys and audio channel mixing, connecting a range of common devices and software so streamers can easily stay in control of the stream and deliver high-quality content to their viewers.']},
+{type:'cards',items:[{title:'Before',text:'Mid-stream, streamers often had to open several programs and adjust audio levels and aspect ratios'},{title:'With NEXUS',text:'Preset multiple streaming scenes, then swipe the controller’s screen to switch between them instantly'}]},
+{heading:'Design Process',type:'text-image',items:[
+{title:'Hardware: Boot Animation and Lighting Effects',text:'Using a flashy esports style as the visual concept, I animated the company logo and designed lighting effects that flash in time with the animation’s rhythm.',imgId:'nexus-boot',natural:true},
+{title:'• Lighting scripts timed to the millisecond',text:'Because the lighting changes are fast and complex, I followed the lighting patterns and wrote the script precisely, millisecond by millisecond.',imgId:'nexus-light-script',natural:true},
+{title:'Software: Hotkey Design',text:'I defined an icon color specification based on the brand colors of each software NEXUS supports. Because the streaming controller’s screen is small, changes in an icon’s shape are hard to notice, so I made animated icons to make On / Off states easier to read at a glance.',noImage:true}
+]}
+]},
 {id:'1177pay',projectType:'Fintech · Mobile App',timeline:'2021 – 2023',labels:['Fintech','Mobile Payment App'],title:'1177pay Mobile Payment App',
 blocks:[]},
 {id:'17backstage',projectType:'Fintech · Back-Office System',timeline:'2021 – 2023',labels:['Fintech','Back-Office System'],title:'17Backstage Financial Back Office',
 blocks:[]}
 ];
 // Page variant, picked by URL: ?focus=ai leads with the AI voice work; ?focus=fintech is the default site
-// plus the 1177 Tech finance projects at the end; no param = default site.
+// plus the 1177 Tech finance projects at the end; ?focus=hardware leads with hardware–software work;
+// no param = default site.
 window.SITE_VARIANT=(()=>{
 const focus=new URLSearchParams(window.location.search).get('focus');
+if(focus==='hardware') return {
+order:['ai-butler','nexus','guestweb','aca-ai'],
+headline:'Clarity between\npeople and devices.',
+tagline:'Luna・UI/UX Designer・Hardware–Software Experiences',
+resumeUrl:'https://drive.google.com/drive/folders/1XALJ8GZUo-nuZVn3wBFxr7idXlIw1IAG?usp=sharing'
+};
 if(focus==='fintech') return {
 order:['guestweb','aca-ai','ai-butler','1177pay','17backstage'],
 headline:'Clarity between\npeople and AI.',
