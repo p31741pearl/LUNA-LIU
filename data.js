@@ -94,7 +94,7 @@ blocks:[
 {heading:'Results & Impact',type:'text',items:['Improved screen presentation reduced mistaps when staff report task status; a reworked task management view sped up managers’ shift scheduling and cleaning assignments.']},
 {heading:'Reflection',type:'text',items:['Only through interviews and on-site visits can you truly understand how users work and solve problems effectively. At the same time, hotel managers and frontline staff often care about different things, and design needs to find a balance between the two.']}
 ]},
-{id:'nexus',coverNatural:true,projectType:'UI Design · Hardware–Software Integration',timeline:'2020',platform:'Streaming controller panel + desktop software',timelineFirst:true,labels:['UI Design','Hardware–Software Integration','Animated Icons'],title:'Live Streamer NEXUS',
+{id:'nexus',dark:true,coverNatural:true,projectType:'UI Design · Hardware–Software Integration',timeline:'2020',platform:'Streaming controller panel + desktop software',timelineFirst:true,labels:['UI Design','Hardware–Software Integration','Animated Icons'],title:'Live Streamer NEXUS',
 scope:'Dynamic UI components for the hardware panel and desktop software, boot animation, LED lighting scripts, icon library, UI string translation',
 blocks:[
 {heading:'Background',type:'text',items:['NEXUS is live-streaming software that works with a streaming controller. It lets streamers easily switch which PC screen to capture, and set the hotkeys and styles shown on the controller’s panel.']},
