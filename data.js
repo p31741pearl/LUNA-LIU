@@ -168,7 +168,7 @@ blocks:[
 ]}
 ];
 // Page variant, picked by URL: ?focus=ai leads with the AI voice work; ?focus=hardware leads with
-// hardware–software work (?focus=automotive is the same, led by NEXUS); no param = default site (older ?focus=fintech links land here too).
+// hardware–software work (?focus=automotive is the same with a motion-focused tagline); no param = default site (older ?focus=fintech links land here too).
 // pairs:true lays every card out two per row instead of making the first card full width. aboutIntro / career (keyed by company) override the About page copy.
 window.SITE_VARIANT=(()=>{
 const focus=new URLSearchParams(window.location.search).get('focus');
@@ -182,8 +182,8 @@ headline:'Clarity between\npeople and devices.',
 tagline:'Luna・UI/UX Designer・Hardware–Software Experiences',
 resumeUrl:'https://drive.google.com/drive/folders/1U047kGSj6b7uZfmoTVgLbatRQR5mA4kY?usp=sharing'
 };
-// ?focus=automotive: the hardware variant led by NEXUS, for in-vehicle / embedded UI roles.
-return focus==='automotive'?{...hw,order:['nexus','ai-butler','guestweb','aca-ai'],tagline:'Luna・UI/UX Designer・Hardware–Software UI & Motion'}:hw;
+// ?focus=automotive: the hardware variant with a motion-focused tagline, for in-vehicle / embedded UI roles.
+return focus==='automotive'?{...hw,tagline:'Luna・UI/UX Designer・Hardware–Software UI & Motion'}:hw;
 }
 if(focus==='ai') return {
 order:['aca-ai','ai-butler','guestweb','17backstage','1177pay'],
