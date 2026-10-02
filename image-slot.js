@@ -343,6 +343,7 @@
     '.ring{position:absolute;inset:0;pointer-events:none;border:1.5px dashed rgba(0,0,0,.25);' +
     '  transition:border-color .12s}' +
     ':host([data-over]) .ring{border-color:#c96442}' +
+    ':host(:not([data-editable]):not([data-filled])) .ring{display:none}' +
     ':host([data-filled]) .ring{display:none}' +
     // Controls overlay INSIDE the frame, pinned to the top-right corner, so
     // a full-bleed slot in an overflow:hidden container still shows them
@@ -1173,7 +1174,9 @@
         this._ghost.removeAttribute('src');
         // The error tile owns the blocked-photo state; .empty stays for
         // the genuinely-empty slot.
-        this._empty.style.display = attrError ? 'none' : 'flex';
+        // The drop prompt is an editor affordance: on the published (read-only)
+        // site an unfilled slot just shows its plain frame while the image loads.
+        this._empty.style.display = attrError || !editable ? 'none' : 'flex';
         this.removeAttribute('data-filled');
       }
 
