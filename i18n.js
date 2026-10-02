@@ -379,7 +379,7 @@ window.ZH_TEXT={
 'Building mockups':'製作 Mockup',
 'I designed the screens in Sketch and uploaded them to Zeplin for handoff to the frontend engineers.':'使用 Sketch 製作畫面，並上傳到 Zeplin 與前端交付設計。',
 'The back office was still an MVP and hadn’t launched yet, so its impact showed inside the company: leadership adopted my proposal, the Design Guideline was applied to every product line, and the visual designer also used it for marketing materials.':'這套後台當時仍在 MVP 階段、尚未正式上線，因此成果主要展現在公司內部：老闆採用了我的提案，Design Guideline 套用到所有產品線，視覺設計師也用它製作廣告行銷素材。',
-'This project taught me that a redesign is won by its reasoning, not just its screens. Explaining layout decisions through reading order, visual flow and the risk of each action is what convinced leadership, and it turned one product’s redesign into a guideline for the whole company. I carried the same approach into building the design system for GuestWeb: settle the structure and the reasons behind it first, then refine the visuals.':'這個專案讓我學到，改版能被接受，靠的不只是畫面，而是背後的理由。用閱讀順序、視覺動線和操作風險來解釋版面決策，才讓老闆採用提案，也讓一個產品的改版變成全公司的設計規範。後來在 GuestWeb 建立設計系統時，我也延續了這個做法：先定結構、說清楚理由，再細修視覺。',
+'This project taught me that a redesign is won by its reasoning, not just its screens. Explaining layout decisions through reading order, visual flow and the risk of each action is what convinced leadership, and it turned one product’s redesign into a guideline for the whole company.':'這個專案讓我學到，改版能被接受，靠的不只是畫面，而是背後的理由。用閱讀順序、視覺動線和操作風險來解釋版面決策，才讓老闆採用提案，也讓一個產品的改版變成全公司的設計規範。',
 
 // ---- Project: TMS ----
 'Research-Driven Product Design':'研究驅動的產品設計',

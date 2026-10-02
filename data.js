@@ -168,13 +168,12 @@ blocks:[
 ]},
 {heading:'Final Product',type:'text-image',items:[{imgId:'bs-final-1',natural:true},{imgId:'bs-final-2',natural:true},{imgId:'bs-final-3',natural:true},{imgId:'bs-final-4',natural:true},{imgId:'bs-final-5',natural:true}]},
 {heading:'Results',type:'text',items:['The back office was still an MVP and hadn’t launched yet, so its impact showed inside the company: leadership adopted my proposal, the Design Guideline was applied to every product line, and the visual designer also used it for marketing materials.']},
-{heading:'Reflection',type:'text',items:['This project taught me that a redesign is won by its reasoning, not just its screens. Explaining layout decisions through reading order, visual flow and the risk of each action is what convinced leadership, and it turned one product’s redesign into a guideline for the whole company. I carried the same approach into building the design system for GuestWeb: settle the structure and the reasons behind it first, then refine the visuals.']}
+{heading:'Reflection',type:'text',items:['This project taught me that a redesign is won by its reasoning, not just its screens. Explaining layout decisions through reading order, visual flow and the risk of each action is what convinced leadership, and it turned one product’s redesign into a guideline for the whole company.']}
 ]}
 ];
 // Page variant, picked by URL: ?focus=ai leads with the AI voice work; ?focus=hardware leads with
-// hardware–software work; ?focus=fintech is the default site plus the 1177 Tech finance projects at the end;
-// no param = default site. pairs:true lays every card out two per row
-// instead of making the first card full width. aboutIntro / career (keyed by company) override the About page copy.
+// hardware–software work; no param = default site (older ?focus=fintech links land here too).
+// pairs:true lays every card out two per row instead of making the first card full width. aboutIntro / career (keyed by company) override the About page copy.
 window.SITE_VARIANT=(()=>{
 const focus=new URLSearchParams(window.location.search).get('focus');
 if(focus==='hardware') return {
@@ -186,12 +185,6 @@ headline:'Clarity between\npeople and devices.',
 tagline:'Luna・UI/UX Designer・Hardware–Software Experiences',
 resumeUrl:'https://drive.google.com/drive/folders/1U047kGSj6b7uZfmoTVgLbatRQR5mA4kY?usp=sharing'
 };
-if(focus==='fintech') return {
-order:['guestweb','aca-ai','ai-butler','1177pay','17backstage'],
-headline:'Clarity between\npeople and AI.',
-tagline:'Luna・UI/UX Designer・AI SaaS Products',
-resumeUrl:'https://drive.google.com/drive/folders/1XALJ8GZUo-nuZVn3wBFxr7idXlIw1IAG?usp=sharing'
-};
 if(focus==='ai') return {
 order:['aca-ai','ai-butler','guestweb'],
 headline:'Designing AI that\nlistens, then acts.',
@@ -199,7 +192,7 @@ tagline:'Luna・UI/UX Designer・Conversational AI & Smart Devices',
 resumeUrl:'https://drive.google.com/drive/folders/1kColvmaOikbEV8f8Nej0tayngMJpFT3f?usp=sharing'
 };
 return {
-order:['guestweb','aca-ai','ai-butler'],
+order:['guestweb','aca-ai','ai-butler','1177pay','17backstage'],
 headline:'Clarity between\npeople and AI.',
 tagline:'Luna・UI/UX Designer・AI SaaS Products',
 resumeUrl:'https://drive.google.com/drive/folders/1XALJ8GZUo-nuZVn3wBFxr7idXlIw1IAG?usp=sharing'
