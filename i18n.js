@@ -271,16 +271,6 @@ window.ZH_TEXT={
 'Taking the knobs on the streaming controller as the concept and pairing them with the software’s signature orange, I drew the icon in 9 sizes, from 16 px to 1024 px.':'以直播控制器上的旋鈕為概念，結合軟體主色的橘，繪製從 16 px 到 1024 px 之 9 種尺寸的 icon。',
 'Final Product':'最終成品',
 
-// ---- Projects: 1177 Tech (fintech variant) ----
-'Fintech · Mobile App':'金融科技 · 行動 App',
-'Fintech · Back-Office System':'金融科技 · 後台系統',
-'2021 – 2023':'2021 – 2023',
-'Fintech':'金融科技',
-'Mobile Payment App':'行動支付 App',
-'Back-Office System':'後台系統',
-'1177pay Mobile Payment App':'1177pay 行動支付 App',
-'17Backstage Financial Back Office':'17Backstage 金融後台系統',
-
 // ---- Project: TMS ----
 'Research-Driven Product Design':'研究驅動的產品設計',
 'Research Methods':'研究方法',

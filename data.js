@@ -110,27 +110,16 @@ blocks:[
 {title:'Software: App Icon',text:'Taking the knobs on the streaming controller as the concept and pairing them with the software’s signature orange, I drew the icon in 9 sizes, from 16 px to 1024 px.',imgId:'nexus-app-icon',natural:true}
 ]},
 {heading:'Final Product',type:'text-image',items:[{imgId:'nexus-final',natural:true}]}
-]},
-{id:'1177pay',projectType:'Fintech · Mobile App',timeline:'2021 – 2023',labels:['Fintech','Mobile Payment App'],title:'1177pay Mobile Payment App',
-blocks:[]},
-{id:'17backstage',projectType:'Fintech · Back-Office System',timeline:'2021 – 2023',labels:['Fintech','Back-Office System'],title:'17Backstage Financial Back Office',
-blocks:[]}
+]}
 ];
-// Page variant, picked by URL: ?focus=ai leads with the AI voice work; ?focus=fintech is the default site
-// plus the 1177 Tech finance projects at the end; ?focus=hardware leads with hardware–software work;
-// no param = default site.
+// Page variant, picked by URL: ?focus=ai leads with the AI voice work; ?focus=hardware leads with
+// hardware–software work; no param = default site.
 window.SITE_VARIANT=(()=>{
 const focus=new URLSearchParams(window.location.search).get('focus');
 if(focus==='hardware') return {
 order:['ai-butler','nexus','guestweb','aca-ai'],
 headline:'Clarity between\npeople and devices.',
 tagline:'Luna・UI/UX Designer・Hardware–Software Experiences',
-resumeUrl:'https://drive.google.com/drive/folders/1XALJ8GZUo-nuZVn3wBFxr7idXlIw1IAG?usp=sharing'
-};
-if(focus==='fintech') return {
-order:['guestweb','aca-ai','ai-butler','1177pay','17backstage'],
-headline:'Clarity between\npeople and AI.',
-tagline:'Luna・UI/UX Designer・AI SaaS Products',
 resumeUrl:'https://drive.google.com/drive/folders/1XALJ8GZUo-nuZVn3wBFxr7idXlIw1IAG?usp=sharing'
 };
 if(focus==='ai') return {
