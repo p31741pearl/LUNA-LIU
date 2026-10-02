@@ -84,6 +84,7 @@ React.createElement('image-slot',{id:it.imgId?'block-'+it.imgId:uid(j),shape:'re
 )):React.createElement('div',{style:{aspectRatio:it.ratio||'16/9',borderRadius:'var(--radius-lg,16px)',overflow:'hidden',background:window.__csDark?'#18181B':'#FFFFFF'}},
 React.createElement('image-slot',{id:it.imgId?'block-'+it.imgId:uid(j),shape:'rect',placeholder:'Add illustration'})
 )),
+it.iconGrid&&React.createElement('div',{style:{display:'grid',gridTemplateColumns:'repeat('+(it.iconCols||5)+',minmax(0,1fr))',gap:window.__csPhone?6:12,maxWidth:640,margin:'8px auto 0'}},it.iconGrid.map(src=>React.createElement('img',{key:src,src,alt:'',loading:'lazy',style:{display:'block',width:'100%',height:'auto',borderRadius:4}}))),
 it.caption&&React.createElement('div',{style:{fontSize:14,lineHeight:1.6,color:'var(--text-muted)',marginTop:10,textAlign:'center'}},it.caption)
 );}),
 b.type==='quotes'&&(()=>{
