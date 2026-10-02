@@ -735,8 +735,31 @@
       // frame's clamp range.
       this._ro = new ResizeObserver(() => this._render());
       this._ro.observe(this);
+      this._watchNear();
       load();
       this._render();
+    }
+
+    // Lazy loading: a slot only fetches its image or video once it comes within
+    // ~1.5 screens of view, so opening a long case study doesn't download every
+    // image at once. Slots marked fetchpriority="high" load right away. The
+    // observer's root is the nearest scrolling ancestor (case studies scroll
+    // inside a modal, not the window), so the margin is measured there.
+    _watchNear() {
+      if (this._near) return;
+      if (this.getAttribute('fetchpriority') === 'high' || typeof IntersectionObserver === 'undefined') { this._near = true; return; }
+      let root = null;
+      for (let el = this.parentElement; el && el !== document.body && el !== document.documentElement; el = el.parentElement) {
+        const oy = getComputedStyle(el).overflowY;
+        if (oy === 'auto' || oy === 'scroll') { root = el; break; }
+      }
+      this._io = new IntersectionObserver((entries) => {
+        if (!entries.some(e => e.isIntersecting)) return;
+        this._near = true;
+        this._io.disconnect(); this._io = null;
+        this._render();
+      }, { root, rootMargin: '150% 0px' });
+      this._io.observe(this);
     }
 
     disconnectedCallback() {
@@ -747,6 +770,7 @@
       this.removeEventListener('dragleave', this);
       this.removeEventListener('drop', this);
       if (this._ro) { this._ro.disconnect(); this._ro = null; }
+      if (this._io) { this._io.disconnect(); this._io = null; }
       // commit=false: a disconnect is not a user intent — committing here
       // would persist whatever half-finished drag a React remount or DOM
       // splice happened to interrupt. Deliberate exits commit on their own
@@ -1115,7 +1139,13 @@
         !credit && !this._userUrl && srcAttr && isUnsplashHost(srcAttr)
       );
       this.toggleAttribute('data-attribution-error', attrError);
-      if (url && !attrError && isVideoUrl(url)) {
+      if (url && !attrError && !this._near && !this._img.getAttribute('src') && !this._video.getAttribute('src')) {
+        // Not near the viewport yet (see _watchNear): keep the plain frame and
+        // wait. Nothing has been fetched, so there is nothing to tear down.
+        this._img.style.display = 'none';
+        this._video.style.display = 'none';
+        this._empty.style.display = 'none';
+      } else if (url && !attrError && isVideoUrl(url)) {
         if (this._video.getAttribute('src') !== url) { this._video.src = url; this._video.play && this._video.play().catch(()=>{}); }
         this._video.style.display = 'block';
         this._img.style.display = 'none';
