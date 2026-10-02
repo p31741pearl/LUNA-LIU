@@ -117,10 +117,60 @@ blocks:[
 ]},
 {heading:'Final Product',type:'text-image',items:[{imgId:'nexus-final',natural:true}]},
 {heading:'Reflection',type:'text',items:['NEXUS taught me to start from the usage context and design operations that span hardware and software as one experience. A streamer’s attention is on the game and the audience, so the lighting on the controller, the buttons on its touchscreen and the settings in the desktop software can’t be treated as separate interfaces. Together they have to answer one question: what does the user need to know in that moment?','If I did it again, I would test the hotkeys in real live-streaming sessions rather than relying on design reviews alone, and track how they are used after launch, to validate that the dimmed off state stays readable under real lighting and in the middle of a stream.']}
+]},
+{id:'1177pay',coverNatural:true,projectType:'UI Design · B2C Mobile Payment',timeline:'2021 – 2023',platform:'Mobile App',timelineFirst:true,coverHeadline:'Making bill payment quick and easy, starting from the very first payment.',labels:['UI Design','B2C Mobile Payment'],title:'1177PAY Mobile Payment App',
+scope:'New feature screens, flowcharts, Design Guideline maintenance, design handoff',collaborators:'PO',
+blocks:[
+{heading:'Background',type:'text',items:['1177PAY offers secure, versatile mobile payment services. Users can link credit cards, bank accounts and e-invoice mobile barcodes to complete payments quickly and simply. Through app push notifications, they receive bills and payment confirmations in real time, making bills easy to manage.','Product positioning: offer a convenient, fast way to pay bills, guiding people who first use the company’s payment services to download the 1177PAY app, and growing them into loyal members.']},
+{heading:'Project at a Glance',type:'cards',items:[
+{compact:true,noImage:true,title:'Three core features',text:'Pay through convenience stores and major banks, receive bills by push notification, and scan to pay in person.'},
+{compact:true,noImage:true,title:'From screens to handoff',text:'Feature screens and design specs, flowcharts with checkpoints and screen transitions, and handoff files in Sketch and Zeplin.'},
+{compact:true,noImage:true,title:'Visual details',text:'A widget in light and dark mode, a loading animation made in After Effects, and the App Store screenshots.'}
+]},
+{heading:'Problems & Challenges',type:'bullets',items:['Converting first-time users: many people meet 1177PAY through the company’s payment services rather than the app store, so the app has to show its value right away.','Complex payment flows: payments involve many checkpoints and branches, which have to be documented clearly enough for engineers to build.','Keeping a growing product consistent: as new features are added, the Design Guideline has to stay up to date so every screen still feels like the same product.']},
+{heading:'Key Features',type:'text-image',items:[
+{title:'Easy payment',text:'We integrated convenience stores and major banks, so bills can be paid anytime, anywhere.',imgId:'pay-feature-pay',natural:true},
+{title:'Automatic bill notifications',text:'Thoughtful reminders, so users never have to worry about forgetting to pay.',imgId:'pay-feature-push',natural:true},
+{title:'Scan to pay',text:'Shop with peace of mind, even when you leave your wallet at home.',imgId:'pay-feature-scan',natural:true}
+]},
+{heading:'Design Decisions',type:'text-image',items:[
+{title:'Turning requirements into screens',text:'Working with the PO, I designed screens from the wireframes and wrote the design specifications.',imgId:'pay-screens',natural:true},
+{title:'• Widget design',text:'Designed in both light and dark mode.',imgId:'pay-widget',natural:true},
+{title:'• Loading motion design',text:'Inspired by a wallet’s snap button opening, I created the loading animation in After Effects.',imgId:'pay-loading',natural:true},
+{title:'• Color palette',text:'Built on the blue of the company’s corporate identity, paired with grays and whites for a clean, trustworthy feel.',imgId:'pay-color',natural:true},
+{title:'Flowcharts',text:'From the finished screens, I drew flowcharts marking checkpoints and screen transitions.',imgId:'pay-flow',natural:true},
+{title:'Design handoff',text:'I delivered the designs and sliced assets through Sketch and Zeplin.',imgId:'pay-handoff',natural:true}
+]},
+{heading:'Results',type:'text',items:['I delivered the new feature screens, flowcharts and handoff files, kept the Design Guideline up to date as features were added, and designed the app’s App Store screenshots.']},
+{heading:'Reflection',type:'text',items:['In a payment product, trust is built in the details: a consistent color system, a clear state at every checkpoint, and reminders that arrive before users have to think about their bills.']}
+]},
+{id:'17backstage',coverNatural:true,projectType:'UI Design · B2B Back Office',timeline:'2021 – 2023',platform:'Web back office',timelineFirst:true,coverHeadline:'Bringing order to a data-heavy back office.',labels:['UI Design','B2B Back Office','Redesign'],title:'1177 Tech Merchant Back Office',
+scope:'Proposing usability improvements, building a new Design Guideline, wireframes, mockups and handoff',collaborators:'Product manager · Frontend engineers',
+blocks:[
+{heading:'Background',type:'text',items:['1177 Tech provides third-party payment collection, letting merchants accept credit cards, convenience-store payments and virtual-account transfers on their own online store platforms. As the company’s UI Designer, I designed the back-office system that different types of merchants use to look up their orders and revenue.','Goal: propose and build a new Design Guideline, and improve usability across every page of the system.']},
+{heading:'Project at a Glance',type:'cards',items:[
+{compact:true,noImage:true,title:'A redesign of the whole system',text:'From the proposal to mockups, I produced the interfaces for every page of the back office.'},
+{compact:true,noImage:true,title:'Three layout improvements',text:'A top menu set apart from content, detail pages shown as popups, and a collapsible step bar for long forms.'},
+{compact:true,noImage:true,title:'A new Design Guideline',text:'A shared component library that keeps designs consistent across different systems.'}
+]},
+{heading:'Problems & Challenges',type:'bullets',items:['Too much information: the back office holds a lot of data, so the goal was to present it in an organized way and let users quickly find the features they need.','Unclear hierarchy: the old menu was stacked vertically on the left, next to data that was also listed vertically, so the two were easy to mistake for the same level of information.','Endless scrolling: details were listed one per line, making pages very long while the right half of the screen sat mostly empty.','Cramped forms: the step bar on the left of form pages squeezed the width of the form itself.']},
+{heading:'Design Decisions',type:'text-image',items:[
+{title:'Reorganizing the screen layout',text:'In the old version, the menu was stacked vertically on the left of the screen. The back office also lists a lot of data vertically, so the two looked too similar and were easy to mistake for the same level of information. The new version moves the menu to the top, and adds a shadow and a different background color to set it apart from the page content.',imgId:'bs-layout',natural:true},
+{title:'Rearranging detail pages, so users no longer scroll endlessly',text:'In the old version, information was listed one item per line, which made pages too long and left most of the right half of the screen empty. We split the information into columns and set wrapping rules based on the length of each field, keeping the layout neat and comfortable to read. We also turned the detail page into a popup, so users can more easily cross-check several records.',imgId:'bs-detail',natural:true},
+{title:'Consolidating form pages',text:'The form pages used to show the step bar on the left, squeezing the width of the form content. I changed the step bar into an expandable, collapsible structure, so users can quickly open the specific section they want to fill in or edit.',imgId:'bs-form',natural:true},
+{title:'• Visual cues for every field',text:'Beyond the overall layout, I also added visual cues to each field, helping users keep track of their progress and the state of each item.',imgId:'bs-form-hints',natural:true},
+{title:'A new Design Guideline',text:'Based on the results of the visual proposal, I built a component library shared across the team, keeping designs consistent between different systems.',pairIds:['bs-guide-input','bs-guide-dropdown','bs-guide-icon-btn','bs-guide-font']},
+{title:'Discussing wireframes',text:'I used wireframes to discuss component usage and screen layouts with the product manager.',imgId:'bs-wireframe',natural:true},
+{title:'Building mockups',text:'I designed the screens in Sketch and uploaded them to Zeplin for handoff to the frontend engineers.',noImage:true}
+]},
+{heading:'Final Product',type:'text-image',items:[{imgId:'bs-final-1',natural:true},{imgId:'bs-final-2',natural:true},{imgId:'bs-final-3',natural:true},{imgId:'bs-final-4',natural:true},{imgId:'bs-final-5',natural:true}]},
+{heading:'Results',type:'text',items:['The redesign covered every page of the system, and the new Design Guideline gave the team a shared component library for keeping designs consistent across systems.']},
+{heading:'Reflection',type:'text',items:['In a data-heavy back office, the hardest part isn’t any single screen but the hierarchy: when everything is a vertical list, everything looks equally important. This project taught me to settle the structure first, separating navigation from content and setting clear layout rules, before refining the visuals.']}
 ]}
 ];
 // Page variant, picked by URL: ?focus=ai leads with the AI voice work; ?focus=hardware leads with
-// hardware–software work; no param = default site. pairs:true lays every card out two per row
+// hardware–software work; ?focus=fintech is the default site plus the 1177 Tech finance projects at the end;
+// no param = default site. pairs:true lays every card out two per row
 // instead of making the first card full width. aboutIntro / career (keyed by company) override the About page copy.
 window.SITE_VARIANT=(()=>{
 const focus=new URLSearchParams(window.location.search).get('focus');
@@ -132,6 +182,12 @@ career:{'Aiello':'Designing the AVA in-room smart speaker’s on-device interfac
 headline:'Clarity between\npeople and devices.',
 tagline:'Luna・UI/UX Designer・Hardware–Software Experiences',
 resumeUrl:'https://drive.google.com/drive/folders/1U047kGSj6b7uZfmoTVgLbatRQR5mA4kY?usp=sharing'
+};
+if(focus==='fintech') return {
+order:['guestweb','aca-ai','ai-butler','1177pay','17backstage'],
+headline:'Clarity between\npeople and AI.',
+tagline:'Luna・UI/UX Designer・AI SaaS Products',
+resumeUrl:'https://drive.google.com/drive/folders/1XALJ8GZUo-nuZVn3wBFxr7idXlIw1IAG?usp=sharing'
 };
 if(focus==='ai') return {
 order:['aca-ai','ai-butler','guestweb'],
