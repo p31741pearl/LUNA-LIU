@@ -1143,6 +1143,10 @@
           // (the pick path's credit/credit-href setAttributes) need this
           // flag, not complete, to know a load is in flight.
           this._loadPending = true;
+          // Pass a fetchpriority hint from the host through to the inner <img>,
+          // so above-the-fold slots can download ahead of the rest.
+          const fp = this.getAttribute('fetchpriority');
+          if (fp) this._img.setAttribute('fetchpriority', fp);
           this._img.src = url;
           this._ghost.src = url;
         } else {

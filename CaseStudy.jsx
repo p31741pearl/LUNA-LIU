@@ -156,7 +156,7 @@ React.createElement('div',{style:{fontFamily:'var(--font-mono)',fontSize:16,lett
 React.createElement('div',{style:{display:'grid',gridTemplateColumns:window.__csPhone?'minmax(0,1fr)':'repeat(2,minmax(0,1fr))',gap:24}},
 window.SITE_VARIANT.order.filter(id=>id!==project.id).map(id=>(window.PROJECTS_DATA||[]).find(p=>p.id===id)).filter(Boolean).map(p=>React.createElement('div',{key:p.id,onClick:()=>onOpenOther(p),style:{cursor:'pointer',display:'flex',flexDirection:'column',gap:12},onMouseEnter:e=>{e.currentTarget.style.transform='translateY(-4px)';},onMouseLeave:e=>{e.currentTarget.style.transform='translateY(0)';}},
 React.createElement('div',{style:{position:'relative',width:'100%',aspectRatio:'4/3',overflow:'hidden',borderRadius:16,background:window.__csDark?'#18181B':'#F4F4F6',boxShadow:'0 6px 18px -12px color-mix(in srgb, var(--ink-900) 18%, transparent)',pointerEvents:'none'}},
-React.createElement('image-slot',{id:'cover-'+p.id+(p.id==='aca-ai'?'-v3':''),shape:'rect',src:p.id==='aca-ai'?'uploads/39706.jpg':undefined,placeholder:'Add a lifestyle photo for '+p.title})
+React.createElement('image-slot',{id:'cover-'+p.id+(p.id==='aca-ai'?'-v3':''),shape:'rect',placeholder:'Add a lifestyle photo for '+p.title})
 ),
 React.createElement('div',{style:{display:'flex',flexWrap:'wrap',gap:6}},(p.labels||[]).map(l=>React.createElement('div',{key:l,style:{fontSize:12,fontWeight:500,color:'var(--ink-700,#3a3935)',background:'color-mix(in srgb, var(--ink-900) 6%, transparent)',padding:'5px 10px',borderRadius:8,whiteSpace:'nowrap'}},l))),
 React.createElement('div',{style:{fontSize:17,fontWeight:600,letterSpacing:'-0.01em',color:'var(--ink-900)',lineHeight:1.4}},p.title)
