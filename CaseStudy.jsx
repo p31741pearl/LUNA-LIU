@@ -24,7 +24,7 @@ function CaseBlock(b,i,pid){
 const cont=!b.heading;
 const uid=(j,suf)=>'block-'+(pid||'p')+'-'+i+'-'+j+(suf||'');
 return React.createElement('div',{key:i,style:{marginBottom:40,marginTop:cont?-24:0}},
-b.heading&&React.createElement('div',{style:{fontFamily:'var(--font-mono)',fontSize:16,letterSpacing:'var(--tracking-wide)',textTransform:'uppercase',color:'#A66A00',marginBottom:14}},b.heading),
+b.heading&&React.createElement('div',{style:{fontFamily:'var(--font-mono)',fontSize:16,letterSpacing:'var(--tracking-wide)',textTransform:'uppercase',color:window.__csDark?'#E3A33B':'#A66A00',marginBottom:14}},b.heading),
 b.type==='text'&&b.title&&React.createElement('div',{style:{fontSize:19,fontWeight:600,color:'var(--text)',marginBottom:14,lineHeight:1.5}},b.title),
 React.createElement('div',{style:(b.sideImgId||b.sideChart)?{display:'flex',flexDirection:window.__csNarrow?'column':'row',gap:window.__csNarrow?24:32,alignItems:'stretch'}:null},
 React.createElement('div',{style:{flex:1,minWidth:0}},
@@ -43,7 +43,7 @@ b.type==='bullets'&&React.createElement('ul',{style:{margin:0,paddingLeft:20,dis
 const [lead,rest]=splitLead(t);
 return React.createElement('li',{key:j,style:{fontSize:16,lineHeight:1.7,color:'var(--text)'}},lead,rest);
 })),
-b.type==='cards'&&React.createElement('div',{style:{display:'flex',flexDirection:'column',gap:16}},b.items.map((it,j)=>React.createElement('div',{key:j,style:{background:'#FFFFFF',border:'1px solid color-mix(in srgb, var(--ink-900) 7%, transparent)',borderRadius:16,padding:'22px 24px',display:'flex',flexWrap:'wrap',alignItems:'center',gap:'12px 32px',boxShadow:'inset 0 1px 0 rgba(255,255,255,0.8), 0 4px 14px -8px color-mix(in srgb, var(--ink-900) 14%, transparent)'}},
+b.type==='cards'&&React.createElement('div',{style:{display:'flex',flexDirection:'column',gap:16}},b.items.map((it,j)=>React.createElement('div',{key:j,style:{background:window.__csDark?'#18181B':'#FFFFFF',border:'1px solid color-mix(in srgb, var(--ink-900) 7%, transparent)',borderRadius:16,padding:'22px 24px',display:'flex',flexWrap:'wrap',alignItems:'center',gap:'12px 32px',boxShadow:(window.__csDark?'inset 0 1px 0 rgba(255,255,255,0.06)':'inset 0 1px 0 rgba(255,255,255,0.8)')+', 0 4px 14px -8px color-mix(in srgb, var(--ink-900) 14%, transparent)'}},
 React.createElement('div',{style:{flex:'1 1 240px',minWidth:0,display:'flex',flexDirection:'column',gap:6}},
 React.createElement('div',{style:{fontSize:18,fontWeight:600,color:'var(--text)',lineHeight:1.3}},it.title),
 React.createElement('div',{style:{fontSize:15,lineHeight:1.65,color:'var(--text-muted)'}},it.text)
@@ -71,7 +71,7 @@ React.createElement('div',{style:{flex:'1.6 1 260px',minWidth:0,borderRadius:'va
 React.createElement('image-slot',{id:it.imgId?'block-'+it.imgId:uid(j),shape:'rect',fit:'contain',placeholder:'Add illustration'})
 )
 ),
-it.pairIds&&React.createElement('div',{style:{display:'grid',gridTemplateColumns:window.__csPhone?'minmax(0,1fr)':(it.pairCols||'repeat(2,minmax(0,1fr))'),gap:16,alignItems:'stretch'}},it.pairIds.map(pid=>React.createElement('div',{key:pid,style:{aspectRatio:it.pairCols?'auto':'4/3',height:it.pairCols?'clamp(220px,30vw,360px)':'auto',borderRadius:'var(--radius-lg,16px)',overflow:'hidden',background:'#FFFFFF'}},React.createElement('image-slot',{id:'block-'+pid,shape:'rect',fit:'contain',placeholder:'Add illustration'})))),
+it.pairIds&&React.createElement('div',{style:{display:'grid',gridTemplateColumns:window.__csPhone?'minmax(0,1fr)':(it.pairCols||'repeat(2,minmax(0,1fr))'),gap:16,alignItems:'stretch'}},it.pairIds.map(pid=>React.createElement('div',{key:pid,style:{aspectRatio:it.pairCols?'auto':'4/3',height:it.pairCols?'clamp(220px,30vw,360px)':'auto',borderRadius:'var(--radius-lg,16px)',overflow:'hidden',background:window.__csDark?'#18181B':'#FFFFFF'}},React.createElement('image-slot',{id:'block-'+pid,shape:'rect',fit:'contain',placeholder:'Add illustration'})))),
 !it.pairIds&&!it.extraImgId&&!it.noImage&&(it.natural?(it.imgId2?React.createElement('div',{style:{display:'flex',flexDirection:window.__csNarrow?'column':'row',gap:16,alignItems:window.__csNarrow?'stretch':'flex-start'}},
 React.createElement('div',{style:{flex:window.__csNarrow?'none':(it.flex1||1)+' 1 0',minWidth:0,borderRadius:'var(--radius-lg,16px)',overflow:'hidden'}},
 React.createElement('image-slot',{id:it.imgId?'block-'+it.imgId:uid(j),shape:'rect',fit:'contain','natural-ratio':'',placeholder:'Add illustration'})
@@ -81,7 +81,7 @@ React.createElement('image-slot',{id:it.imgId2?'block-'+it.imgId2:uid(j,'-b'),sh
 )
 ):React.createElement('div',{style:{borderRadius:'var(--radius-lg,16px)',overflow:'hidden',maxWidth:it.smallImg?'60%':'100%'}},
 React.createElement('image-slot',{id:it.imgId?'block-'+it.imgId:uid(j),shape:'rect',fit:'contain','natural-ratio':'',placeholder:'Add illustration'})
-)):React.createElement('div',{style:{aspectRatio:it.ratio||'16/9',borderRadius:'var(--radius-lg,16px)',overflow:'hidden',background:'#FFFFFF'}},
+)):React.createElement('div',{style:{aspectRatio:it.ratio||'16/9',borderRadius:'var(--radius-lg,16px)',overflow:'hidden',background:window.__csDark?'#18181B':'#FFFFFF'}},
 React.createElement('image-slot',{id:it.imgId?'block-'+it.imgId:uid(j),shape:'rect',placeholder:'Add illustration'})
 )),
 it.caption&&React.createElement('div',{style:{fontSize:14,lineHeight:1.6,color:'var(--text-muted)',marginTop:10,textAlign:'center'}},it.caption)
@@ -115,6 +115,14 @@ React.createElement('div',{style:{fontSize:14,lineHeight:window.__csNarrow?1.5:1
 );
 }
 
+// Dark theme for projects with dark:true: these tokens override the light ones for everything inside the case study.
+const CASE_DARK_VARS={'--surface':'#0E0E10','--text':'#EDEDEF','--text-muted':'#A3A3AA','--text-faint':'#7A7A82','--ink-900':'#F4F4F6','--ink-700':'#D4D4D8','--border':'rgba(255,255,255,0.12)','--primary-strong':'#E3A33B'};
+
+function DarkBackButton({onClick,style}){
+const [hover,setHover]=React.useState(false);
+return React.createElement('button',{onClick,onMouseEnter:()=>setHover(true),onMouseLeave:()=>setHover(false),style:{fontFamily:'var(--font-sans)',fontSize:12,fontWeight:'var(--fw-medium)',border:'none',borderRadius:'var(--radius-sm)',cursor:'pointer',background:hover?'rgba(255,255,255,0.08)':'transparent',color:hover?'var(--text)':'var(--text-muted)',transition:'all var(--dur-base) var(--ease-expo-out)',...style}},window.t('← Back to all work'));
+}
+
 function CaseStudy({project,onBack,hideCover,onOpenOther}){
 const rootRef=React.useRef(null);
 React.useEffect(()=>{let el=rootRef.current&&rootRef.current.parentElement;while(el&&el!==document.body){const oy=getComputedStyle(el).overflowY;if(oy==='auto'||oy==='scroll'){el.scrollTop=0;break;}el=el.parentElement;}},[project&&project.id]);
@@ -122,9 +130,10 @@ const [vw,setVw]=React.useState(window.innerWidth);
 React.useEffect(()=>{const f=()=>setVw(window.innerWidth);window.addEventListener('resize',f);return ()=>window.removeEventListener('resize',f);},[]);
 window.__csNarrow=vw<820;window.__csPhone=vw<560;
 if(!project)return null;
+const dark=!!project.dark;window.__csDark=dark;
 const narrow=vw<820;
 const {Button}=window.LunaLiuDesignSystem_29754e;
-return React.createElement('div',{ref:rootRef},
+return React.createElement('div',{ref:rootRef,style:dark?{...CASE_DARK_VARS,background:'var(--surface)',color:'var(--text)',colorScheme:'dark',minHeight:'100%'}:undefined},
 React.createElement('section',{style:{padding:narrow?'32px 20px 72px':'56px 48px 96px',maxWidth:1120,margin:'0 auto',display:'grid',gridTemplateColumns:narrow?'minmax(0,1fr)':'240px minmax(0,1fr)',gap:narrow?32:56,alignItems:'start',animation:'caseTextFadeIn 0.5s ease-in-out 0.15s both'}},
 React.createElement('div',{style:{position:narrow?'static':'sticky',top:56,minHeight:narrow?0:'calc(100vh - 112px)',display:'flex',flexDirection:'column',gap:narrow?12:20}},
 React.createElement('div',{style:{fontSize:26,fontWeight:600,letterSpacing:'-0.02em',color:'var(--ink-900)',lineHeight:1.3}},project.title),
@@ -133,7 +142,7 @@ project.timelineFirst?SideItem('Timeline',project.timeline):SideItem('Platform',
 project.timelineFirst?SideItem('Platform',project.platform):SideItem('Timeline',project.timeline),
 SideItem('Collaborators',project.collaborators),
 SideItem('My Role',project.scope),
-!narrow&&React.createElement(Button,{variant:'ghost',size:'sm',onClick:onBack,style:{alignSelf:'flex-start',padding:'10px 14px',marginTop:'auto',marginBottom:16}},window.t('← Back to all work'))
+!narrow&&(dark?React.createElement(DarkBackButton,{onClick:onBack,style:{alignSelf:'flex-start',padding:'10px 14px',marginTop:'auto',marginBottom:16}}):React.createElement(Button,{variant:'ghost',size:'sm',onClick:onBack,style:{alignSelf:'flex-start',padding:'10px 14px',marginTop:'auto',marginBottom:16}},window.t('← Back to all work')))
 ),
 React.createElement('div',{style:{minWidth:0}},
 !hideCover&&React.createElement('div',{style:{position:'relative',width:'100%',height:(project.coverNatural||project.coverRatio||narrow)?'auto':(project.id==='guestweb'?'clamp(340px,58vh,580px)':'clamp(280px,44vh,440px)'),aspectRatio:narrow?undefined:(project.coverRatio||undefined),overflow:'hidden',borderRadius:16,marginBottom:40,opacity:0,animation:'caseImgSlideIn 0.6s cubic-bezier(0.16,1,0.3,1) both'}},
@@ -142,10 +151,10 @@ React.createElement('image-slot',{key:'cv'+(narrow?1:0),id:'modal-cover-'+projec
 project.coverHeadline&&React.createElement('div',{style:{fontSize:'clamp(26px,3vw,36px)',fontWeight:600,letterSpacing:'-0.03em',lineHeight:1.25,color:'var(--ink-900)',marginTop:-8,marginBottom:40,textWrap:'pretty'}},project.coverHeadline),
 project.blocks.map((b,i)=>CaseBlock(b,i,project.id)),
 onOpenOther&&React.createElement('div',{style:{marginTop:24,paddingTop:40,borderTop:'1px solid var(--border)'}},
-React.createElement('div',{style:{fontFamily:'var(--font-mono)',fontSize:16,letterSpacing:'var(--tracking-wide)',textTransform:'uppercase',color:'#A66A00',marginBottom:20}},window.t('Keep Reading')),
+React.createElement('div',{style:{fontFamily:'var(--font-mono)',fontSize:16,letterSpacing:'var(--tracking-wide)',textTransform:'uppercase',color:window.__csDark?'#E3A33B':'#A66A00',marginBottom:20}},window.t('Keep Reading')),
 React.createElement('div',{style:{display:'grid',gridTemplateColumns:window.__csPhone?'minmax(0,1fr)':'repeat(2,minmax(0,1fr))',gap:24}},
 window.SITE_VARIANT.order.filter(id=>id!==project.id).map(id=>(window.PROJECTS_DATA||[]).find(p=>p.id===id)).filter(Boolean).map(p=>React.createElement('div',{key:p.id,onClick:()=>onOpenOther(p),style:{cursor:'pointer',display:'flex',flexDirection:'column',gap:12},onMouseEnter:e=>{e.currentTarget.style.transform='translateY(-4px)';},onMouseLeave:e=>{e.currentTarget.style.transform='translateY(0)';}},
-React.createElement('div',{style:{position:'relative',width:'100%',aspectRatio:'4/3',overflow:'hidden',borderRadius:16,background:'#F4F4F6',boxShadow:'0 6px 18px -12px color-mix(in srgb, var(--ink-900) 18%, transparent)',pointerEvents:'none'}},
+React.createElement('div',{style:{position:'relative',width:'100%',aspectRatio:'4/3',overflow:'hidden',borderRadius:16,background:window.__csDark?'#18181B':'#F4F4F6',boxShadow:'0 6px 18px -12px color-mix(in srgb, var(--ink-900) 18%, transparent)',pointerEvents:'none'}},
 React.createElement('image-slot',{id:'cover-'+p.id+(p.id==='aca-ai'?'-v3':''),shape:'rect',src:p.id==='aca-ai'?'uploads/39706.jpg':undefined,placeholder:'Add a lifestyle photo for '+p.title})
 ),
 React.createElement('div',{style:{display:'flex',flexWrap:'wrap',gap:6}},(p.labels||[]).map(l=>React.createElement('div',{key:l,style:{fontSize:12,fontWeight:500,color:'var(--ink-700,#3a3935)',background:'color-mix(in srgb, var(--ink-900) 6%, transparent)',padding:'5px 10px',borderRadius:8,whiteSpace:'nowrap'}},l))),

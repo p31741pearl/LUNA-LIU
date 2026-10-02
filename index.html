@@ -47,7 +47,7 @@
 </sc-if>
 <sc-if value="{{isCase}}" hint-placeholder-val="{{false}}">
 <div style="position:fixed;inset:0;z-index:1100;overscroll-behavior:none;background:rgba(20,20,22,0.45);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);animation:{{backdropAnim}}" onClick="{{backToWork}}">
-<div style="position:absolute;top:56px;left:0;right:0;bottom:0;background:var(--surface);overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;border-radius:20px 20px 0 0;animation:{{modalAnim}}" onClick="{{stopPropagation}}">
+<div style="position:absolute;top:56px;left:0;right:0;bottom:0;background:{{caseBg}};overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;border-radius:20px 20px 0 0;animation:{{modalAnim}}" onClick="{{stopPropagation}}">
 <x-import component-from-global-scope="PortfolioCaseStudy" from="./CaseStudy.jsx" project="{{project}}" onBack="{{backToWork}}" onOpenOther="{{openProject}}" hint-size="100%,800px"></x-import>
 </div>
 </div>
@@ -106,6 +106,7 @@ class Component extends DCLogic {
     return {
       screen,
       project,
+      caseBg: project && project.dark ? '#0E0E10' : 'var(--surface)',
       nav: this.nav,
       stopPropagation: this.stopPropagation,
       openProject: this.openProject,
