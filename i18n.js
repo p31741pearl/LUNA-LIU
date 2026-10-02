@@ -234,6 +234,11 @@ window.ZH_TEXT={
 '“This channel lets us engage with guests in a better way — not only keeping them up to date on the latest offers in real time, but also ensuring they never miss any information, for a smoother, more engaging stay.” — Holiday Inn & Suites Saigon Airport.\n“Since we started working together, our F&B revenue has grown 30× compared to the same period, and the Aiello Voice Assistant is the best low-friction ordering tool on the market today.” — iHotel.':'「這個管道讓我們能以更好的方式與住客互動——不僅能即時讓他們掌握最新優惠，也確保他們不會錯過任何資訊，讓住宿體驗更順暢、更投入。」——Holiday Inn & Suites Saigon Airport。\n「自從開始合作以來，我們的餐飲營收較同期成長了 30 倍，Aiello 語音助理是目前市面上最低門檻的點餐工具。」——iHotel。',
 'Customized home page styles and in-room dining menu settings also have to match the data formats of each hotel’s existing ordering system — design can’t only consider whether screens look good; it has to trace back to whether the underlying data actually lines up.':'客製化的首頁風格與客房送餐菜單設定，也必須對應各飯店既有點餐系統的資料格式——設計不能只考慮畫面好不好看，還得回頭確認底層資料是否真的對得上。',
 
+// ---- About page (hardware variant) ----
+'UI/UX designer with 5 years of experience, focused on products where hardware and software meet: from a live-streaming controller’s touchscreen and lighting to an AI smart speaker in hotel rooms. I start from the device’s environment, the context it is used in and the people who use it, then turn engineering constraints into clear, scalable design systems.':'5 年 UI/UX 經驗，專注於軟硬體交會的產品：從直播控制器的觸控螢幕與燈光，到飯店客房裡的 AI 智慧音箱。我從裝置所處的環境、使用情境與使用族群出發，再把工程限制轉化為清楚、可擴展的設計系統。',
+'Designing the AVA in-room smart speaker’s on-device interface, AI voice conversation experience and IoT controls (TV, lighting), plus AI phone ordering and hospitality SaaS products':'負責 AVA 客房智慧音箱的裝置介面、AI 語音對話體驗設計與 IoT 控制（電視、燈光），以及 AI 電話點餐與飯店 SaaS 產品',
+'Design internship | Live Streamer NEXUS controller: dynamic UI for the touchscreen and desktop software, boot animation, LED lighting scripts, icon library and app icon':'設計實習｜Live Streamer NEXUS 直播控制器：觸控螢幕與電腦軟體的動態 UI、開機動畫、燈光腳本、icon library 與 App icon',
+
 // ---- Project: Live Streamer NEXUS (hardware variant) ----
 'Luna・UI/UX Designer・Hardware–Software Experiences':'Luna・UI/UX 設計師・軟硬體整合體驗',
 'UI Design · Hardware–Software Integration':'UI 設計 · 軟硬體整合',

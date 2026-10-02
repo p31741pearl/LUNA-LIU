@@ -121,12 +121,14 @@ blocks:[
 ];
 // Page variant, picked by URL: ?focus=ai leads with the AI voice work; ?focus=hardware leads with
 // hardware–software work; no param = default site. pairs:true lays every card out two per row
-// instead of making the first card full width.
+// instead of making the first card full width. aboutIntro / career (keyed by company) override the About page copy.
 window.SITE_VARIANT=(()=>{
 const focus=new URLSearchParams(window.location.search).get('focus');
 if(focus==='hardware') return {
 order:['ai-butler','nexus','guestweb','aca-ai'],
 pairs:true,
+aboutIntro:'UI/UX designer with 5 years of experience, focused on products where hardware and software meet: from a live-streaming controller’s touchscreen and lighting to an AI smart speaker in hotel rooms. I start from the device’s environment, the context it is used in and the people who use it, then turn engineering constraints into clear, scalable design systems.',
+career:{'Aiello':'Designing the AVA in-room smart speaker’s on-device interface, AI voice conversation experience and IoT controls (TV, lighting), plus AI phone ordering and hospitality SaaS products','AVerMedia':'Design internship | Live Streamer NEXUS controller: dynamic UI for the touchscreen and desktop software, boot animation, LED lighting scripts, icon library and app icon'},
 headline:'Clarity between\npeople and devices.',
 tagline:'Luna・UI/UX Designer・Hardware–Software Experiences',
 resumeUrl:'https://drive.google.com/drive/folders/1XALJ8GZUo-nuZVn3wBFxr7idXlIw1IAG?usp=sharing'
