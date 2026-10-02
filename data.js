@@ -104,8 +104,12 @@ blocks:[
 {heading:'Design Process',type:'text-image',items:[
 {title:'Hardware: Boot Animation and Lighting Effects',text:'Using a flashy esports style as the visual concept, I animated the company logo and designed lighting effects that flash in time with the animation’s rhythm.',imgId:'nexus-boot',natural:true},
 {title:'• Lighting scripts timed to the millisecond',text:'Because the lighting changes are fast and complex, I followed the lighting patterns and wrote the script precisely, millisecond by millisecond.',imgId:'nexus-light-script',natural:true},
-{title:'Software: Hotkey Design',text:'I defined an icon color specification based on the brand colors of each software NEXUS supports. Because the streaming controller’s screen is small, changes in an icon’s shape are hard to notice, so I made animated icons to make On / Off states easier to read at a glance.',noImage:true}
-]}
+{title:'Software: Hotkey Design',text:'I defined an icon color specification based on the brand colors of each software NEXUS supports. Because the streaming controller’s screen is small, changes in an icon’s shape are hard to notice, so I made animated icons to make On / Off states more visually distinct.',imgId:'nexus-hotkey-icons',natural:true},
+{title:'• Icons for custom hotkeys',text:'NEXUS offers an online editor for customizing hotkeys, where users can set their own background colors and images, so I also drew icons in a range of styles for users to choose from.',imgId:'nexus-custom-icons',natural:true},
+{title:'Software: Icon Library',text:'The app is built on a dark base, so I drew clean, line-based icons that follow the product’s visual guidelines.',imgId:'nexus-icon-library',natural:true},
+{title:'Software: App Icon',text:'Taking the knobs on the streaming controller as the concept and pairing them with the software’s signature orange, I drew the icon in 9 sizes, from 16 px to 1024 px.',imgId:'nexus-app-icon',natural:true}
+]},
+{heading:'Final Product',type:'text-image',items:[{imgId:'nexus-final',natural:true}]}
 ]},
 {id:'1177pay',projectType:'Fintech · Mobile App',timeline:'2021 – 2023',labels:['Fintech','Mobile Payment App'],title:'1177pay Mobile Payment App',
 blocks:[]},

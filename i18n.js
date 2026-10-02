@@ -262,7 +262,14 @@ window.ZH_TEXT={
 '• Lighting scripts timed to the millisecond':'• 以毫秒為單位撰寫燈光腳本',
 'Because the lighting changes are fast and complex, I followed the lighting patterns and wrote the script precisely, millisecond by millisecond.':'由於燈光變換的速度快與複雜，因此按照燈光的規律，以毫秒為單位精準撰寫出腳本。',
 'Software: Hotkey Design':'軟體：Hotkey 設計',
-'I defined an icon color specification based on the brand colors of each software NEXUS supports. Because the streaming controller’s screen is small, changes in an icon’s shape are hard to notice, so I made animated icons to make On / Off states easier to read at a glance.':'依據 NEXUS 支援的各軟體的品牌色制定 Icon 色彩規範。由於直播控制器的螢幕較小，對於 Icon 圖案的變化較難察覺，為了增強 On / Off 狀態的視覺易用性，製作了動態 Icon。',
+'I defined an icon color specification based on the brand colors of each software NEXUS supports. Because the streaming controller’s screen is small, changes in an icon’s shape are hard to notice, so I made animated icons to make On / Off states more visually distinct.':'依據 NEXUS 支援的各軟體的品牌色制定 Icon 色彩規範。由於直播控制器的螢幕較小，對於 Icon 圖案的變化較難察覺，為了增強 On / Off 狀態的視覺差異性，製作了動態 Icon。',
+'• Icons for custom hotkeys':'• 客製化 Hotkey 的 icon',
+'NEXUS offers an online editor for customizing hotkeys, where users can set their own background colors and images, so I also drew icons in a range of styles for users to choose from.':'NEXUS 提供客製化 Hotkey 的線上編輯網頁，使用者可自定義底色及圖片。因此也繪製了各種風格的 icon 讓使用者選擇。',
+'Software: Icon Library':'軟體：Icon Library',
+'The app is built on a dark base, so I drew clean, line-based icons that follow the product’s visual guidelines.':'App 以深色系為基底，繪製線條簡潔的 Icon 符合產品視覺規範。',
+'Software: App Icon':'軟體：App Icon',
+'Taking the knobs on the streaming controller as the concept and pairing them with the software’s signature orange, I drew the icon in 9 sizes, from 16 px to 1024 px.':'以直播控制器上的旋鈕為概念，結合軟體主色的橘，繪製從 16 px 到 1024 px 之 9 種尺寸的 icon。',
+'Final Product':'最終成品',
 
 // ---- Projects: 1177 Tech (fintech variant) ----
 'Fintech · Mobile App':'金融科技 · 行動 App',
