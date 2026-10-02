@@ -234,6 +234,16 @@ window.ZH_TEXT={
 '“This channel lets us engage with guests in a better way — not only keeping them up to date on the latest offers in real time, but also ensuring they never miss any information, for a smoother, more engaging stay.” — Holiday Inn & Suites Saigon Airport.\n“Since we started working together, our F&B revenue has grown 30× compared to the same period, and the Aiello Voice Assistant is the best low-friction ordering tool on the market today.” — iHotel.':'「這個管道讓我們能以更好的方式與住客互動——不僅能即時讓他們掌握最新優惠，也確保他們不會錯過任何資訊，讓住宿體驗更順暢、更投入。」——Holiday Inn & Suites Saigon Airport。\n「自從開始合作以來，我們的餐飲營收較同期成長了 30 倍，Aiello 語音助理是目前市面上最低門檻的點餐工具。」——iHotel。',
 'Customized home page styles and in-room dining menu settings also have to match the data formats of each hotel’s existing ordering system — design can’t only consider whether screens look good; it has to trace back to whether the underlying data actually lines up.':'客製化的首頁風格與客房送餐菜單設定，也必須對應各飯店既有點餐系統的資料格式——設計不能只考慮畫面好不好看，還得回頭確認底層資料是否真的對得上。',
 
+// ---- Projects: 1177 Tech (fintech variant) ----
+'Fintech · Mobile App':'金融科技 · 行動 App',
+'Fintech · Back-Office System':'金融科技 · 後台系統',
+'2021 – 2023':'2021 – 2023',
+'Fintech':'金融科技',
+'Mobile Payment App':'行動支付 App',
+'Back-Office System':'後台系統',
+'1177pay Mobile Payment App':'1177pay 行動支付 App',
+'17Backstage Financial Back Office':'17Backstage 金融後台系統',
+
 // ---- Project: TMS ----
 'Research-Driven Product Design':'研究驅動的產品設計',
 'Research Methods':'研究方法',

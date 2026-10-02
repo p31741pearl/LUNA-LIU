@@ -93,11 +93,22 @@ blocks:[
 {heading:'Solution',type:'text',items:['Adjusted the level of detail shown in the task list, and redesigned the room status overview using the terminology and status-light colors housekeeping staff are familiar with, making information clearer at a glance.']},
 {heading:'Results & Impact',type:'text',items:['Improved screen presentation reduced mistaps when staff report task status; a reworked task management view sped up managers’ shift scheduling and cleaning assignments.']},
 {heading:'Reflection',type:'text',items:['Only through interviews and on-site visits can you truly understand how users work and solve problems effectively. At the same time, hotel managers and frontline staff often care about different things, and design needs to find a balance between the two.']}
-]}
+]},
+{id:'1177pay',projectType:'Fintech · Mobile App',timeline:'2021 – 2023',labels:['Fintech','Mobile Payment App'],title:'1177pay Mobile Payment App',
+blocks:[]},
+{id:'17backstage',projectType:'Fintech · Back-Office System',timeline:'2021 – 2023',labels:['Fintech','Back-Office System'],title:'17Backstage Financial Back Office',
+blocks:[]}
 ];
-// Page variant, picked by URL: ?focus=ai leads with the AI voice work; no param = default site.
+// Page variant, picked by URL: ?focus=ai leads with the AI voice work; ?focus=fintech is the default site
+// plus the 1177 Tech finance projects at the end; no param = default site.
 window.SITE_VARIANT=(()=>{
 const focus=new URLSearchParams(window.location.search).get('focus');
+if(focus==='fintech') return {
+order:['guestweb','aca-ai','ai-butler','1177pay','17backstage'],
+headline:'Clarity between\npeople and AI.',
+tagline:'Luna・UI/UX Designer・AI SaaS Products',
+resumeUrl:'https://drive.google.com/drive/folders/1XALJ8GZUo-nuZVn3wBFxr7idXlIw1IAG?usp=sharing'
+};
 if(focus==='ai') return {
 order:['aca-ai','ai-butler','guestweb'],
 headline:'Designing AI that\nlistens, then acts.',
