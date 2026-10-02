@@ -118,7 +118,7 @@ blocks:[
 {heading:'Final Product',type:'text-image',items:[{imgId:'nexus-final',natural:true}]},
 {heading:'Reflection',type:'text',items:['NEXUS taught me to start from the usage context and design operations that span hardware and software as one experience. A streamer’s attention is on the game and the audience, so the lighting on the controller, the buttons on its touchscreen and the settings in the desktop software can’t be treated as separate interfaces. Together they have to answer one question: what does the user need to know in that moment?','If I did it again, I would test the hotkeys in real live-streaming sessions rather than relying on design reviews alone, and track how they are used after launch, to validate that the dimmed off state stays readable under real lighting and in the middle of a stream.']}
 ]},
-{id:'1177pay',projectType:'UI Design · B2C Mobile Payment',timeline:'2021 – 2023',platform:'Mobile App',timelineFirst:true,coverHeadline:'Making bill payment quick and easy, starting from the very first payment.',labels:['UI Design','B2C Mobile Payment'],title:'1177PAY Mobile Payment App',
+{id:'1177pay',coverNatural:true,projectType:'UI Design · B2C Mobile Payment',timeline:'2021 – 2023',platform:'Mobile App',timelineFirst:true,coverHeadline:'Making bill payment quick and easy, starting from the very first payment.',labels:['UI Design','B2C Mobile Payment'],title:'1177PAY Mobile Payment App',
 scope:'New feature screens, flowcharts, Design Guideline maintenance, design handoff',collaborators:'PO',
 blocks:[
 {heading:'Background',type:'text',items:['1177PAY offers secure, versatile mobile payment services. Users can link credit cards, bank accounts and e-invoice mobile barcodes to complete payments quickly and simply. Through app push notifications, they receive bills and payment confirmations in real time, making bills easy to manage.','Product positioning: offer a convenient, fast way to pay bills, guiding people who first use the company’s payment services to download the 1177PAY app, and growing them into loyal members.']},
@@ -131,13 +131,12 @@ blocks:[
 {heading:'Key Features',type:'text-image',items:[
 {title:'Easy payment',text:'We integrated convenience stores and major banks, so bills can be paid anytime, anywhere.',imgId:'pay-feature-pay',natural:true},
 {title:'Automatic bill notifications',text:'Thoughtful reminders, so users never have to worry about forgetting to pay.',imgId:'pay-feature-push',natural:true},
-{title:'Scan to pay',text:'Shop with peace of mind, even when you leave your wallet at home.',imgId:'pay-feature-scan',natural:true},
-{title:'App Store screenshots',imgId:'pay-appstore',natural:true}
+{title:'Scan to pay',text:'Shop with peace of mind, even when you leave your wallet at home.',imgId:'pay-feature-scan',natural:true}
 ]},
 {heading:'Design Decisions',type:'text-image',items:[
 {title:'Turning requirements into screens',text:'Working with the PO, I designed screens from the wireframes and wrote the design specifications.',imgId:'pay-screens',natural:true},
 {title:'• Widget design',text:'Designed in both light and dark mode.',imgId:'pay-widget',natural:true},
-{title:'• Loading motion design',text:'Inspired by a wallet’s snap button opening, I created the loading animation in After Effects.',noImage:true},
+{title:'• Loading motion design',text:'Inspired by a wallet’s snap button opening, I created the loading animation in After Effects.',imgId:'pay-loading',natural:true},
 {title:'• Color palette',text:'Built on the blue of the company’s corporate identity, paired with grays and whites for a clean, trustworthy feel.',imgId:'pay-color',natural:true},
 {title:'Flowcharts',text:'From the finished screens, I drew flowcharts marking checkpoints and screen transitions.',imgId:'pay-flow',natural:true},
 {title:'Design handoff',text:'I delivered the designs and sliced assets through Sketch and Zeplin.',imgId:'pay-handoff',natural:true}
@@ -145,7 +144,7 @@ blocks:[
 {heading:'Results',type:'text',items:['I delivered the new feature screens, flowcharts and handoff files, kept the Design Guideline up to date as features were added, and designed the app’s App Store screenshots.']},
 {heading:'Reflection',type:'text',items:['In a payment product, trust is built in the details: a consistent color system, a clear state at every checkpoint, and reminders that arrive before users have to think about their bills.']}
 ]},
-{id:'17backstage',projectType:'UI Design · B2B Back Office',timeline:'2021 – 2023',platform:'Web back office',timelineFirst:true,coverHeadline:'Bringing order to a data-heavy back office.',labels:['UI Design','B2B Back Office','Redesign'],title:'1177 Tech Merchant Back Office',
+{id:'17backstage',coverNatural:true,projectType:'UI Design · B2B Back Office',timeline:'2021 – 2023',platform:'Web back office',timelineFirst:true,coverHeadline:'Bringing order to a data-heavy back office.',labels:['UI Design','B2B Back Office','Redesign'],title:'1177 Tech Merchant Back Office',
 scope:'Proposing usability improvements, building a new Design Guideline, wireframes, mockups and handoff',collaborators:'Product manager · Frontend engineers',
 blocks:[
 {heading:'Background',type:'text',items:['1177 Tech provides third-party payment collection, letting merchants accept credit cards, convenience-store payments and virtual-account transfers on their own online store platforms. As the company’s UI Designer, I designed the back-office system that different types of merchants use to look up their orders and revenue.','Goal: propose and build a new Design Guideline, and improve usability across every page of the system.']},
@@ -162,7 +161,7 @@ blocks:[
 {title:'• Visual cues for every field',text:'Beyond the overall layout, I also added visual cues to each field, helping users keep track of their progress and the state of each item.',imgId:'bs-form-hints',natural:true},
 {title:'A new Design Guideline',text:'Based on the results of the visual proposal, I built a component library shared across the team, keeping designs consistent between different systems.',pairIds:['bs-guide-input','bs-guide-dropdown','bs-guide-icon-btn','bs-guide-font']},
 {title:'Discussing wireframes',text:'I used wireframes to discuss component usage and screen layouts with the product manager.',imgId:'bs-wireframe',natural:true},
-{title:'Building mockups',text:'I designed the screens in Sketch and uploaded them to Zeplin for handoff to the frontend engineers.',imgId:'bs-mockup',natural:true}
+{title:'Building mockups',text:'I designed the screens in Sketch and uploaded them to Zeplin for handoff to the frontend engineers.',noImage:true}
 ]},
 {heading:'Final Product',type:'text-image',items:[{imgId:'bs-final-1',natural:true},{imgId:'bs-final-2',natural:true},{imgId:'bs-final-3',natural:true},{imgId:'bs-final-4',natural:true},{imgId:'bs-final-5',natural:true}]},
 {heading:'Results',type:'text',items:['The redesign covered every page of the system, and the new Design Guideline gave the team a shared component library for keeping designs consistent across systems.']},

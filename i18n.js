@@ -321,7 +321,6 @@ window.ZH_TEXT={
 'Thoughtful reminders, so users never have to worry about forgetting to pay.':'貼心提醒，不再擔心忘記繳費。',
 'Scan to pay':'掃碼即付款',
 'Shop with peace of mind, even when you leave your wallet at home.':'出門忘記帶錢包也能安心消費。',
-'App Store screenshots':'App Store 送審圖',
 'Turning requirements into screens':'需求確認與畫面製作',
 'Working with the PO, I designed screens from the wireframes and wrote the design specifications.':'與 PO 討論按照 Wireframe 產出畫面，並撰寫設計規範。',
 '• Widget design':'• Widget Design',
