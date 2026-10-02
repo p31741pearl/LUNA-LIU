@@ -94,7 +94,7 @@ blocks:[
 {heading:'Results & Impact',type:'text',items:['Improved screen presentation reduced mistaps when staff report task status; a reworked task management view sped up managers’ shift scheduling and cleaning assignments.']},
 {heading:'Reflection',type:'text',items:['Only through interviews and on-site visits can you truly understand how users work and solve problems effectively. At the same time, hotel managers and frontline staff often care about different things, and design needs to find a balance between the two.']}
 ]},
-{id:'nexus',dark:true,coverNatural:true,coverHeadline:'Readable at a glance, built to look the part.',projectType:'UI Design · Hardware–Software Integration',timeline:'2020',platform:'Streaming controller panel + desktop software',timelineFirst:true,labels:['UI Design','Hardware–Software Integration','Animated Icons'],title:'Live Streamer NEXUS',
+{id:'nexus',dark:true,coverNatural:true,coverHeadline:'Readable at a glance, built to look the part.',projectType:'UI Design · Hardware–Software Integration',timeline:'2020',platform:'Streaming controller panel + desktop software',timelineFirst:true,labels:['UI Design','Hardware–Software Integration','Motion Design'],title:'Live Streamer NEXUS',
 oneLiner:'A streaming controller and its companion software. Starting from how streamers actually use it mid-broadcast, I built a visual system that makes every state readable at a glance on a small screen, without giving up the bold esports look the product needed.',
 scope:'Dynamic UI components for the hardware panel and desktop software, boot animation, LED lighting scripts, icon library, UI string translation',
 blocks:[
@@ -168,11 +168,12 @@ blocks:[
 ]}
 ];
 // Page variant, picked by URL: ?focus=ai leads with the AI voice work; ?focus=hardware leads with
-// hardware–software work; no param = default site (older ?focus=fintech links land here too).
+// hardware–software work (?focus=automotive is the same, led by NEXUS); no param = default site (older ?focus=fintech links land here too).
 // pairs:true lays every card out two per row instead of making the first card full width. aboutIntro / career (keyed by company) override the About page copy.
 window.SITE_VARIANT=(()=>{
 const focus=new URLSearchParams(window.location.search).get('focus');
-if(focus==='hardware') return {
+if(focus==='hardware'||focus==='automotive'){
+const hw={
 order:['ai-butler','nexus','guestweb','aca-ai'],
 pairs:true,
 aboutIntro:'UI/UX designer with 5 years of experience, focused on products where hardware and software meet: from a live-streaming controller’s touchscreen and lighting to an AI smart speaker in hotel rooms. I start from the device’s environment, the context it is used in and the people who use it, then turn engineering constraints into clear, scalable design systems.',
@@ -181,6 +182,9 @@ headline:'Clarity between\npeople and devices.',
 tagline:'Luna・UI/UX Designer・Hardware–Software Experiences',
 resumeUrl:'https://drive.google.com/drive/folders/1U047kGSj6b7uZfmoTVgLbatRQR5mA4kY?usp=sharing'
 };
+// ?focus=automotive: the hardware variant led by NEXUS, for in-vehicle / embedded UI roles.
+return focus==='automotive'?{...hw,order:['nexus','ai-butler','guestweb','aca-ai'],tagline:'Luna・UI/UX Designer・Hardware–Software UI & Motion'}:hw;
+}
 if(focus==='ai') return {
 order:['aca-ai','ai-butler','guestweb','17backstage','1177pay'],
 headline:'Designing AI that\nlistens, then acts.',
