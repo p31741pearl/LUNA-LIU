@@ -278,7 +278,9 @@ window.ZH_TEXT={
 'The lighting changes are fast and intricate, so I followed each lighting pattern and wrote the script precisely, millisecond by millisecond.':'燈光變換快速又複雜，因此我依照燈光的規律，以毫秒為單位精準撰寫出腳本。',
 '• App icon':'• App Icon',
 'Taking the controller’s knobs as the concept and pairing them with the software’s signature orange, I drew the app icon in 9 sizes, from 16 px to 1024 px, so it reads clearly at every size.':'以直播控制器上的旋鈕為概念，結合軟體主色的橘，繪製從 16 px 到 1024 px 共 9 種尺寸的 App Icon，讓它在每種尺寸下都清楚可辨。',
-'On a device people use mid-broadcast, a state they have to look for is a state they will miss. Working within a small screen taught me to let color, contrast and motion carry the meaning instead of detail. Once those rules were clear, they left plenty of room for the bold visual style a streaming product calls for.':'對於在直播中使用的裝置，需要「找」的狀態，就是會被錯過的狀態。在小螢幕的限制下，我學會讓色彩、對比與動態承載意義，而不是依賴細節；而當這些規則清楚之後，反而為直播產品需要的強烈視覺風格留下了充分的空間。',
+'NEXUS taught me to start from the usage context and design operations that span hardware and software as one experience. A streamer’s attention is on the game and the audience, so the lighting on the controller, the buttons on its touchscreen and the settings in the desktop software can’t be treated as separate interfaces. Together they have to answer one question: what does the user need to know in that moment?':'NEXUS 讓我學會從使用情境出發，把橫跨軟硬體的操作當成同一段體驗來設計。直播主的注意力在遊戲與觀眾身上，控制器上的燈光、觸控螢幕的按鈕與電腦軟體裡的設定，不能被當成各自獨立的介面，而要一起回答同一個問題：使用者在那一瞬間需要知道什麼。',
+'Shipped in 2021':'2021 年上市量產',
+'Launched as a mass-produced product: AVerMedia Live Streamer NEXUS (model AX310).':'以圓剛 Live Streamer NEXUS（型號 AX310）上市量產。',
 
 // ---- Reflections: what I would do differently ----
 'If I did it again, I would test the hotkeys in real live-streaming sessions rather than relying on design reviews alone, and track how they are used after launch, to validate that the dimmed off state stays readable under real lighting and in the middle of a stream.':'如果重做，我會在真實的直播情境中測試 Hotkey，而不只依賴設計審查，並追蹤上線後的使用數據，驗證暗色的關閉狀態在實際燈光下、直播進行中是否依然清楚。',
