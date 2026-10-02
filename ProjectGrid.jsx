@@ -10,7 +10,7 @@ onMouseLeave:()=>setHover(false),
 style:{cursor:'pointer',display:'flex',flexDirection:'column',transform:hover?'translateY(-4px)':'translateY(0)',transition:'transform 0.35s cubic-bezier(0.16,1,0.3,1)'}
 },
 React.createElement('div',{style:{position:'relative',width:'100%',aspectRatio:isMobile?'16/10':(wide?'21/9':'4/3'),overflow:'hidden',borderRadius:24,background:'#F4F4F6',boxShadow:hover?'0 18px 40px -16px color-mix(in srgb, var(--ink-900) 26%, transparent)':'0 6px 18px -12px color-mix(in srgb, var(--ink-900) 18%, transparent)',transition:'box-shadow 0.35s cubic-bezier(0.16,1,0.3,1)'}},
-React.createElement('image-slot',{id:'cover-'+project.id+(project.id==='aca-ai'?'-v3':''),shape:'rect',src:project.id==='aca-ai'?'uploads/39706.jpg':undefined,placeholder:'Add a lifestyle photo for '+project.title}),
+React.createElement('image-slot',{id:'cover-'+project.id+(project.id==='aca-ai'?'-v3':''),shape:'rect',fetchpriority:'high',placeholder:'Add a lifestyle photo for '+project.title}),
 ),
 React.createElement('div',{style:{display:'flex',flexDirection:'column',alignItems:'center',gap:12,padding:'22px 8px 0'}},
 React.createElement('div',{style:{display:'flex',flexWrap:'wrap',gap:6,justifyContent:'center'}},
