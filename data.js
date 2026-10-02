@@ -140,7 +140,7 @@ blocks:[
 ]},
 {heading:'Results',type:'text',items:['My work covered bill details, the donation page and the card-binding flow, along with the widget, loading animation, flowcharts and App Store screenshots, and I kept the Design Guideline up to date as features were added.']},
 {heading:'Reflection',type:'text',items:['In a payment product, trust is built in the details: a familiar bank logo on each card, a clear state at every checkpoint, and reminders that arrive before users have to think about their bills.']},
-{heading:'Final Product',type:'text-image',items:[{imgId:'pay-feature-pay',natural:true},{imgId:'pay-feature-push',natural:true},{imgId:'pay-feature-scan',natural:true}]}
+{heading:'Final Product',type:'text-image',items:[{imgId:'pay-feature-pay',natural:true},{imgId:'pay-feature-push',imgId2:'pay-feature-scan',natural:true}]}
 ]},
 {id:'17backstage',coverNatural:true,projectType:'UI Design · B2B Back Office',timeline:'2021 – 2023',platform:'Web back office',timelineFirst:true,coverHeadline:'Turning a templated back office into a clear, consistent system for small merchants.',labels:['UI Design','B2B Back Office','Redesign'],title:'1177 Tech Merchant Back Office',
 scope:'Redesign proposal, layout and interaction design, Design Guideline, wireframes, mockups and handoff',collaborators:'Company leadership · Product manager · Frontend engineers',
