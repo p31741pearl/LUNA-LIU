@@ -131,7 +131,7 @@ aboutIntro:'UI/UX designer with 5 years of experience, focused on products where
 career:{'Aiello':'Designing the AVA in-room smart speaker’s on-device interface, AI voice conversation experience and IoT controls (TV, lighting), plus AI phone ordering and hospitality SaaS products','AVerMedia':'Design internship | Live Streamer NEXUS controller: dynamic UI for the touchscreen and desktop software, boot animation, LED lighting scripts, icon library and app icon'},
 headline:'Clarity between\npeople and devices.',
 tagline:'Luna・UI/UX Designer・Hardware–Software Experiences',
-resumeUrl:'https://drive.google.com/drive/folders/1XALJ8GZUo-nuZVn3wBFxr7idXlIw1IAG?usp=sharing'
+resumeUrl:'https://drive.google.com/drive/folders/1U047kGSj6b7uZfmoTVgLbatRQR5mA4kY?usp=sharing'
 };
 if(focus==='ai') return {
 order:['aca-ai','ai-butler','guestweb'],
