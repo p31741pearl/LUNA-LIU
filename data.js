@@ -113,11 +113,13 @@ blocks:[
 ]}
 ];
 // Page variant, picked by URL: ?focus=ai leads with the AI voice work; ?focus=hardware leads with
-// hardware–software work; no param = default site.
+// hardware–software work; no param = default site. pairs:true lays every card out two per row
+// instead of making the first card full width.
 window.SITE_VARIANT=(()=>{
 const focus=new URLSearchParams(window.location.search).get('focus');
 if(focus==='hardware') return {
 order:['ai-butler','nexus','guestweb','aca-ai'],
+pairs:true,
 headline:'Clarity between\npeople and devices.',
 tagline:'Luna・UI/UX Designer・Hardware–Software Experiences',
 resumeUrl:'https://drive.google.com/drive/folders/1XALJ8GZUo-nuZVn3wBFxr7idXlIw1IAG?usp=sharing'
