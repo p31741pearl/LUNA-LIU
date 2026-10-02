@@ -183,7 +183,7 @@ tagline:'Luna・UI/UX Designer・Hardware–Software Experiences',
 resumeUrl:'https://drive.google.com/drive/folders/1U047kGSj6b7uZfmoTVgLbatRQR5mA4kY?usp=sharing'
 };
 // ?focus=automotive: the hardware variant with a motion-focused tagline, for in-vehicle / embedded UI roles.
-return focus==='automotive'?{...hw,tagline:'Luna・UI/UX Designer・Hardware–Software UI & Motion'}:hw;
+return focus==='automotive'?{...hw,order:hw.order.concat(['17backstage','1177pay']),tagline:'Luna・UI/UX Designer・Hardware–Software UI & Motion'}:hw;
 }
 if(focus==='ai') return {
 order:['aca-ai','ai-butler','guestweb','17backstage','1177pay'],
