@@ -128,11 +128,6 @@ blocks:[
 {compact:true,noImage:true,title:'Visual details',text:'A widget in light and dark mode, a loading animation made in After Effects, and the App Store screenshots.'}
 ]},
 {heading:'Problems & Challenges',type:'bullets',items:['Converting first-time users: many people meet 1177PAY through the company’s payment services rather than the app store, so the app has to show its value right away.','Complex payment flows: payments involve many checkpoints and branches, which have to be documented clearly enough for engineers to build.','Trust when adding a card: linking a credit card is a sensitive step, so users need to recognize their card and understand what the camera is doing.','Keeping a growing product consistent: as new features are added, the Design Guideline has to stay up to date so every screen still feels like the same product.']},
-{heading:'Key Features',type:'text-image',items:[
-{title:'Easy payment',text:'We integrated convenience stores and major banks, so bills can be paid anytime, anywhere.',imgId:'pay-feature-pay',natural:true},
-{title:'Automatic bill notifications',text:'Thoughtful reminders, so users never have to worry about forgetting to pay.',imgId:'pay-feature-push',natural:true},
-{title:'Scan to pay',text:'Shop with peace of mind, even when you leave your wallet at home.',imgId:'pay-feature-scan',natural:true}
-]},
 {heading:'Design Decisions',type:'text-image',items:[
 {title:'Turning requirements into screens',text:'Working with the PO, I designed screens from the wireframes and wrote the design specifications.',imgId:'pay-screens',natural:true},
 {title:'• Making card binding easier to trust',text:'Each card now shows its issuing bank’s logo, so users can recognize it at a glance. I also improved the camera screen used to scan a credit card and fill in its details automatically, making the process easier to understand and use.',noImage:true},
@@ -144,7 +139,8 @@ blocks:[
 {title:'Design handoff',text:'I delivered the designs and sliced assets through Sketch and Zeplin.',imgId:'pay-handoff',natural:true}
 ]},
 {heading:'Results',type:'text',items:['My work covered bill details, the donation page and the card-binding flow, along with the widget, loading animation, flowcharts and App Store screenshots, and I kept the Design Guideline up to date as features were added.']},
-{heading:'Reflection',type:'text',items:['In a payment product, trust is built in the details: a familiar bank logo on each card, a clear state at every checkpoint, and reminders that arrive before users have to think about their bills.']}
+{heading:'Reflection',type:'text',items:['In a payment product, trust is built in the details: a familiar bank logo on each card, a clear state at every checkpoint, and reminders that arrive before users have to think about their bills.']},
+{heading:'Final Product',type:'text-image',items:[{imgId:'pay-feature-pay',natural:true},{imgId:'pay-feature-push',imgId2:'pay-feature-scan',natural:true}]}
 ]},
 {id:'17backstage',coverNatural:true,projectType:'UI Design · B2B Back Office',timeline:'2021 – 2023',platform:'Web back office',timelineFirst:true,coverHeadline:'Turning a templated back office into a clear, consistent system for small merchants.',labels:['UI Design','B2B Back Office','Redesign'],title:'1177 Tech Merchant Back Office',
 scope:'Redesign proposal, layout and interaction design, Design Guideline, wireframes, mockups and handoff',collaborators:'Company leadership · Product manager · Frontend engineers',
@@ -192,7 +188,7 @@ tagline:'Luna・UI/UX Designer・Conversational AI & Smart Devices',
 resumeUrl:'https://drive.google.com/drive/folders/1kColvmaOikbEV8f8Nej0tayngMJpFT3f?usp=sharing'
 };
 return {
-order:['guestweb','aca-ai','ai-butler','1177pay','17backstage'],
+order:['guestweb','aca-ai','ai-butler','17backstage','1177pay'],
 headline:'Clarity between\npeople and AI.',
 tagline:'Luna・UI/UX Designer・AI SaaS Products',
 resumeUrl:'https://drive.google.com/drive/folders/1XALJ8GZUo-nuZVn3wBFxr7idXlIw1IAG?usp=sharing'
