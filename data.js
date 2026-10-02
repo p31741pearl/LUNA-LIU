@@ -188,7 +188,7 @@ tagline:'Luna・UI/UX Designer・Conversational AI & Smart Devices',
 resumeUrl:'https://drive.google.com/drive/folders/1kColvmaOikbEV8f8Nej0tayngMJpFT3f?usp=sharing'
 };
 return {
-order:['guestweb','aca-ai','ai-butler','1177pay','17backstage'],
+order:['guestweb','aca-ai','ai-butler','17backstage','1177pay'],
 headline:'Clarity between\npeople and AI.',
 tagline:'Luna・UI/UX Designer・AI SaaS Products',
 resumeUrl:'https://drive.google.com/drive/folders/1XALJ8GZUo-nuZVn3wBFxr7idXlIw1IAG?usp=sharing'
