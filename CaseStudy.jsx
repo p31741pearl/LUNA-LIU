@@ -6,30 +6,6 @@ if(idx>2&&idx<text.length-2) return [text.slice(0,idx+1),text.slice(idx+1)];
 return [text,''];
 }
 
-// Long copy shows its first sentence; the rest folds behind "Read more" so skimmers see the gist.
-function isCJK(t){return /[一-鿿]/.test(t);}
-function isLong(t){return t.length>(isCJK(t)?90:220);}
-function leadSentence(t){
-const m=isCJK(t)?t.match(/^([\s\S]*?[。！？])/):t.match(/^([\s\S]*?[.!?])\s+(?=[A-Z“"(])/);
-if(m&&m[1].length<t.length-8) return [m[1],t.slice(m[0].length).replace(/^\s+/,'')];
-return [t,''];
-}
-function Foldable(key,paras,pStyle){
-paras=paras.filter(Boolean);
-const total=paras.join('').length;
-if(!paras.length||total<=(isCJK(paras.join(''))?140:320)) return paras.map((t,j)=>React.createElement('p',{key:key+'-'+j,style:pStyle},t));
-let first=paras[0],hidden=paras.slice(1);
-if(isLong(first)){const [lead,rest]=leadSentence(first);if(rest){first=lead;hidden=[rest,...hidden];}}
-if(!hidden.length) return [React.createElement('p',{key:key,style:pStyle},first)];
-return [React.createElement('div',{key:key},
-React.createElement('p',{style:pStyle},first),
-React.createElement('details',{className:'cs-more'},
-React.createElement('summary',null,window.t('Read more')),
-hidden.map((t,j)=>React.createElement('p',{key:j,style:pStyle},t))
-)
-)];
-}
-
 function BarRow(bar,j){
 return React.createElement('div',{key:j,style:{display:'flex',alignItems:'center',gap:12}},
 React.createElement('span',{style:{width:140,flexShrink:0,fontSize:13,fontFamily:"'Albert Sans',var(--font-sans,sans-serif)",color:bar.bold?'#0b0b0b':'#52514e',textAlign:'right',fontWeight:bar.bold?500:400}},bar.label),
@@ -52,8 +28,7 @@ b.heading&&React.createElement('div',{style:{fontFamily:'var(--font-mono)',fontS
 b.type==='text'&&b.title&&React.createElement('div',{style:{fontSize:19,fontWeight:600,color:'var(--text)',marginBottom:14,lineHeight:1.5}},b.title),
 React.createElement('div',{style:(b.sideImgId||b.sideChart)?{display:'flex',flexDirection:window.__csNarrow?'column':'row',gap:window.__csNarrow?24:32,alignItems:'stretch'}:null},
 React.createElement('div',{style:{flex:1,minWidth:0}},
-b.type==='text'&&b.items.every(t=>typeof t==='string')&&Foldable(uid(0,'-t'),b.items,{fontSize:16,lineHeight:1.7,color:'var(--text)',marginBottom:12,whiteSpace:'pre-line'}),
-b.type==='text'&&!b.items.every(t=>typeof t==='string')&&b.items.map((t,j)=>{
+b.type==='text'&&b.items.map((t,j)=>{
 const isObj=typeof t==='object';
 const text=isObj?t.text:t;
 if(isObj&&t.imgId)return React.createElement('div',{key:j,style:{display:'flex',flexWrap:'wrap',gap:20,alignItems:'flex-start',marginBottom:12}},
@@ -83,14 +58,14 @@ b.type==='text-image'&&b.items.map((it,j)=>{const nx=b.items[j+1];const imgOnly=
 it.sideImgId?React.createElement('div',{style:{display:'flex',flexWrap:'wrap',gap:24,alignItems:'flex-start',marginBottom:16}},
 React.createElement('div',{style:{flex:'1 1 280px',minWidth:0}},
 it.title&&React.createElement('div',{style:{fontSize:(it.small||it.title.startsWith('\u2022'))?16:19,fontWeight:600,color:'var(--text)',marginBottom:it.compact?0:8,lineHeight:it.compact?1.25:1.5}},it.title),
-it.text&&Foldable(uid(j,'-s'),it.text.split(/\n\n+/),{fontSize:16,lineHeight:1.7,color:'var(--text)',marginBottom:0,whiteSpace:'pre-line'})
+it.text&&React.createElement('p',{style:{fontSize:16,lineHeight:1.7,color:'var(--text)',marginBottom:0,whiteSpace:'pre-line'}},it.text)
 ),
 React.createElement('div',{style:{flex:'1 1 240px',minWidth:0,borderRadius:'var(--radius-lg,16px)',overflow:'hidden'}},
 React.createElement('image-slot',{id:'block-'+it.sideImgId,shape:'rect',fit:'contain','natural-ratio':'',placeholder:'Add illustration'})
 )
 ):React.createElement(React.Fragment,null,
 it.title&&React.createElement('div',{style:{fontSize:(it.small||it.title.startsWith('\u2022'))?16:19,fontWeight:600,color:'var(--text)',marginBottom:it.compact?0:8,lineHeight:it.compact?1.25:1.5}},it.title),
-it.text&&React.createElement('div',{style:{marginBottom:16}},Foldable(uid(j,'-x'),it.text.split(/\n\n+/),{fontSize:16,lineHeight:1.7,color:'var(--text)',marginBottom:12,whiteSpace:'pre-line'}))
+it.text&&React.createElement('p',{style:{fontSize:16,lineHeight:1.7,color:'var(--text)',marginBottom:16,whiteSpace:'pre-line'}},it.text)
 ),
 it.extraImgId&&React.createElement('div',{style:{display:'flex',gap:16,marginBottom:16,alignItems:'stretch',height:340,maxWidth:'100%'}},
 React.createElement('div',{style:{flex:'1 1 0',minWidth:0,borderRadius:'var(--radius-lg,16px)',overflow:'hidden',height:'100%'}},
@@ -164,7 +139,6 @@ const dark=!!project.dark;window.__csDark=dark;
 const narrow=vw<820;
 const {Button}=window.LunaLiuDesignSystem_29754e;
 return React.createElement('div',{ref:rootRef,style:dark?{...CASE_DARK_VARS,background:'var(--surface)',color:'var(--text)',colorScheme:'dark',minHeight:'100%'}:undefined},
-React.createElement('style',null,'.cs-more>summary{list-style:none;cursor:pointer;display:inline-block;margin:-4px 0 12px;font-size:14px;font-weight:500;color:'+(dark?'#E3A33B':'#A66A00')+'}.cs-more>summary::-webkit-details-marker{display:none}.cs-more>summary::after{content:" ↓"}.cs-more[open]>summary{display:none}'),
 React.createElement('section',{style:{padding:narrow?'32px 20px 72px':'56px 48px 96px',maxWidth:1120,margin:'0 auto',display:'grid',gridTemplateColumns:narrow?'minmax(0,1fr)':'240px minmax(0,1fr)',gap:narrow?32:56,alignItems:'start',animation:'caseTextFadeIn 0.5s ease-in-out 0.15s both'}},
 React.createElement('div',{style:{position:narrow?'static':'sticky',top:56,minHeight:narrow?0:'calc(100vh - 112px)',display:'flex',flexDirection:'column',gap:narrow?12:20}},
 React.createElement('div',{style:{fontSize:26,fontWeight:600,letterSpacing:'-0.02em',color:'var(--ink-900)',lineHeight:1.3}},project.title),
