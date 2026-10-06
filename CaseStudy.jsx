@@ -46,8 +46,8 @@ return React.createElement('li',{key:j,style:{fontSize:16,lineHeight:1.7,color:'
 b.type==='cards'&&(()=>{
 // Wide screens (1100px+): cards sit side by side (stat on top); narrower screens keep the stacked rows.
 const wide=!!window.__csWide;const n=b.items.length;const nStat=b.items.filter(x=>x.stat).length;
-// When at least two cards have numbers, those share a row and cards without a number span the full width.
-const splitRows=nStat>=2&&nStat<n;const cols=splitRows?nStat:(n===4?2:Math.min(n,3));
+// Cards with numbers share a row; cards without one span the full width (a lone number card does too, unless it's one of four).
+const splitRows=nStat>=1&&nStat<n&&(nStat>=2||n<=3);const cols=splitRows?nStat:(n===4?2:Math.min(n,3));
 const cardStyle={background:window.__csDark?'#18181B':'#FFFFFF',border:'1px solid color-mix(in srgb, var(--ink-900) 7%, transparent)',borderRadius:16,padding:wide?'24px':'22px 24px',display:'flex',flexDirection:wide?'column':'row',flexWrap:wide?'nowrap':'wrap',alignItems:wide?'stretch':'center',gap:wide?14:'12px 32px',minWidth:0,boxShadow:(window.__csDark?'inset 0 1px 0 rgba(255,255,255,0.06)':'inset 0 1px 0 rgba(255,255,255,0.8)')+', 0 4px 14px -8px color-mix(in srgb, var(--ink-900) 14%, transparent)'};
 const statEl=it=>React.createElement('div',{style:{flex:wide?'none':(window.__csPhone?'0 0 auto':'0 0 176px'),display:'flex',flexDirection:'column',gap:2}},
 React.createElement('div',{style:{fontFamily:"'Albert Sans',var(--font-sans,sans-serif)",fontSize:window.__csPhone?36:44,fontWeight:600,letterSpacing:'-0.03em',lineHeight:1,color:window.__csDark?'#E3A33B':'#A66A00',whiteSpace:'nowrap'}},String(it.stat).split(/\s*([\u4e00-\u9fff]+)/).map((part,k)=>/[\u4e00-\u9fff]/.test(part)?React.createElement('span',{key:k,style:{fontSize:'0.55em',marginLeft:'0.1em'}},part):part)),
@@ -104,6 +104,7 @@ it.compare.filter(c=>c.before&&c.after).map(c=>React.createElement('div',{key:c.
 React.createElement('img',{src,alt:window.t(c.label||'')+' '+window.t(tag),loading:'lazy',width:1280,height:720,style:{display:'block',width:'100%',height:'100%',objectFit:'cover'}})
 ))))
 );})(),
+it.chat&&React.createElement(ChatScenarios,{scenarios:it.chat.scenarios}),
 it.media&&React.createElement('div',{style:{borderRadius:'var(--radius-lg,16px)',overflow:'hidden',background:window.__csDark?'#18181B':'#F4F4F6',aspectRatio:it.mediaRatio||'16/9',border:'1px solid color-mix(in srgb, var(--ink-900) 7%, transparent)'}},
 React.createElement('img',{src:it.media,alt:window.t(it.title||''),loading:'lazy',style:{display:'block',width:'100%',height:'100%',objectFit:'cover'}})),
 it.iconGrid&&React.createElement('div',{style:{display:'grid',gridTemplateColumns:'repeat('+(it.iconCols||5)+',minmax(0,1fr))',gap:window.__csPhone?6:12,maxWidth:640,margin:'8px auto 0'}},it.iconGrid.map(src=>React.createElement('img',{key:src,src,alt:'',loading:'lazy',style:{display:'block',width:'100%',height:'auto',borderRadius:4}}))),
@@ -127,6 +128,28 @@ b.sideImgId&&React.createElement('div',{style:{flex:window.__csNarrow?'none':'0 
 React.createElement('image-slot',{id:'block-'+b.sideImgId,shape:'rect',fit:'cover',placeholder:'Add illustration'})
 )
 )
+);
+}
+
+// Before/after AI replies for several conversation scenarios, switched with tabs.
+function ChatScenarios({scenarios}){
+const [cur,setCur]=React.useState(0);
+const dark=window.__csDark,accent=dark?'#E3A33B':'#A66A00';
+const sc=scenarios[cur]||scenarios[0];
+const bubble=(l,k,good)=>{const ai=l.who==='ai';return React.createElement('div',{key:k,style:{display:'flex',flexDirection:'column',alignItems:ai?'flex-start':'flex-end',gap:3}},
+React.createElement('div',{style:{fontSize:11,color:'var(--text-faint)'}},ai?'AI':window.t('Guest')),
+React.createElement('div',{style:{maxWidth:'88%',fontSize:15,lineHeight:1.55,padding:'9px 13px',borderRadius:ai?'4px 14px 14px 14px':'14px 4px 14px 14px',background:ai?(good?(dark?'#3A2E17':'#FBF1DC'):(dark?'#26262A':'#FFFFFF')):(dark?'#2E2E33':'#E3E3E7'),color:'var(--text)'}},window.t(l.text)));};
+return React.createElement('div',{style:{display:'flex',flexDirection:'column',gap:14}},
+React.createElement('div',{role:'tablist',style:{display:'flex',flexWrap:'wrap',gap:8}},scenarios.map((x,k)=>React.createElement('button',{key:x.label,role:'tab','aria-selected':k===cur,onClick:()=>setCur(k),style:{font:'inherit',fontSize:14,fontWeight:k===cur?600:500,padding:'7px 14px',borderRadius:999,cursor:'pointer',border:'1px solid '+(k===cur?accent:'color-mix(in srgb, var(--ink-900) 14%, transparent)'),background:k===cur?accent:'transparent',color:k===cur?(dark?'#1A1408':'#FFFFFF'):'var(--text)',transition:'background 0.2s, color 0.2s, border-color 0.2s'}},window.t(x.label)))),
+React.createElement('div',{role:'tabpanel',style:{borderRadius:16,padding:window.__csPhone?'16px 18px':'20px 24px',background:dark?'#18181B':'#F4F4F6'}},
+// One centered column inside the full-width panel: the guest asks once, then the AI's reply before and after the guidelines.
+React.createElement('div',{style:{width:'100%',maxWidth:620,margin:'0 auto',display:'flex',flexDirection:'column',gap:14}},
+sc.before.filter(l=>l.who!=='ai').map((l,k)=>bubble(l,'q'+k,false)),
+[['Before the guidelines',sc.before,false],['After the guidelines',sc.after,true]].map(([tag,lines,good])=>React.createElement('div',{key:tag,style:{display:'flex',flexDirection:'column',gap:6}},
+React.createElement('div',{style:{fontSize:13,fontWeight:600,color:good?accent:'var(--text-muted)'}},window.t(tag)),
+lines.filter(l=>l.who==='ai').map((l,k)=>bubble(l,k,good))
+)))
+),
 );
 }
 
