@@ -104,7 +104,7 @@ it.compare.filter(c=>c.before&&c.after).map(c=>React.createElement('div',{key:c.
 React.createElement('img',{src,alt:window.t(c.label||'')+' '+window.t(tag),loading:'lazy',width:1280,height:720,style:{display:'block',width:'100%',height:'100%',objectFit:'cover'}})
 ))))
 );})(),
-it.chat&&React.createElement('div',{style:{display:'grid',gridTemplateColumns:window.__csPhone?'minmax(0,1fr)':'repeat(2,minmax(0,1fr))',gap:16}},[['Old',it.chat.before,false],['New',it.chat.after,true]].map(([tag,lines,good])=>React.createElement('div',{key:tag,style:{minWidth:0,borderRadius:16,padding:'16px 18px',background:window.__csDark?'#18181B':'#F4F4F6',border:good?'1.5px solid '+(window.__csDark?'#E3A33B':'#A66A00'):'1px solid color-mix(in srgb, var(--ink-900) 7%, transparent)',display:'flex',flexDirection:'column',gap:10}},
+it.chat&&React.createElement('div',{style:{display:'grid',gridTemplateColumns:window.__csPhone?'minmax(0,1fr)':'repeat(2,minmax(0,1fr))',gap:16}},[['Old',it.chat.before,false],['New',it.chat.after,true]].map(([tag,lines,good])=>React.createElement('div',{key:tag,style:{minWidth:0,borderRadius:16,padding:'16px 18px',background:window.__csDark?'#18181B':'#F4F4F6',display:'flex',flexDirection:'column',gap:10}},
 React.createElement('div',{style:{fontSize:13,fontWeight:600,color:good?(window.__csDark?'#E3A33B':'#A66A00'):'var(--text-muted)'}},window.t(tag==='Old'?'Before the guidelines':'After the guidelines')),
 lines.map((l,k)=>{const ai=l.who==='ai';return React.createElement('div',{key:k,style:{display:'flex',flexDirection:'column',alignItems:ai?'flex-start':'flex-end',gap:3}},
 React.createElement('div',{style:{fontSize:11,color:'var(--text-faint)'}},ai?'AI':window.t('Guest')),
