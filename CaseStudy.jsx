@@ -104,6 +104,8 @@ it.compare.filter(c=>c.before&&c.after).map(c=>React.createElement('div',{key:c.
 React.createElement('img',{src,alt:window.t(c.label||'')+' '+window.t(tag),loading:'lazy',width:1280,height:720,style:{display:'block',width:'100%',height:'100%',objectFit:'cover'}})
 ))))
 );})(),
+it.media&&React.createElement('div',{style:{borderRadius:'var(--radius-lg,16px)',overflow:'hidden',background:window.__csDark?'#18181B':'#F4F4F6',aspectRatio:it.mediaRatio||'16/9',border:'1px solid color-mix(in srgb, var(--ink-900) 7%, transparent)'}},
+React.createElement('img',{src:it.media,alt:window.t(it.title||''),loading:'lazy',style:{display:'block',width:'100%',height:'100%',objectFit:'cover'}})),
 it.iconGrid&&React.createElement('div',{style:{display:'grid',gridTemplateColumns:'repeat('+(it.iconCols||5)+',minmax(0,1fr))',gap:window.__csPhone?6:12,maxWidth:640,margin:'8px auto 0'}},it.iconGrid.map(src=>React.createElement('img',{key:src,src,alt:'',loading:'lazy',style:{display:'block',width:'100%',height:'auto',borderRadius:4}}))),
 it.caption&&React.createElement('div',{style:{fontSize:14,lineHeight:1.6,color:'var(--text-muted)',marginTop:10,textAlign:'center'}},it.caption)
 );}),
