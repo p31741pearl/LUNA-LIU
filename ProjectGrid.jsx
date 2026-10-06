@@ -14,7 +14,7 @@ React.createElement('image-slot',{id:'cover-'+project.id+(project.id==='aca-ai'?
 ),
 React.createElement('div',{style:{display:'flex',flexDirection:'column',alignItems:'flex-start',gap:12,padding:'20px 4px 0'}},
 React.createElement('div',{style:{fontSize:17,fontWeight:600,letterSpacing:'-0.01em',color:'var(--ink-900)',lineHeight:1.4,textAlign:'left',textWrap:'pretty'}},project.title),
-project.highlight&&React.createElement('div',{style:{marginTop:-4,fontSize:14,fontWeight:500,color:'#A66A00',lineHeight:1.5,textAlign:'left',textWrap:'pretty'}},project.highlight)
+project.highlight&&React.createElement('div',{style:{marginTop:-4,fontSize:14,fontWeight:400,color:'var(--ink-700,#3B4657)',lineHeight:1.5,textAlign:'left',textWrap:'pretty'}},project.highlight)
 )
 );
 }
