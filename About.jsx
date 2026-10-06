@@ -2,7 +2,7 @@ const steps=[
 {n:'01',title:'Uncover the real need',desc:'Gather needs from every side: interview sales and customer support, and observe users on site to find where they actually get stuck. For example, walking into a hotel to observe how the front desk, housekeeping, and F&B teams really work.'},
 {n:'02',title:'Validate assumptions with real data',desc:'Go back to call logs and back-office monitoring data to make sure assumptions hold up. For example, using call logs to pinpoint where a voice conversation flow breaks down.'},
 {n:'03',title:'Systematize into scalable specs',desc:'Distill findings into design guidelines that are concrete, actionable, and able to keep scaling. For example, consolidating custom requests from many hotels into a single set of component specs.'},
-{n:'04',title:'Speed up the process with AI',desc:'Bring AI into every stage of design: early research, design-system setup, and a plugin I built that turns web pages into Figma files, leaving more time for work that needs judgment.'}
+{n:'04',title:'Speed up the process with AI',desc:'Use AI for research and design-system setup, and built a plugin that turns web pages into Figma files.'}
 ];
 const countries=['Taiwan','Singapore','Thailand','Vietnam'];
 const career=[
