@@ -88,6 +88,15 @@ React.createElement('image-slot',{id:it.imgId?'block-'+it.imgId:uid(j),shape:'re
 )):React.createElement('div',{style:{aspectRatio:it.ratio||'16/9',borderRadius:'var(--radius-lg,16px)',overflow:'hidden',background:window.__csDark?'#18181B':'#FFFFFF'}},
 React.createElement('image-slot',{id:it.imgId?'block-'+it.imgId:uid(j),shape:'rect',placeholder:'Add illustration'})
 )),
+it.compare&&React.createElement('div',{style:{display:'flex',flexDirection:'column',gap:window.__csPhone?24:28}},it.compare.filter(c=>c.before&&c.after).map(c=>React.createElement('div',{key:c.before},
+c.label&&React.createElement('div',{style:{fontSize:14,fontWeight:600,color:'var(--text-muted)',marginBottom:10}},window.t(c.label)),
+React.createElement('div',{style:{display:'grid',gridTemplateColumns:window.__csPhone?'minmax(0,1fr)':'repeat(2,minmax(0,1fr))',gap:window.__csPhone?10:16}},[['Old UI',c.before],['New UI',c.after]].map(([tag,src])=>React.createElement('div',{key:tag,style:{minWidth:0}},
+React.createElement('div',{style:{display:'flex',alignItems:'center',gap:6,marginBottom:6,fontSize:13,fontWeight:600,color:tag==='New UI'?(window.__csDark?'#E3A33B':'#A66A00'):'var(--text-muted)'}},React.createElement('span',{style:{width:6,height:6,borderRadius:3,background:'currentColor'}}),window.t(tag)),
+React.createElement('div',{style:{borderRadius:12,overflow:'hidden',background:'#111',aspectRatio:'16/9'}},
+React.createElement('img',{src,alt:window.t(c.label||'')+' '+window.t(tag),loading:'lazy',width:1280,height:720,style:{display:'block',width:'100%',height:'100%',objectFit:'cover'}}))
+)
+))
+))),
 it.iconGrid&&React.createElement('div',{style:{display:'grid',gridTemplateColumns:'repeat('+(it.iconCols||5)+',minmax(0,1fr))',gap:window.__csPhone?6:12,maxWidth:640,margin:'8px auto 0'}},it.iconGrid.map(src=>React.createElement('img',{key:src,src,alt:'',loading:'lazy',style:{display:'block',width:'100%',height:'auto',borderRadius:4}}))),
 it.caption&&React.createElement('div',{style:{fontSize:14,lineHeight:1.6,color:'var(--text-muted)',marginTop:10,textAlign:'center'}},it.caption)
 );}),
