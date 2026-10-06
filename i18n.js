@@ -56,6 +56,7 @@ window.ZH_TEXT={
 '5 years of UI/UX experience, focused on AI voice and hospitality SaaS products. I specialize in translating engineering constraints and real-world usage into scalable design systems.':'5 年 UI/UX 經驗，專注於 AI 語音與飯店 SaaS 產品。擅長將工程限制與真實使用情境，轉化為可擴展的設計系統。',
 'Working at the intersection of hardware and software':'橫跨軟硬體整合的工作經歷',
 'Tools':'工具',
+'Built a design system; proposal adopted company-wide':'設計系統建置，提案獲採用並推廣至全公司',
 'One hotel saved 384 phone calls a month':'單一飯店每月省下 384 通電話',
 'Clearer bills, easier card binding':'帳單更清楚、綁卡更簡單',
 'Interview users, sales, and support; observe on site':'訪談使用者、業務與客服，並實地觀察',
