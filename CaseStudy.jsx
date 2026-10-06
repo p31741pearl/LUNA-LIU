@@ -104,12 +104,7 @@ it.compare.filter(c=>c.before&&c.after).map(c=>React.createElement('div',{key:c.
 React.createElement('img',{src,alt:window.t(c.label||'')+' '+window.t(tag),loading:'lazy',width:1280,height:720,style:{display:'block',width:'100%',height:'100%',objectFit:'cover'}})
 ))))
 );})(),
-it.chat&&React.createElement('div',{style:{display:'grid',gridTemplateColumns:window.__csPhone?'minmax(0,1fr)':'repeat(2,minmax(0,1fr))',gap:16}},[['Old',it.chat.before,false],['New',it.chat.after,true]].map(([tag,lines,good])=>React.createElement('div',{key:tag,style:{minWidth:0,borderRadius:16,padding:'16px 18px',background:window.__csDark?'#18181B':'#F4F4F6',display:'flex',flexDirection:'column',gap:10}},
-React.createElement('div',{style:{fontSize:13,fontWeight:600,color:good?(window.__csDark?'#E3A33B':'#A66A00'):'var(--text-muted)'}},window.t(tag==='Old'?'Before the guidelines':'After the guidelines')),
-lines.map((l,k)=>{const ai=l.who==='ai';return React.createElement('div',{key:k,style:{display:'flex',flexDirection:'column',alignItems:ai?'flex-start':'flex-end',gap:3}},
-React.createElement('div',{style:{fontSize:11,color:'var(--text-faint)'}},ai?'AI':window.t('Guest')),
-React.createElement('div',{style:{maxWidth:'88%',fontSize:15,lineHeight:1.55,padding:'9px 13px',borderRadius:ai?'4px 14px 14px 14px':'14px 4px 14px 14px',background:ai?(good?(window.__csDark?'#3A2E17':'#FBF1DC'):(window.__csDark?'#26262A':'#FFFFFF')):(window.__csDark?'#2E2E33':'#E3E3E7'),color:'var(--text)'}},window.t(l.text)));})
-))),
+it.chat&&React.createElement(ChatScenarios,{scenarios:it.chat.scenarios}),
 it.media&&React.createElement('div',{style:{borderRadius:'var(--radius-lg,16px)',overflow:'hidden',background:window.__csDark?'#18181B':'#F4F4F6',aspectRatio:it.mediaRatio||'16/9',border:'1px solid color-mix(in srgb, var(--ink-900) 7%, transparent)'}},
 React.createElement('img',{src:it.media,alt:window.t(it.title||''),loading:'lazy',style:{display:'block',width:'100%',height:'100%',objectFit:'cover'}})),
 it.iconGrid&&React.createElement('div',{style:{display:'grid',gridTemplateColumns:'repeat('+(it.iconCols||5)+',minmax(0,1fr))',gap:window.__csPhone?6:12,maxWidth:640,margin:'8px auto 0'}},it.iconGrid.map(src=>React.createElement('img',{key:src,src,alt:'',loading:'lazy',style:{display:'block',width:'100%',height:'auto',borderRadius:4}}))),
@@ -133,6 +128,24 @@ b.sideImgId&&React.createElement('div',{style:{flex:window.__csNarrow?'none':'0 
 React.createElement('image-slot',{id:'block-'+b.sideImgId,shape:'rect',fit:'cover',placeholder:'Add illustration'})
 )
 )
+);
+}
+
+// Before/after AI replies for several conversation scenarios, switched with tabs.
+function ChatScenarios({scenarios}){
+const [cur,setCur]=React.useState(0);
+const dark=window.__csDark,accent=dark?'#E3A33B':'#A66A00';
+const sc=scenarios[cur]||scenarios[0];
+const bubble=(l,k,good)=>{const ai=l.who==='ai';return React.createElement('div',{key:k,style:{display:'flex',flexDirection:'column',alignItems:ai?'flex-start':'flex-end',gap:3}},
+React.createElement('div',{style:{fontSize:11,color:'var(--text-faint)'}},ai?'AI':window.t('Guest')),
+React.createElement('div',{style:{maxWidth:'88%',fontSize:15,lineHeight:1.55,padding:'9px 13px',borderRadius:ai?'4px 14px 14px 14px':'14px 4px 14px 14px',background:ai?(good?(dark?'#3A2E17':'#FBF1DC'):(dark?'#26262A':'#FFFFFF')):(dark?'#2E2E33':'#E3E3E7'),color:'var(--text)'}},window.t(l.text)));};
+return React.createElement('div',{style:{display:'flex',flexDirection:'column',gap:14}},
+React.createElement('div',{role:'tablist',style:{display:'flex',flexWrap:'wrap',gap:8}},scenarios.map((x,k)=>React.createElement('button',{key:x.label,role:'tab','aria-selected':k===cur,onClick:()=>setCur(k),style:{font:'inherit',fontSize:14,fontWeight:k===cur?600:500,padding:'7px 14px',borderRadius:999,cursor:'pointer',border:'1px solid '+(k===cur?accent:'color-mix(in srgb, var(--ink-900) 14%, transparent)'),background:k===cur?accent:'transparent',color:k===cur?(dark?'#1A1408':'#FFFFFF'):'var(--text)',transition:'background 0.2s, color 0.2s, border-color 0.2s'}},window.t(x.label)))),
+React.createElement('div',{role:'tabpanel',style:{display:'grid',gridTemplateColumns:window.__csPhone?'minmax(0,1fr)':'repeat(2,minmax(0,1fr))',gap:16}},[['Before the guidelines',sc.before,false],['After the guidelines',sc.after,true]].map(([tag,lines,good])=>React.createElement('div',{key:tag,style:{minWidth:0,borderRadius:16,padding:'16px 18px',background:dark?'#18181B':'#F4F4F6',display:'flex',flexDirection:'column',gap:10}},
+React.createElement('div',{style:{fontSize:13,fontWeight:600,color:good?accent:'var(--text-muted)'}},window.t(tag)),
+lines.map((l,k)=>bubble(l,k,good))
+))),
+sc.note&&React.createElement('div',{style:{fontSize:14,lineHeight:1.6,color:'var(--text-muted)'}},window.t(sc.note))
 );
 }
 
