@@ -57,7 +57,7 @@ return React.createElement('div',{style:wide?{display:'grid',gridTemplateColumns
 it.stat&&statEl(it),
 React.createElement('div',{style:{flex:wide?'none':'1 1 240px',minWidth:0,display:'flex',flexDirection:'column',gap:6}},
 React.createElement('div',{style:{fontSize:wide?17:18,fontWeight:600,color:'var(--text)',lineHeight:1.35}},it.title),
-React.createElement('div',{style:{fontSize:15,lineHeight:1.65,color:'var(--text-muted)'}},it.text)
+it.text&&React.createElement('div',{style:{fontSize:15,lineHeight:1.65,color:'var(--text-muted)'}},it.text)
 ),
 it.detail&&React.createElement('div',{style:{fontSize:14,lineHeight:1.7,color:'var(--text)',whiteSpace:'pre-line'}},it.detail)
 )));})(),
