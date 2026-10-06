@@ -44,6 +44,10 @@ const [lead,rest]=splitLead(t);
 return React.createElement('li',{key:j,style:{fontSize:16,lineHeight:1.7,color:'var(--text)'}},lead,rest);
 })),
 b.type==='cards'&&React.createElement('div',{style:{display:'flex',flexDirection:'column',gap:16}},b.items.map((it,j)=>React.createElement('div',{key:j,style:{background:window.__csDark?'#18181B':'#FFFFFF',border:'1px solid color-mix(in srgb, var(--ink-900) 7%, transparent)',borderRadius:16,padding:'22px 24px',display:'flex',flexWrap:'wrap',alignItems:'center',gap:'12px 32px',boxShadow:(window.__csDark?'inset 0 1px 0 rgba(255,255,255,0.06)':'inset 0 1px 0 rgba(255,255,255,0.8)')+', 0 4px 14px -8px color-mix(in srgb, var(--ink-900) 14%, transparent)'}},
+it.stat&&React.createElement('div',{style:{flex:'0 0 auto',minWidth:window.__csPhone?0:132,display:'flex',flexDirection:'column',gap:2}},
+React.createElement('div',{style:{fontFamily:"'Albert Sans',var(--font-sans,sans-serif)",fontSize:window.__csPhone?36:44,fontWeight:600,letterSpacing:'-0.03em',lineHeight:1,color:window.__csDark?'#E3A33B':'#A66A00',whiteSpace:'nowrap'}},it.stat),
+it.statUnit&&React.createElement('div',{style:{fontSize:13,color:'var(--text-muted)',lineHeight:1.4}},it.statUnit)
+),
 React.createElement('div',{style:{flex:'1 1 240px',minWidth:0,display:'flex',flexDirection:'column',gap:6}},
 React.createElement('div',{style:{fontSize:18,fontWeight:600,color:'var(--text)',lineHeight:1.3}},it.title),
 React.createElement('div',{style:{fontSize:15,lineHeight:1.65,color:'var(--text-muted)'}},it.text)
@@ -150,7 +154,8 @@ React.createElement('div',{style:{minWidth:0}},
 React.createElement('image-slot',{key:'cv'+(narrow?1:0),id:'modal-cover-'+project.id,shape:'rect','natural-ratio':(project.coverNatural||narrow)?'':undefined,placeholder:'Add a lifestyle photo for '+project.title})
 ),
 project.coverHeadline&&React.createElement('div',{style:{fontSize:'clamp(26px,3vw,36px)',fontWeight:600,letterSpacing:'-0.03em',lineHeight:1.25,color:'var(--ink-900)',marginTop:-8,marginBottom:40,textWrap:'pretty'}},project.coverHeadline),
-project.blocks.map((b,i)=>CaseBlock(b,i,project.id)),
+// Results and the finished product come first, so the page opens on outcomes and visuals before the story.
+project.blocks.map((b,i)=>[b,i]).sort((x,y)=>((x[0].pin||9)-(y[0].pin||9))||(x[1]-y[1])).map(([b,i])=>CaseBlock(b,i,project.id)),
 onOpenOther&&React.createElement('div',{style:{marginTop:24,paddingTop:40,borderTop:'1px solid var(--border)'}},
 React.createElement('div',{style:{fontFamily:'var(--font-mono)',fontSize:16,letterSpacing:'var(--tracking-wide)',textTransform:'uppercase',color:window.__csDark?'#E3A33B':'#A66A00',marginBottom:20}},window.t('Keep Reading')),
 React.createElement('div',{style:{display:'grid',gridTemplateColumns:window.__csPhone?'minmax(0,1fr)':'repeat(2,minmax(0,1fr))',gap:24}},
