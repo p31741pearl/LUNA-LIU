@@ -32,7 +32,7 @@ window.ZH_TEXT={
 
 // ---- About ----
 'Uncover the real need':'挖掘真實需求',
-'Use interviews and on-site observation to find where users actually get stuck. For example, walking into a hotel to observe how the front desk, housekeeping, and F&B teams really work.':'透過訪談與現場觀察，找出使用者真正卡住的地方。例如走進飯店，觀察櫃檯、房務與餐飲團隊實際如何工作。',
+'Gather needs from every side: interview sales and customer support, and observe users on site to find where they actually get stuck. For example, walking into a hotel to observe how the front desk, housekeeping, and F&B teams really work.':'主動向各方蒐集需求：訪談業務與客服，並實地觀察使用者真正卡住的地方。例如走進飯店，觀察櫃檯、房務與餐飲團隊實際如何工作。',
 'Validate assumptions with real data':'用真實數據驗證假設',
 'Go back to call logs and back-office monitoring data to make sure assumptions hold up. For example, using call logs to pinpoint where a voice conversation flow breaks down.':'回到通話紀錄與後台監控數據，確認假設站得住腳。例如從通話紀錄找出語音對話流程在哪裡斷掉。',
 'Systematize into scalable specs':'系統化為可擴展的規格',
@@ -56,6 +56,14 @@ window.ZH_TEXT={
 '5 years of UI/UX experience, focused on AI voice and hospitality SaaS products. I specialize in translating engineering constraints and real-world usage into scalable design systems.':'5 年 UI/UX 經驗，專注於 AI 語音與飯店 SaaS 產品。擅長將工程限制與真實使用情境，轉化為可擴展的設計系統。',
 'Working at the intersection of hardware and software':'橫跨軟硬體整合的工作經歷',
 'Tools':'工具',
+'Gather needs from users, sales, and support through interviews and on-site visits':'透過訪談與實地走訪，向使用者、業務與客服蒐集需求',
+'AI-Powered Workflow':'AI 導入工作流程',
+'Bring AI into research, design-system setup, and a plugin that turns web pages into Figma files':'將 AI 導入前期調研與設計系統建置，並製作把網頁轉成 Figma 檔的插件',
+'Speed up the process with AI':'用 AI 加速流程',
+'Bring AI into every stage of design: early research, design-system setup, and a plugin I built that turns web pages into Figma files, leaving more time for work that needs judgment.':'把 AI 導入設計的每個階段：前期調研、設計系統建置，也自己做了把網頁轉成 Figma 檔的插件，把時間留給真正需要判斷的事。',
+'Languages':'語言',
+'Mandarin · Native':'中文 · 母語',
+'English · Fluent reading for competitive research':'英文 · 閱讀流利（常態閱讀國外競品與資料）',
 'How I Work':'我的工作方式',
 
 // ---- Case study chrome ----

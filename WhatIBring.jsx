@@ -1,8 +1,8 @@
 const items=[
 {n:'01',title:'Systems Thinking',desc:'Distill requirements into scalable rules'},
-{n:'02',title:'User Research',desc:'Ground decisions in interviews and on-site observation'},
+{n:'02',title:'User Research',desc:'Gather needs from users, sales, and support through interviews and on-site visits'},
 {n:'04',title:'Cross-team Collaboration',desc:'Define specs together with PMs and engineers'},
-{n:'05',title:'Technical Curiosity',desc:'Build tools to eliminate repetitive work, saving time for work that truly needs judgment'}
+{n:'05',title:'AI-Powered Workflow',desc:'Bring AI into research, design-system setup, and a plugin that turns web pages into Figma files'}
 ];
 function WhatIBring(){
 const [w,setW]=React.useState(window.innerWidth);
