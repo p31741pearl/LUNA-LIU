@@ -150,7 +150,6 @@ React.createElement('div',{style:{fontSize:13,fontWeight:600,color:good?accent:'
 lines.filter(l=>l.who==='ai').map((l,k)=>bubble(l,k,good))
 )))
 ),
-sc.note&&React.createElement('div',{style:{fontSize:14,lineHeight:1.6,color:'var(--text-muted)'}},window.t(sc.note))
 );
 }
 

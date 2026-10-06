@@ -69,7 +69,6 @@ window.ZH_TEXT={
 'I found tiramisu and brownies in the menu.':'我查詢到菜單中有提拉米蘇和布朗尼。',
 'Our tiramisu is a favorite, and we also have a warm brownie. Which would you like to try?':'我們的提拉米蘇很受歡迎，也有熱騰騰的布朗尼，您想試試哪一個呢？',
 'No back-to-back questions':'不連續追問',
-'Anything still missing is collected once, at the confirmation checkpoint at the end.':'其他資訊留到最後的確認檢查點，一次補齊。',
 'I’d like a steak.':'我要一份牛排。',
 'How would you like it cooked? Which sauce? What’s your room number?':'請問幾分熟？請問要搭配什麼醬料？請問房號是？',
 'Sure, one steak. How would you like it cooked?':'好的，一份牛排。請問要幾分熟？',
