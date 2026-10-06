@@ -59,8 +59,8 @@ oneLiner:'A hotel-branded front desk web page guests open by scanning a QR code,
 blocks:[
 {heading:'Background',type:'text',title:'This system lets every hotel quickly launch a service website that feels “built for their brand” — while all of them run on one shared, maintained architecture',items:['Guests scan an in-room QR code to open the hotel’s own front desk page. From pre-arrival to check-out, they can look up information, order food, request deliveries, book rides and arrange laundry, without downloading an app. Hotels manage it all through a SaaS back office.','Every hotel wants a page that fits its brand and can go live without engineers. So I designed flexible templates and components, with a back office simple enough for hotels to customize themselves.']},
 {heading:'Results at a Glance',pin:1,type:'cards',items:[
-{compact:true,stat:'NT$270K',statUnit:'monthly F&B revenue, one hotel',title:'Revenue growth',text:'Partner hotels’ F&B revenue grew after launch',noImage:true},
-{compact:true,stat:'384',statUnit:'calls saved in a month',title:'Staff time saved',text:'Some brands save hundreds of phone calls per month',noImage:true},
+{compact:true,stat:'NT$270K',statUnit:'monthly F&B revenue, one hotel',title:'Revenue growth',noImage:true},
+{compact:true,stat:'384',statUnit:'calls saved in a month',title:'Staff time saved',noImage:true},
 {compact:true,title:'Development cost efficiency',text:'New brands launch without building a new system; the shared architecture greatly reduces maintenance and scaling costs',noImage:true}
 ]},
 {pin:1,type:'text-image',items:[{noImage:true,small:true,title:'Back office and guest page, live',text:'The final design: a back office hotels can edit freely and understand at a glance, with the guest page updating to match.',media:'slot-assets/guestweb-builder.gif',mediaRatio:'1200/721'}]},
