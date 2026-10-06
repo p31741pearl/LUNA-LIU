@@ -56,6 +56,8 @@ window.ZH_TEXT={
 '5 years of UI/UX experience, focused on AI voice and hospitality SaaS products. I specialize in translating engineering constraints and real-world usage into scalable design systems.':'5 年 UI/UX 經驗，專注於 AI 語音與飯店 SaaS 產品。擅長將工程限制與真實使用情境，轉化為可擴展的設計系統。',
 'Working at the intersection of hardware and software':'橫跨軟硬體整合的工作經歷',
 'Tools':'工具',
+'Results by Hotel':'各飯店成效',
+'Holiday Inn: about NT$270K in monthly F&B revenue and 450 orders after launch.\niHotel: about NT$160K in monthly revenue and 490 orders.\nHotel Clover saved 384 phone calls in one month, while receiving 204 proactive guest inquiries.':'Holiday Inn：上線後每月餐飲營收約新台幣 27 萬元、450 筆訂單。\niHotel：每月營收約新台幣 16 萬元、490 筆訂單。\nHotel Clover 單月省下 384 通電話，同時收到 204 則住客主動詢問。',
 'UI refresh, now live':'已上線的 UI 改版',
 'Redesigned around information hierarchy and clearer wording. For example, alarm dates now read “Today” or “Thu, Sep 10” instead of “06/03 Mon”, matching the date formats guests from different countries are used to.':'依資訊層級與文案表達重新設計介面。例如鬧鐘日期從「06/03 週一」改成「Today」「Thu, Sep 10」，貼近各國住客習慣的時間寫法。',
 'The same screens before and after the interface refresh.':'介面翻新前後的同一個畫面。',
