@@ -137,7 +137,7 @@ const [cur,setCur]=React.useState(0);
 const dark=window.__csDark,accent=dark?'#E3A33B':'#A66A00';
 const sc=scenarios[cur]||scenarios[0];
 const bubble=(l,k,good)=>{const ai=l.who==='ai';return React.createElement('div',{key:k,style:{display:'flex',flexDirection:'column',alignItems:ai?'flex-start':'flex-end',gap:3}},
-React.createElement('div',{style:{fontSize:11,color:'var(--text-faint)'}},ai?'AI':window.t('Guest')),
+!ai&&React.createElement('div',{style:{fontSize:11,color:'var(--text-faint)'}},window.t('Guest')),
 React.createElement('div',{style:{maxWidth:'88%',fontSize:15,lineHeight:1.55,padding:'9px 13px',borderRadius:ai?'4px 14px 14px 14px':'14px 4px 14px 14px',background:ai?(good?(dark?'#3A2E17':'#FBF1DC'):(dark?'#26262A':'#FFFFFF')):(dark?'#2E2E33':'#E3E3E7'),color:'var(--text)'}},window.t(l.text)));};
 return React.createElement('div',{style:{display:'flex',flexDirection:'column',gap:14}},
 React.createElement('div',{role:'tablist',style:{display:'flex',flexWrap:'wrap',gap:8}},scenarios.map((x,k)=>React.createElement('button',{key:x.label,role:'tab','aria-selected':k===cur,onClick:()=>setCur(k),style:{font:'inherit',fontSize:14,fontWeight:k===cur?600:500,padding:'7px 14px',borderRadius:999,cursor:'pointer',border:'1px solid '+(k===cur?accent:'color-mix(in srgb, var(--ink-900) 14%, transparent)'),background:k===cur?accent:'transparent',color:k===cur?(dark?'#1A1408':'#FFFFFF'):'var(--text)',transition:'background 0.2s, color 0.2s, border-color 0.2s'}},window.t(x.label)))),
@@ -145,7 +145,7 @@ React.createElement('div',{role:'tabpanel',style:{borderRadius:16,padding:window
 // One centered column inside the full-width panel: the guest asks once, then the AI's reply before and after the guidelines.
 React.createElement('div',{style:{width:'100%',maxWidth:620,margin:'0 auto',display:'flex',flexDirection:'column',gap:14}},
 sc.before.filter(l=>l.who!=='ai').map((l,k)=>bubble(l,'q'+k,false)),
-[['Before the guidelines',sc.before,false],['After the guidelines',sc.after,true]].map(([tag,lines,good])=>React.createElement('div',{key:tag,style:{display:'flex',flexDirection:'column',gap:6}},
+[['AI reply before the guidelines',sc.before,false],['AI reply after the guidelines',sc.after,true]].map(([tag,lines,good])=>React.createElement('div',{key:tag,style:{display:'flex',flexDirection:'column',gap:6}},
 React.createElement('div',{style:{fontSize:13,fontWeight:600,color:good?accent:'var(--text-muted)'}},window.t(tag)),
 lines.filter(l=>l.who==='ai').map((l,k)=>bubble(l,k,good))
 )))
