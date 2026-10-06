@@ -57,7 +57,7 @@ window.ZH_TEXT={
 'Working at the intersection of hardware and software':'橫跨軟硬體整合的工作經歷',
 'Tools':'工具',
 'UI refresh, now live':'已上線的 UI 改版',
-'Redesigned around information hierarchy and clearer wording. For example, alarm dates now read “Today” or “Thu, Sep 10” instead of “06/03 Mon”, so they’re quicker to scan.':'依資訊層級與文案表達重新設計介面。例如鬧鐘日期從「06/03 週一」改成「Today」「Thu, Sep 10」，一眼就能看懂。',
+'Redesigned around information hierarchy and clearer wording. For example, alarm dates now read “Today” or “Thu, Sep 10” instead of “06/03 Mon”, matching the date formats guests from different countries are used to.':'依資訊層級與文案表達重新設計介面。例如鬧鐘日期從「06/03 週一」改成「Today」「Thu, Sep 10」，貼近各國住客習慣的時間寫法。',
 'The same screens before and after the interface refresh.':'介面翻新前後的同一個畫面。',
 'Dial pad':'撥號鍵盤',
 'In a call':'通話中',
