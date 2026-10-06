@@ -57,7 +57,7 @@ window.ZH_TEXT={
 'Working at the intersection of hardware and software':'橫跨軟硬體整合的工作經歷',
 'Tools':'工具',
 'Built a design system; proposal adopted company-wide':'設計系統建置，提案獲採用並推廣至全公司',
-'One hotel saved 384 phone calls a month':'單一飯店每月省下 384 通電話',
+'SaaS product: AI-assisted research, design system, and admin back office':'SaaS 產品：AI 導入前期調研、設計系統與後台管理系統建置',
 'Clearer bills, easier card binding':'帳單更清楚、綁卡更簡單',
 'Interview users, sales, and support; observe on site':'訪談使用者、業務與客服，並實地觀察',
 'AI-Powered Workflow':'AI 導入工作流程',
