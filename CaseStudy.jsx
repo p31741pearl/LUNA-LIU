@@ -44,7 +44,7 @@ const [lead,rest]=splitLead(t);
 return React.createElement('li',{key:j,style:{fontSize:16,lineHeight:1.7,color:'var(--text)'}},lead,rest);
 })),
 b.type==='cards'&&React.createElement('div',{style:{display:'flex',flexDirection:'column',gap:16}},b.items.map((it,j)=>React.createElement('div',{key:j,style:{background:window.__csDark?'#18181B':'#FFFFFF',border:'1px solid color-mix(in srgb, var(--ink-900) 7%, transparent)',borderRadius:16,padding:'22px 24px',display:'flex',flexWrap:'wrap',alignItems:'center',gap:'12px 32px',boxShadow:(window.__csDark?'inset 0 1px 0 rgba(255,255,255,0.06)':'inset 0 1px 0 rgba(255,255,255,0.8)')+', 0 4px 14px -8px color-mix(in srgb, var(--ink-900) 14%, transparent)'}},
-it.stat&&React.createElement('div',{style:{flex:'0 0 auto',minWidth:window.__csPhone?0:132,display:'flex',flexDirection:'column',gap:2}},
+it.stat&&React.createElement('div',{style:{flex:window.__csPhone?'0 0 auto':'0 0 176px',display:'flex',flexDirection:'column',gap:2}},
 React.createElement('div',{style:{fontFamily:"'Albert Sans',var(--font-sans,sans-serif)",fontSize:window.__csPhone?36:44,fontWeight:600,letterSpacing:'-0.03em',lineHeight:1,color:window.__csDark?'#E3A33B':'#A66A00',whiteSpace:'nowrap'}},it.stat),
 it.statUnit&&React.createElement('div',{style:{fontSize:13,color:'var(--text-muted)',lineHeight:1.4}},it.statUnit)
 ),
