@@ -59,7 +59,7 @@ window.ZH_TEXT={
 'AI conversation flow, UI design system refresh, and motion for small-screen devices':'AI 對話流程體驗優化、UI 設計系統翻新、小尺寸螢幕裝置動態設計',
 'Built a design system; proposal adopted company-wide':'設計系統建置，提案獲採用並推廣至全公司',
 'SaaS product: AI-assisted research, design system, and admin back office':'SaaS 產品：AI 導入前期調研、設計系統與後台管理系統建置',
-'Clearer bills, easier card binding':'帳單更清楚、綁卡更簡單',
+'Consumer app improvements: bills, donations, and card binding':'C 端 App 功能優化：帳單資訊、捐款與綁卡流程',
 'Interview users, sales, and support; observe on site':'訪談使用者、業務與客服，並實地觀察',
 'AI-Powered Workflow':'AI 導入工作流程',
 'AI in research and design systems; built a web-to-Figma plugin':'用 AI 做調研、建設計系統，並自製網頁轉 Figma 插件',
