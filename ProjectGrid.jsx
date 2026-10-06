@@ -13,10 +13,8 @@ React.createElement('div',{style:{position:'relative',width:'100%',aspectRatio:i
 React.createElement('image-slot',{id:'cover-'+project.id+(project.id==='aca-ai'?'-v3':''),shape:'rect',fetchpriority:'high',placeholder:'Add a lifestyle photo for '+project.title}),
 ),
 React.createElement('div',{style:{display:'flex',flexDirection:'column',alignItems:'center',gap:12,padding:'22px 8px 0'}},
-React.createElement('div',{style:{display:'flex',flexWrap:'wrap',gap:6,justifyContent:'center'}},
-(project.labels||[]).map(l=>React.createElement('div',{key:l,style:{fontSize:12,fontWeight:500,color:'var(--ink-700,#3a3935)',background:'color-mix(in srgb, var(--ink-900) 6%, transparent)',padding:'5px 10px',borderRadius:8,whiteSpace:'nowrap'}},l))
-),
-React.createElement('div',{style:{fontSize:17,fontWeight:600,letterSpacing:'-0.01em',color:'var(--ink-900)',lineHeight:1.4,textAlign:'center',textWrap:'pretty'}},project.title)
+React.createElement('div',{style:{fontSize:17,fontWeight:600,letterSpacing:'-0.01em',color:'var(--ink-900)',lineHeight:1.4,textAlign:'center',textWrap:'pretty'}},project.title),
+project.highlight&&React.createElement('div',{style:{marginTop:-4,fontSize:14,fontWeight:500,color:'#A66A00',lineHeight:1.5,textAlign:'center',textWrap:'pretty'}},project.highlight)
 )
 );
 }

@@ -1,7 +1,8 @@
 const steps=[
-{n:'01',title:'Uncover the real need',desc:'Use interviews and on-site observation to find where users actually get stuck. For example, walking into a hotel to observe how the front desk, housekeeping, and F&B teams really work.'},
+{n:'01',title:'Uncover the real need',desc:'Gather needs from every side: interview sales and customer support, and observe users on site to find where they actually get stuck. For example, walking into a hotel to observe how the front desk, housekeeping, and F&B teams really work.'},
 {n:'02',title:'Validate assumptions with real data',desc:'Go back to call logs and back-office monitoring data to make sure assumptions hold up. For example, using call logs to pinpoint where a voice conversation flow breaks down.'},
-{n:'03',title:'Systematize into scalable specs',desc:'Distill findings into design guidelines that are concrete, actionable, and able to keep scaling. For example, consolidating custom requests from many hotels into a single set of component specs.'}
+{n:'03',title:'Systematize into scalable specs',desc:'Distill findings into design guidelines that are concrete, actionable, and able to keep scaling. For example, consolidating custom requests from many hotels into a single set of component specs.'},
+{n:'04',title:'Speed up the process with AI',desc:'Use AI for research and design-system setup, and built a plugin that turns web pages into Figma files.'}
 ];
 const countries=['Taiwan','Singapore','Thailand','Vietnam'];
 const career=[
@@ -14,6 +15,7 @@ function SiteAbout(){
 const {Badge}=window.LunaLiuDesignSystem_29754e;
 const skills=['User research','Design system planning (spec breakdown, component taxonomy)','Cross-functional collaboration (with engineers / PMs / clients)','Using AI tools to rapidly prototype and iterate','Hardware × software experience design (smart speakers, in-room smart devices)','Data-driven conversation flow optimization (call log analysis, data interpretation)'];
 const tools=['Figma','HTML / CSS','Adobe'];
+const languages=['Mandarin · Native','English · Fluent reading for competitive research'];
 const [narrow,setNarrow]=React.useState(window.innerWidth<860);
 React.useEffect(()=>{const f=()=>setNarrow(window.innerWidth<860);window.addEventListener('resize',f);return()=>window.removeEventListener('resize',f);},[]);
 const title=React.createElement('h2',{style:{fontSize:32,fontWeight:600,letterSpacing:'-0.03em',marginBottom:narrow?0:28,position:'relative',isolation:'isolate',display:'inline-block'}},React.createElement('span',{'aria-hidden':true,style:{position:'absolute',left:-28,top:'50%',width:96,height:96,transform:'translateY(-50%)',borderRadius:'50%',background:'radial-gradient(38% 22% at 50% 6%, rgba(176,150,226,0.8), rgba(176,150,226,0) 100%), linear-gradient(195deg, #F2782A 0%, #F58A30 28%, #F7A83E 55%, #F9C752 80%, #FAD767 100%)',filter:'blur(10px)',opacity:0.75,zIndex:-1,pointerEvents:'none'}}),'Luna Liu');
@@ -29,7 +31,9 @@ React.createElement('div',{style:{fontFamily:"'Albert Sans',var(--font-sans,sans
 React.createElement('div',{style:{fontSize:16,lineHeight:1.6,color:'var(--text)',textWrap:'pretty'}},React.createElement('span',{style:{fontWeight:600,display:'block',marginBottom:2}},c.co),window.t((window.SITE_VARIANT.career||{})[c.co]||c.d))
 ))),
 React.createElement('div',{style:{fontSize:14,fontWeight:500,color:'var(--text-muted)',marginBottom:12}},window.t('Tools')),
-React.createElement('div',{style:{display:'flex',gap:10,flexWrap:'wrap',marginBottom:64}},tools.map(t=>React.createElement(Badge,{key:t,variant:'outline',style:{fontFamily:"'Albert Sans',var(--font-sans,sans-serif)",fontSize:12}},t))),
+React.createElement('div',{style:{display:'flex',gap:10,flexWrap:'wrap',marginBottom:28}},tools.map(t=>React.createElement(Badge,{key:t,variant:'outline',style:{fontFamily:"'Albert Sans',var(--font-sans,sans-serif)",fontSize:12}},t))),
+React.createElement('div',{style:{fontSize:14,fontWeight:500,color:'var(--text-muted)',marginBottom:12}},window.t('Languages')),
+React.createElement('div',{style:{display:'flex',gap:10,flexWrap:'wrap',marginBottom:64}},languages.map(t=>React.createElement(Badge,{key:t,variant:'outline',style:{fontFamily:"'Albert Sans',var(--font-sans,sans-serif)",fontSize:12}},window.t(t)))),
 
 React.createElement('h2',{style:{fontSize:20,fontWeight:600,letterSpacing:'-0.01em',marginBottom:28}},window.t('How I Work')),
 React.createElement('div',{style:{display:'flex',flexDirection:'column',gap:20,marginBottom:64}},steps.map(s=>React.createElement('div',{key:s.n,style:{display:'flex',gap:20}},
