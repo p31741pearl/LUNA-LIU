@@ -88,6 +88,15 @@ React.createElement('image-slot',{id:it.imgId?'block-'+it.imgId:uid(j),shape:'re
 )):React.createElement('div',{style:{aspectRatio:it.ratio||'16/9',borderRadius:'var(--radius-lg,16px)',overflow:'hidden',background:window.__csDark?'#18181B':'#FFFFFF'}},
 React.createElement('image-slot',{id:it.imgId?'block-'+it.imgId:uid(j),shape:'rect',placeholder:'Add illustration'})
 )),
+it.compare&&(()=>{
+const cols={display:'grid',gridTemplateColumns:'repeat(2,minmax(0,1fr))',gap:window.__csPhone?8:16};
+const tagStyle=tag=>({textAlign:'center',fontSize:13,fontWeight:600,color:tag==='New UI'?(window.__csDark?'#E3A33B':'#A66A00'):'var(--text-muted)'});
+return React.createElement('div',{style:{display:'flex',flexDirection:'column',gap:window.__csPhone?8:16}},
+React.createElement('div',{style:cols},['Old UI','New UI'].map(tag=>React.createElement('div',{key:tag,style:tagStyle(tag)},window.t(tag)))),
+it.compare.filter(c=>c.before&&c.after).map(c=>React.createElement('div',{key:c.before,style:cols},[['Old UI',c.before],['New UI',c.after]].map(([tag,src])=>React.createElement('div',{key:tag,style:{minWidth:0,borderRadius:window.__csPhone?8:12,overflow:'hidden',background:'#111',aspectRatio:'16/9'}},
+React.createElement('img',{src,alt:window.t(c.label||'')+' '+window.t(tag),loading:'lazy',width:1280,height:720,style:{display:'block',width:'100%',height:'100%',objectFit:'cover'}})
+))))
+);})(),
 it.iconGrid&&React.createElement('div',{style:{display:'grid',gridTemplateColumns:'repeat('+(it.iconCols||5)+',minmax(0,1fr))',gap:window.__csPhone?6:12,maxWidth:640,margin:'8px auto 0'}},it.iconGrid.map(src=>React.createElement('img',{key:src,src,alt:'',loading:'lazy',style:{display:'block',width:'100%',height:'auto',borderRadius:4}}))),
 it.caption&&React.createElement('div',{style:{fontSize:14,lineHeight:1.6,color:'var(--text-muted)',marginTop:10,textAlign:'center'}},it.caption)
 );}),
