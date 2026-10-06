@@ -56,6 +56,7 @@ window.ZH_TEXT={
 '5 years of UI/UX experience, focused on AI voice and hospitality SaaS products. I specialize in translating engineering constraints and real-world usage into scalable design systems.':'5 年 UI/UX 經驗，專注於 AI 語音與飯店 SaaS 產品。擅長將工程限制與真實使用情境，轉化為可擴展的設計系統。',
 'Working at the intersection of hardware and software':'橫跨軟硬體整合的工作經歷',
 'Tools':'工具',
+'AI conversation flow, UI design system refresh, and motion for small-screen devices':'AI 對話流程體驗優化、UI 設計系統翻新、小尺寸螢幕裝置動態設計',
 'Built a design system; proposal adopted company-wide':'設計系統建置，提案獲採用並推廣至全公司',
 'SaaS product: AI-assisted research, design system, and admin back office':'SaaS 產品：AI 導入前期調研、設計系統與後台管理系統建置',
 'Clearer bills, easier card binding':'帳單更清楚、綁卡更簡單',
