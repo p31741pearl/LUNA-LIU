@@ -45,13 +45,15 @@ return React.createElement('li',{key:j,style:{fontSize:16,lineHeight:1.7,color:'
 })),
 b.type==='cards'&&(()=>{
 // Wide screens (1100px+): cards sit side by side (stat on top); narrower screens keep the stacked rows.
-const wide=!!window.__csWide;const n=b.items.length;
+const wide=!!window.__csWide;const n=b.items.length;const nStat=b.items.filter(x=>x.stat).length;
+// When at least two cards have numbers, those share a row and cards without a number span the full width.
+const splitRows=nStat>=2&&nStat<n;const cols=splitRows?nStat:(n===4?2:Math.min(n,3));
 const cardStyle={background:window.__csDark?'#18181B':'#FFFFFF',border:'1px solid color-mix(in srgb, var(--ink-900) 7%, transparent)',borderRadius:16,padding:wide?'24px':'22px 24px',display:'flex',flexDirection:wide?'column':'row',flexWrap:wide?'nowrap':'wrap',alignItems:wide?'stretch':'center',gap:wide?14:'12px 32px',minWidth:0,boxShadow:(window.__csDark?'inset 0 1px 0 rgba(255,255,255,0.06)':'inset 0 1px 0 rgba(255,255,255,0.8)')+', 0 4px 14px -8px color-mix(in srgb, var(--ink-900) 14%, transparent)'};
 const statEl=it=>React.createElement('div',{style:{flex:wide?'none':(window.__csPhone?'0 0 auto':'0 0 176px'),display:'flex',flexDirection:'column',gap:2}},
-React.createElement('div',{style:{fontFamily:"'Albert Sans',var(--font-sans,sans-serif)",fontSize:window.__csPhone?36:44,fontWeight:600,letterSpacing:'-0.03em',lineHeight:1,color:window.__csDark?'#E3A33B':'#A66A00',whiteSpace:'nowrap'}},it.stat),
+React.createElement('div',{style:{fontFamily:"'Albert Sans',var(--font-sans,sans-serif)",fontSize:window.__csPhone?36:44,fontWeight:600,letterSpacing:'-0.03em',lineHeight:1,color:window.__csDark?'#E3A33B':'#A66A00',whiteSpace:'nowrap'}},String(it.stat).split(/\s*([\u4e00-\u9fff]+)/).map((part,k)=>/[\u4e00-\u9fff]/.test(part)?React.createElement('span',{key:k,style:{fontSize:'0.55em',marginLeft:'0.1em'}},part):part)),
 React.createElement('div',{style:{fontSize:13,color:'var(--text-muted)',lineHeight:1.4}},it.statUnit)
 );
-return React.createElement('div',{style:wide?{display:'grid',gridTemplateColumns:'repeat('+(n===4?2:Math.min(n,3))+',minmax(0,1fr))',gap:16}:{display:'flex',flexDirection:'column',gap:16}},b.items.map((it,j)=>React.createElement('div',{key:j,style:cardStyle},
+return React.createElement('div',{style:wide?{display:'grid',gridTemplateColumns:'repeat('+cols+',minmax(0,1fr))',gap:16}:{display:'flex',flexDirection:'column',gap:16}},b.items.map((it,j)=>React.createElement('div',{key:j,style:wide&&splitRows&&!it.stat?{...cardStyle,gridColumn:'1 / -1'}:cardStyle},
 it.stat&&statEl(it),
 React.createElement('div',{style:{flex:wide?'none':'1 1 240px',minWidth:0,display:'flex',flexDirection:'column',gap:6}},
 React.createElement('div',{style:{fontSize:wide?17:18,fontWeight:600,color:'var(--text)',lineHeight:1.35}},it.title),
