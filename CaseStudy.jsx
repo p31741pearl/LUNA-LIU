@@ -53,18 +53,12 @@ const statEl=it=>React.createElement('div',{style:{flex:wide?'none':(window.__cs
 React.createElement('div',{style:{fontFamily:"'Albert Sans',var(--font-sans,sans-serif)",fontSize:window.__csPhone?36:44,fontWeight:600,letterSpacing:'-0.03em',lineHeight:1,color:window.__csDark?'#E3A33B':'#A66A00',whiteSpace:'nowrap'}},String(it.stat).split(/\s*([\u4e00-\u9fff]+)/).map((part,k)=>/[\u4e00-\u9fff]/.test(part)?React.createElement('span',{key:k,style:{fontSize:'0.55em',marginLeft:'0.1em'}},part):part)),
 React.createElement('div',{style:{fontSize:13,color:'var(--text-muted)',lineHeight:1.4}},it.statUnit)
 );
-// e.g. 46 of 50 test calls as a dot grid.
-const dotsEl=it=>it.dots&&React.createElement('div',{style:{display:'flex',flexDirection:'column',gap:6}},
-React.createElement('div',{'aria-hidden':true,style:{display:'grid',gridTemplateColumns:'repeat(10,10px)',gap:5}},Array.from({length:it.dots.total},(_,k)=>React.createElement('span',{key:k,style:{width:10,height:10,borderRadius:5,background:k<it.dots.hit?(window.__csDark?'#E3A33B':'#A66A00'):'color-mix(in srgb, var(--ink-900) 14%, transparent)'}}))),
-React.createElement('div',{style:{fontSize:12,color:'var(--text-muted)'}},it.dots.hit+' / '+it.dots.total+' '+window.t('calls completed'))
-);
 return React.createElement('div',{style:wide?{display:'grid',gridTemplateColumns:'repeat('+cols+',minmax(0,1fr))',gap:16}:{display:'flex',flexDirection:'column',gap:16}},b.items.map((it,j)=>React.createElement('div',{key:j,style:wide&&splitRows&&!it.stat?{...cardStyle,gridColumn:'1 / -1'}:cardStyle},
 it.stat&&statEl(it),
 React.createElement('div',{style:{flex:wide?'none':'1 1 240px',minWidth:0,display:'flex',flexDirection:'column',gap:6}},
 React.createElement('div',{style:{fontSize:wide?17:18,fontWeight:600,color:'var(--text)',lineHeight:1.35}},it.title),
 it.text&&React.createElement('div',{style:{fontSize:15,lineHeight:1.65,color:'var(--text-muted)'}},it.text)
 ),
-dotsEl(it),
 it.detail&&React.createElement('div',{style:{fontSize:14,lineHeight:1.7,color:'var(--text)',whiteSpace:'pre-line'}},it.detail)
 )));})(),
 b.type==='text-image'&&b.items.map((it,j)=>{const nx=b.items[j+1];const imgOnly=x=>x&&!x.title&&!x.text&&!x.noImage;return React.createElement('div',{key:j,style:{marginBottom:(imgOnly(nx)&&!it.noImage&&!it.caption)?16:28}},
