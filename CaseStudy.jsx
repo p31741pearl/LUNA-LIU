@@ -105,9 +105,9 @@ React.createElement('img',{src,alt:window.t(c.label||'')+' '+window.t(tag),loadi
 ))))
 );})(),
 it.chat&&React.createElement(ChatScenarios,{scenarios:it.chat.scenarios}),
-it.gallery&&React.createElement(TabGallery,{images:it.gallery}),
+it.gallery&&React.createElement(Carousel,{images:it.gallery}),
 it.media&&React.createElement('div',{style:{borderRadius:'var(--radius-lg,16px)',overflow:'hidden',background:window.__csDark?'#18181B':'#F4F4F6',aspectRatio:it.mediaRatio||'16/9',border:'1px solid color-mix(in srgb, var(--ink-900) 7%, transparent)'}},
-React.createElement('img',{src:it.media,alt:window.t(it.title||''),loading:'lazy',style:{display:'block',width:'100%',height:'100%',objectFit:'cover'}})),
+/\.mp4$/.test(it.media)?React.createElement(LazyVideo,{src:it.media,poster:it.poster,label:window.t(it.title||it.caption||'')}):React.createElement('img',{src:it.media,alt:window.t(it.title||''),loading:'lazy',style:{display:'block',width:'100%',height:'100%',objectFit:'cover'}})),
 it.iconGrid&&React.createElement('div',{style:{display:'grid',gridTemplateColumns:'repeat('+(it.iconCols||5)+',minmax(0,1fr))',gap:window.__csPhone?6:12,maxWidth:640,margin:'8px auto 0'}},it.iconGrid.map(src=>React.createElement('img',{key:src,src,alt:'',loading:'lazy',style:{display:'block',width:'100%',height:'auto',borderRadius:4}}))),
 it.caption&&React.createElement('div',{style:{fontSize:14,lineHeight:1.6,color:'var(--text-muted)',marginTop:10,textAlign:'center'}},it.caption)
 );}),
@@ -154,17 +154,34 @@ lines.filter(l=>l.who==='ai').map((l,k)=>bubble(l,k,good))
 );
 }
 
-// Several screenshots in the space of one: pill tabs switch the image, and clicking it opens the full-size file.
-function TabGallery({images}){
+// Several screenshots in the space of one image: swipe or use the arrows to move between them.
+function Carousel({images}){
+const ref=React.useRef(null);
 const [cur,setCur]=React.useState(0);
 const dark=window.__csDark,accent=dark?'#E3A33B':'#A66A00';
-const im=images[cur]||images[0];
-return React.createElement('div',{style:{display:'flex',flexDirection:'column',gap:14}},
-React.createElement('div',{role:'tablist',style:{display:'flex',flexWrap:'wrap',gap:8}},images.map((x,k)=>React.createElement('button',{key:x.src,role:'tab','aria-selected':k===cur,onClick:()=>setCur(k),style:{font:'inherit',fontSize:14,fontWeight:k===cur?600:500,padding:'7px 14px',borderRadius:999,cursor:'pointer',border:'1px solid '+(k===cur?accent:'color-mix(in srgb, var(--ink-900) 14%, transparent)'),background:k===cur?accent:'transparent',color:k===cur?(dark?'#1A1408':'#FFFFFF'):'var(--text)'}},window.t(x.label)))),
-React.createElement('a',{href:im.src,target:'_blank',rel:'noopener',title:window.t('Open full size'),style:{display:'block',borderRadius:'var(--radius-lg,16px)',overflow:'hidden',background:'#FFFFFF',border:'1px solid color-mix(in srgb, var(--ink-900) 8%, transparent)',cursor:'zoom-in'}},
-React.createElement('img',{src:im.src,alt:window.t(im.label),loading:'lazy',style:{display:'block',width:'100%',maxHeight:window.__csPhone?420:560,objectFit:'contain',background:'#FFFFFF'}})),
-React.createElement('div',{style:{fontSize:13,color:'var(--text-faint)'}},window.t('Click the image to view full size'))
+const go=k=>{const el=ref.current;if(!el)return;const n=Math.max(0,Math.min(images.length-1,k));el.scrollTo({left:n*el.clientWidth,behavior:'smooth'});};
+const onScroll=()=>{const el=ref.current;if(el)setCur(Math.round(el.scrollLeft/el.clientWidth));};
+const arrow=(dir)=>React.createElement('button',{'aria-label':dir<0?'Previous':'Next',onClick:()=>go(cur+dir),disabled:dir<0?cur===0:cur===images.length-1,style:{position:'absolute',top:'50%',[dir<0?'left':'right']:10,transform:'translateY(-50%)',width:40,height:40,borderRadius:20,border:'none',cursor:'pointer',background:'rgba(255,255,255,0.92)',boxShadow:'0 4px 14px -6px rgba(19,26,36,0.35)',color:'#131A24',fontSize:20,lineHeight:'40px',display:window.__csPhone?'none':'block',opacity:(dir<0?cur===0:cur===images.length-1)?0:1,transition:'opacity 0.2s'}},dir<0?'‹':'›');
+return React.createElement('div',{style:{display:'flex',flexDirection:'column',gap:12}},
+React.createElement('style',null,'.cs-carousel::-webkit-scrollbar{display:none}'),
+React.createElement('div',{style:{position:'relative'}},
+React.createElement('div',{ref,onScroll,className:'cs-carousel',style:{display:'flex',overflowX:'auto',scrollSnapType:'x mandatory',scrollbarWidth:'none',borderRadius:'var(--radius-lg,16px)',border:'1px solid color-mix(in srgb, var(--ink-900) 8%, transparent)',background:'#FFFFFF'}},
+images.map((im,k)=>React.createElement('div',{key:im.src,style:{flex:'0 0 100%',scrollSnapAlign:'start',display:'flex',alignItems:'center',justifyContent:'center',background:'#FFFFFF'}},
+React.createElement('img',{src:im.src,alt:window.t(im.label),loading:k===0?'eager':'lazy',decoding:'async',draggable:false,style:{display:'block',width:'100%',maxHeight:window.__csPhone?420:560,objectFit:'contain'}})))),
+arrow(-1),arrow(1)),
+React.createElement('div',{style:{display:'flex',alignItems:'center',justifyContent:'space-between',gap:12}},
+React.createElement('div',{style:{fontSize:14,fontWeight:600,color:'var(--text)'}},window.t(images[cur].label),React.createElement('span',{style:{fontWeight:400,color:'var(--text-faint)',marginLeft:8}},(cur+1)+' / '+images.length)),
+React.createElement('div',{style:{display:'flex',gap:6}},images.map((im,k)=>React.createElement('button',{key:im.src,'aria-label':window.t(im.label),onClick:()=>go(k),style:{width:k===cur?22:8,height:8,borderRadius:4,border:'none',padding:0,cursor:'pointer',background:k===cur?accent:'color-mix(in srgb, var(--ink-900) 18%, transparent)',transition:'width 0.25s, background 0.25s'}}))))
 );
+}
+
+// Looping demo video that only starts loading when it scrolls near the viewport.
+function LazyVideo({src,poster,label}){
+const ref=React.useRef(null);const [on,setOn]=React.useState(false);
+React.useEffect(()=>{const el=ref.current;if(!el)return;if(!('IntersectionObserver' in window)){setOn(true);return;}const io=new IntersectionObserver(es=>{if(es.some(e=>e.isIntersecting)){setOn(true);io.disconnect();}},{rootMargin:'300px'});io.observe(el);return ()=>io.disconnect();},[]);
+return React.createElement('div',{ref,style:{width:'100%',height:'100%'}},
+on?React.createElement('video',{src,poster,autoPlay:true,muted:true,loop:true,playsInline:true,preload:'auto','aria-label':label,style:{display:'block',width:'100%',height:'100%',objectFit:'cover'}})
+:React.createElement('img',{src:poster,alt:label,style:{display:'block',width:'100%',height:'100%',objectFit:'cover'}}));
 }
 
 function SideItem(label,value){
