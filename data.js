@@ -196,6 +196,7 @@ return focus==='automotive'?{...hw,order:hw.order.concat(['17backstage','1177pay
 // ?focus=system: leads with design-system work (TMS, GuestWeb, merchant back office) for design-system roles.
 if(focus==='system') return {
 order:['tms-ds','guestweb','17backstage','ai-butler','aca-ai','1177pay'],
+pairs:true,
 headline:'Design systems that\nscale with the product.',
 tagline:'Luna・UI/UX Designer・Design Systems & AI Workflow',
 resumeUrl:'https://drive.google.com/drive/folders/1AvHO931eBC_5MsxLfNGtAgOee26VIhp2'
