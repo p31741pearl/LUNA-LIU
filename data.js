@@ -12,12 +12,12 @@ blocks:[
 {heading:'Results',type:'text-image',items:[{noImage:true,title:'Hotel Feedback',text:'“Now housekeeping requests get a fast response, restaurant reservations are easy to arrange, and guest preferences are recorded automatically — all thanks to the leading AI technology of the Aiello Voice Assistant.” — M Social Hotel Phuket, Thailand.'}]},
 {heading:'Reflection',type:'text',items:['Crafting one sensory experience and systematizing everyday needs look like opposite skills, but both answer the same question: what does the user actually need right now?','Next time, I would track how often guests repeat themselves or interrupt the device after launch, to measure how much the clearer states helped.']}
 ]},
-{id:'aca-ai',highlight:'0% → 92% of phone orders completed by AI',coverRatio:'2/1',projectType:'UX Design · Data Analysis',timeline:'2026 – Now',platform:'Phone',timelineFirst:true,labels:['Voice Interaction Design','Conversation Flow Design'],tag:'AI Phone Agent',pairTag:'Conversation Flow Design',tag3:'Test Scenario Planning',year:'Flow Optimization',title:'AI Voice Agent for Hotel In-Room Dining',
+{id:'aca-ai',highlight:'0% → 95% of phone orders completed by AI',coverRatio:'2/1',projectType:'UX Design · Data Analysis',timeline:'2026 – Now',platform:'Phone',timelineFirst:true,labels:['Voice Interaction Design','Conversation Flow Design'],tag:'AI Phone Agent',pairTag:'Conversation Flow Design',tag3:'Test Scenario Planning',year:'Flow Optimization',title:'AI Voice Agent for Hotel In-Room Dining',
 scope:'Data analysis, requirements translation, VUI flow planning',collaborators:'PM · Backend engineers',
 oneLiner:'I analyzed thousands of real phone calls, then broke down and rebuilt human agents’ ordering logic into service guidelines an AI can execute reliably — so every call sounds like it’s being handled by a seasoned agent.',
 blocks:[
 {heading:'Results at a Glance',pin:1,type:'cards',items:[
-{compact:true,stat:'92%',statUnit:'orders completed by AI',title:'0% → 92% of phone orders completed by AI',text:'Room service is 16% of all calls, and the AI used to transfer every order to a human. In internal stress tests, 46 of 50 calls ended with a complete order.',noImage:true},
+{compact:true,stat:'95%',statUnit:'orders completed by AI',title:'0% → 95% of phone orders completed by AI',text:'Room service is 16% of all calls, and the AI used to transfer every order to a human. Now, after launch, it completes them on its own.',noImage:true},
 {compact:true,title:'Smoother conversations, faster delivery',text:'The AI asks fewer unnecessary questions, and engineers implement directly from the guidelines, shortening regression testing',noImage:true}
 ]},
 {pin:1,type:'text-image',items:[{noImage:true,small:true,title:'Scenarios the AI agent now handles',text:'Five situations from real calls. Switch between them to compare the AI’s replies before and after the guidelines.',chat:{scenarios:[{label:'Menu questions',before:[{who:'guest',text:'Do you have Hainanese chicken rice on the menu?'},{who:'ai',text:'For menu information I need to transfer you to a staff member. Shall I transfer you?'}],after:[{who:'guest',text:'Do you have Hainanese chicken rice on the menu?'},{who:'ai',text:'Yes, we do! Would you like me to order one for you?'}]},{label:'Lookup failures',before:[{who:'guest',text:'I’d like to add a side of fries.'},{who:'ai',text:'Tool call failed.'}],after:[{who:'guest',text:'I’d like to add a side of fries.'},{who:'ai',text:'Sorry, I can’t find fries right now. Would you like to see our other snacks?'}]},{label:'Describing dishes',before:[{who:'guest',text:'Any dessert you’d recommend?'},{who:'ai',text:'I found tiramisu and brownies in the menu.'}],after:[{who:'guest',text:'Any dessert you’d recommend?'},{who:'ai',text:'Our tiramisu is a favorite, and we also have a warm brownie. Which would you like to try?'}]},{label:'No back-to-back questions',before:[{who:'guest',text:'I’d like a steak.'},{who:'ai',text:'How would you like it cooked? Which sauce? What’s your room number?'}],after:[{who:'guest',text:'I’d like a steak.'},{who:'ai',text:'Sure, one steak. How would you like it cooked?'}]},{label:'Special requests',before:[{who:'guest',text:'Can I get the pasta without garlic?'},{who:'ai',text:'I can’t answer that. Let me transfer you to a staff member.'}],after:[{who:'guest',text:'Can I get the pasta without garlic?'},{who:'ai',text:'I’ll note “no garlic” on your order. Or would you like to check with the kitchen directly?'}]}]}}]},
@@ -85,7 +85,7 @@ blocks:[
 {heading:'Reflection',type:'text',items:['Custom home pages and menus also have to match each hotel’s ordering system data. Design isn’t only about how screens look; the data underneath has to line up.']},
 {type:'text-image',items:[{imgId:'guestweb-3-1b'}]},
 ]},
-{id:'tms-ds',coverNatural:true,timeline:'2024 – Now',highlight:'Back-office design system specs, an AI-tokenized component library, and sales enablement',projectType:'Design System · AI Workflow · Sales Enablement',platform:'Web back office',timelineFirst:true,coverHeadline:'A scalable, easy-to-maintain admin back-office component library shared by design and engineering',labels:[],title:'TMS Back-Office Design System',
+{id:'tms-ds',coverNatural:true,timeline:'2024 – Now',highlight:'Back-office design system specs, an AI-tokenized component library, and sales enablement',projectType:'Design System · AI Workflow · Sales Enablement',platform:'Web back office',timelineFirst:true,coverHeadline:'A scalable, easy-to-maintain admin back-office component library shared by design and engineering',labels:['Design System','AI Workflow','Sales Enablement'],title:'TMS Back-Office Design System',
 scope:'Design system lead · AI-built component library · Proposal prototype',collaborators:'PM · Frontend engineers · Sales',
 oneLiner:'I rebuilt the back office’s scattered components into a design system defined by real usage, based on the live product rather than old mockups, then used AI to turn it into a working code library. It let us deliver a clickable proposal in one week and win a major Japanese hotel group.',
 blocks:[
@@ -193,6 +193,13 @@ resumeUrl:'https://drive.google.com/drive/folders/1U047kGSj6b7uZfmoTVgLbatRQR5mA
 // ?focus=automotive: the hardware variant with a motion-focused tagline, for in-vehicle / embedded UI roles.
 return focus==='automotive'?{...hw,order:hw.order.concat(['17backstage','1177pay']),resumeUrl:'https://drive.google.com/drive/folders/1AvHO931eBC_5MsxLfNGtAgOee26VIhp2?usp=sharing',tagline:'Luna・UI/UX Designer・Hardware–Software UI & Motion'}:hw;
 }
+// ?focus=system: leads with design-system work (TMS, GuestWeb, merchant back office) for design-system roles.
+if(focus==='system') return {
+order:['tms-ds','guestweb','17backstage','ai-butler','aca-ai','1177pay'],
+headline:'Design systems that\nscale with the product.',
+tagline:'Luna・UI/UX Designer・Design Systems & AI Workflow',
+resumeUrl:'https://drive.google.com/drive/folders/1AvHO931eBC_5MsxLfNGtAgOee26VIhp2'
+};
 if(focus==='ai') return {
 order:['aca-ai','ai-butler','tms-ds','guestweb','17backstage','1177pay'],
 headline:'Designing AI that\nlistens, then acts.',

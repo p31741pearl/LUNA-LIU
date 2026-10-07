@@ -7,6 +7,7 @@ window.ZH_TEXT={
 // ---- Site variant (data.js) ----
 // The hero headline stays in English on purpose, so it has no entry here.
 'Luna・UI/UX Designer・Conversational AI & Smart Devices':'Luna・UI/UX 設計師・對話式 AI 與智慧裝置',
+'Luna・UI/UX Designer・Design Systems & AI Workflow':'Luna・UI/UX 設計師・設計系統 × AI 工作流程',
 'Luna・UI/UX Designer・AI SaaS Products':'Luna・UI/UX 設計師・AI SaaS 產品',
 
 // ---- Header / Footer / Contact ----
@@ -56,6 +57,8 @@ window.ZH_TEXT={
 '5 years of UI/UX experience, focused on AI voice and hospitality SaaS products. I specialize in translating engineering constraints and real-world usage into scalable design systems.':'5 年 UI/UX 經驗，專注於 AI 語音與飯店 SaaS 產品。擅長將工程限制與真實使用情境，轉化為可擴展的設計系統。',
 'Working at the intersection of hardware and software':'橫跨軟硬體整合的工作經歷',
 'Tools':'工具',
+'AI Workflow':'AI 工作流程',
+'Sales Enablement':'業務賦能',
 'Table Types':'表格類型',
 'The proposal prototype: clients could filter requests, open details and edit them, just like the real product.':'提案原型：客戶可以篩選需求、打開明細並直接編輯，就像操作真正的產品。',
 'Each component spec lists its anatomy, its variants, and the scenarios each variant is used in.':'每個元件規範都列出結構、各種樣式，以及每種樣式適用的使用情境。',
@@ -235,8 +238,8 @@ window.ZH_TEXT={
 'Data analysis, requirements translation, VUI flow planning':'數據分析、需求轉譯、VUI 流程規劃',
 'PM · Backend engineers':'PM · 後端工程師',
 'I analyzed thousands of real phone calls, then broke down and rebuilt human agents’ ordering logic into service guidelines an AI can execute reliably — so every call sounds like it’s being handled by a seasoned agent.':'我分析了數千通真實電話，將真人客服的點餐邏輯拆解、重組成 AI 能穩定執行的服務規範——讓每一通電話聽起來都像由資深客服接聽。',
-'0% → 92% of phone orders completed by AI':'AI 完成的電話點餐從 0% 提升至 92%',
-'Room service is 16% of all calls, and the AI used to transfer every order to a human. In internal stress tests, 46 of 50 calls ended with a complete order.':'客房送餐佔所有來電的 16%，過去 AI 會把每一通點餐都轉給真人。內部壓力測試中，50 通有 46 通完整完成點餐。',
+'0% → 95% of phone orders completed by AI':'AI 完成的電話點餐從 0% 提升至 95%',
+'Room service is 16% of all calls, and the AI used to transfer every order to a human. Now, after launch, it completes them on its own.':'客房送餐佔所有來電的 16%，過去 AI 會把每一通點餐都轉給真人；上線後，AI 已能自行完成點餐。',
 'Smoother conversations, faster delivery':'對話更流暢，交付更快速',
 'The AI asks fewer unnecessary questions, and engineers implement directly from the guidelines, shortening regression testing':'AI 提出的不必要問題變少，工程師也能直接依照規範實作，縮短回歸測試時間',
 'Phone ordering was the feature hotels cared about most — yet it still hadn’t been built':'電話點餐是飯店最在意的功能——卻一直還沒被做出來',
