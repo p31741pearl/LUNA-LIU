@@ -69,7 +69,7 @@ window.ZH_TEXT={
 'Design system lead · AI-built component library · Proposal prototype':'設計系統負責人 · AI 元件庫建置 · 提案原型',
 'PM · Frontend engineers · Sales':'PM · 前端工程師 · 業務',
 'I rebuilt the back office’s scattered components into a design system defined by real usage, based on the live product rather than old mockups, then used AI to turn it into a working code library. It let us deliver a clickable proposal in one week and win a major Japanese hotel group.':'以實際上線的產品為基準，把散落各處的後台元件整理成依使用情境定義的設計系統，再用 AI 轉成可運作的程式碼元件庫，一週內交出可操作的提案原型，協助簽下日本大型飯店集團。',
-'A scalable, easy-to-maintain component library shared by design and engineering':'一套可擴充、好維護，設計與工程共用的元件庫',
+'A scalable, easy-to-maintain admin back-office component library shared by design and engineering':'一套可擴充、好維護，設計與工程共用的管理後台元件庫',
 'A back office built fast to launch, without a real design system':'為了快速上線而生的後台，缺少完整的設計系統',
 'TMS is the back office hotels use to manage tasks and services, and the same platform behind GuestWeb’s admin tools. The first version was built quickly to validate the product, so it never had a complete design system.':'TMS 是飯店用來管理任務與服務的後台，也是 GuestWeb 管理功能背後的同一套平台。初版為了快速上線驗證，一直沒有建立完整的設計系統。',
 'I built on the existing design: audited what had actually shipped, defined every component by how it is used, and turned the result into a code library the whole team could build from.':'我在既有設計的基礎上，盤點實際上線的樣式，依使用情境定義每個元件，再把成果轉成整個團隊都能直接使用的程式碼元件庫。',
