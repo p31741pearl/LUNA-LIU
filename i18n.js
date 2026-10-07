@@ -56,6 +56,7 @@ window.ZH_TEXT={
 '5 years of UI/UX experience, focused on AI voice and hospitality SaaS products. I specialize in translating engineering constraints and real-world usage into scalable design systems.':'5 年 UI/UX 經驗，專注於 AI 語音與飯店 SaaS 產品。擅長將工程限制與真實使用情境，轉化為可擴展的設計系統。',
 'Working at the intersection of hardware and software':'橫跨軟硬體整合的工作經歷',
 'Tools':'工具',
+'Each component spec lists its anatomy, its variants, and the scenarios each variant is used in.':'每個元件規範都列出結構、各種樣式，以及每種樣式適用的使用情境。',
 'A Week to Win a Key Account':'一週內拿下重要客戶',
 'Turning the Design System into Code with AI':'用 AI 把設計系統變成程式碼',
 'Defining Components by Scenario':'依情境定義元件',
