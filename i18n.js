@@ -7,6 +7,7 @@ window.ZH_TEXT={
 // ---- Site variant (data.js) ----
 // The hero headline stays in English on purpose, so it has no entry here.
 'Luna・UI/UX Designer・Conversational AI & Smart Devices':'Luna・UI/UX 設計師・對話式 AI 與智慧裝置',
+'Luna・UI/UX Designer・Design Systems & AI Workflow':'Luna・UI/UX 設計師・設計系統 × AI 工作流程',
 'Luna・UI/UX Designer・AI SaaS Products':'Luna・UI/UX 設計師・AI SaaS 產品',
 
 // ---- Header / Footer / Contact ----
