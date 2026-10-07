@@ -61,7 +61,7 @@ window.ZH_TEXT={
 'Click the image to view full size':'點擊圖片查看原尺寸',
 'Each component spec lists its anatomy, its variants, and the scenarios each variant is used in.':'每個元件規範都列出結構、各種樣式，以及每種樣式適用的使用情境。',
 'TMS Back-Office Design System':'TMS 後台設計系統',
-'Back-office design system specs, an AI-tokenized component library, and sales enablement that won a major Japanese hotel group':'後台設計系統規範、AI 協作 Token 化元件庫，業務賦能簽下日本大型飯店集團',
+'Back-office design system specs, an AI-tokenized component library, and sales enablement':'後台設計系統規範、AI 協作 Token 化元件庫、業務賦能',
 'Design System · AI Workflow · Sales Enablement':'設計系統 · AI 工作流程 · 業務賦能',
 'Design system lead · AI-built component library · Proposal prototype':'設計系統負責人 · AI 元件庫建置 · 提案原型',
 'PM · Frontend engineers · Sales':'PM · 前端工程師 · 業務',
