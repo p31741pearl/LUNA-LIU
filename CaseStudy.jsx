@@ -105,6 +105,7 @@ React.createElement('img',{src,alt:window.t(c.label||'')+' '+window.t(tag),loadi
 ))))
 );})(),
 it.chat&&React.createElement(ChatScenarios,{scenarios:it.chat.scenarios}),
+it.gallery&&React.createElement(TabGallery,{images:it.gallery}),
 it.media&&React.createElement('div',{style:{borderRadius:'var(--radius-lg,16px)',overflow:'hidden',background:window.__csDark?'#18181B':'#F4F4F6',aspectRatio:it.mediaRatio||'16/9',border:'1px solid color-mix(in srgb, var(--ink-900) 7%, transparent)'}},
 React.createElement('img',{src:it.media,alt:window.t(it.title||''),loading:'lazy',style:{display:'block',width:'100%',height:'100%',objectFit:'cover'}})),
 it.iconGrid&&React.createElement('div',{style:{display:'grid',gridTemplateColumns:'repeat('+(it.iconCols||5)+',minmax(0,1fr))',gap:window.__csPhone?6:12,maxWidth:640,margin:'8px auto 0'}},it.iconGrid.map(src=>React.createElement('img',{key:src,src,alt:'',loading:'lazy',style:{display:'block',width:'100%',height:'auto',borderRadius:4}}))),
@@ -150,6 +151,19 @@ React.createElement('div',{style:{fontSize:13,fontWeight:600,color:good?accent:'
 lines.filter(l=>l.who==='ai').map((l,k)=>bubble(l,k,good))
 )))
 ),
+);
+}
+
+// Several screenshots in the space of one: pill tabs switch the image, and clicking it opens the full-size file.
+function TabGallery({images}){
+const [cur,setCur]=React.useState(0);
+const dark=window.__csDark,accent=dark?'#E3A33B':'#A66A00';
+const im=images[cur]||images[0];
+return React.createElement('div',{style:{display:'flex',flexDirection:'column',gap:14}},
+React.createElement('div',{role:'tablist',style:{display:'flex',flexWrap:'wrap',gap:8}},images.map((x,k)=>React.createElement('button',{key:x.src,role:'tab','aria-selected':k===cur,onClick:()=>setCur(k),style:{font:'inherit',fontSize:14,fontWeight:k===cur?600:500,padding:'7px 14px',borderRadius:999,cursor:'pointer',border:'1px solid '+(k===cur?accent:'color-mix(in srgb, var(--ink-900) 14%, transparent)'),background:k===cur?accent:'transparent',color:k===cur?(dark?'#1A1408':'#FFFFFF'):'var(--text)'}},window.t(x.label)))),
+React.createElement('a',{href:im.src,target:'_blank',rel:'noopener',title:window.t('Open full size'),style:{display:'block',borderRadius:'var(--radius-lg,16px)',overflow:'hidden',background:'#FFFFFF',border:'1px solid color-mix(in srgb, var(--ink-900) 8%, transparent)',cursor:'zoom-in'}},
+React.createElement('img',{src:im.src,alt:window.t(im.label),loading:'lazy',style:{display:'block',width:'100%',maxHeight:window.__csPhone?420:560,objectFit:'contain',background:'#FFFFFF'}})),
+React.createElement('div',{style:{fontSize:13,color:'var(--text-faint)'}},window.t('Click the image to view full size'))
 );
 }
 
