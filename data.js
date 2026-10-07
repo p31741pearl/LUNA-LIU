@@ -199,7 +199,7 @@ order:['tms-ds','guestweb','17backstage','ai-butler','aca-ai','1177pay'],
 pairs:true,
 headline:'Design systems that\nscale with the product.',
 tagline:'Luna・UI/UX Designer・Design Systems & AI Workflow',
-resumeUrl:'https://drive.google.com/drive/folders/1AvHO931eBC_5MsxLfNGtAgOee26VIhp2'
+resumeUrl:'https://drive.google.com/drive/folders/16waoSPGUuhGGt1OAd1MnvDTV2zlOU_b4?usp=sharing'
 };
 if(focus==='ai') return {
 order:['aca-ai','ai-butler','tms-ds','guestweb','17backstage','1177pay'],
