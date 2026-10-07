@@ -169,8 +169,7 @@ React.createElement('div',{ref,onScroll,className:'cs-carousel',style:{display:'
 images.map((im,k)=>React.createElement('div',{key:im.src,style:{flex:'0 0 100%',scrollSnapAlign:'start',display:'flex',alignItems:'center',justifyContent:'center',background:'#FFFFFF'}},
 React.createElement('img',{src:im.src,alt:window.t(im.label),loading:k===0?'eager':'lazy',decoding:'async',draggable:false,style:{display:'block',width:'100%',maxHeight:window.__csPhone?420:560,objectFit:'contain'}})))),
 arrow(-1),arrow(1)),
-React.createElement('div',{style:{display:'flex',alignItems:'center',justifyContent:'space-between',gap:12}},
-React.createElement('div',{style:{fontSize:14,fontWeight:600,color:'var(--text)'}},window.t(images[cur].label),React.createElement('span',{style:{fontWeight:400,color:'var(--text-faint)',marginLeft:8}},(cur+1)+' / '+images.length)),
+React.createElement('div',{style:{display:'flex',justifyContent:'center'}},
 React.createElement('div',{style:{display:'flex',gap:6}},images.map((im,k)=>React.createElement('button',{key:im.src,'aria-label':window.t(im.label),onClick:()=>go(k),style:{width:k===cur?22:8,height:8,borderRadius:4,border:'none',padding:0,cursor:'pointer',background:k===cur?accent:'color-mix(in srgb, var(--ink-900) 18%, transparent)',transition:'width 0.25s, background 0.25s'}}))))
 );
 }
