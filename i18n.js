@@ -56,6 +56,8 @@ window.ZH_TEXT={
 '5 years of UI/UX experience, focused on AI voice and hospitality SaaS products. I specialize in translating engineering constraints and real-world usage into scalable design systems.':'5 年 UI/UX 經驗，專注於 AI 語音與飯店 SaaS 產品。擅長將工程限制與真實使用情境，轉化為可擴展的設計系統。',
 'Working at the intersection of hardware and software':'橫跨軟硬體整合的工作經歷',
 'Tools':'工具',
+'AI Workflow':'AI 工作流程',
+'Sales Enablement':'業務賦能',
 'Table Types':'表格類型',
 'The proposal prototype: clients could filter requests, open details and edit them, just like the real product.':'提案原型：客戶可以篩選需求、打開明細並直接編輯，就像操作真正的產品。',
 'Each component spec lists its anatomy, its variants, and the scenarios each variant is used in.':'每個元件規範都列出結構、各種樣式，以及每種樣式適用的使用情境。',

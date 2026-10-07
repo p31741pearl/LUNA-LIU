@@ -85,7 +85,7 @@ blocks:[
 {heading:'Reflection',type:'text',items:['Custom home pages and menus also have to match each hotel’s ordering system data. Design isn’t only about how screens look; the data underneath has to line up.']},
 {type:'text-image',items:[{imgId:'guestweb-3-1b'}]},
 ]},
-{id:'tms-ds',coverNatural:true,timeline:'2024 – Now',highlight:'Back-office design system specs, an AI-tokenized component library, and sales enablement',projectType:'Design System · AI Workflow · Sales Enablement',platform:'Web back office',timelineFirst:true,coverHeadline:'A scalable, easy-to-maintain admin back-office component library shared by design and engineering',labels:[],title:'TMS Back-Office Design System',
+{id:'tms-ds',coverNatural:true,timeline:'2024 – Now',highlight:'Back-office design system specs, an AI-tokenized component library, and sales enablement',projectType:'Design System · AI Workflow · Sales Enablement',platform:'Web back office',timelineFirst:true,coverHeadline:'A scalable, easy-to-maintain admin back-office component library shared by design and engineering',labels:['Design System','AI Workflow','Sales Enablement'],title:'TMS Back-Office Design System',
 scope:'Design system lead · AI-built component library · Proposal prototype',collaborators:'PM · Frontend engineers · Sales',
 oneLiner:'I rebuilt the back office’s scattered components into a design system defined by real usage, based on the live product rather than old mockups, then used AI to turn it into a working code library. It let us deliver a clickable proposal in one week and win a major Japanese hotel group.',
 blocks:[
