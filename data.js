@@ -215,6 +215,7 @@ order:['tms-ds','guestweb','17backstage','ai-butler','aca-ai','1177pay'],
 pairs:true,
 headline:'Clarity between\npeople and AI.',
 tagline:'Luna・UI/UX Designer・AI SaaS Products',
+heroLine:'I’m Luna, a UI/UX designer with 5 years of experience, taking projects end to end from research to launch.',
 career:{'Aiello':'Design systems, back offices and AI voice products for hospitality SaaS, taking projects end to end from research to launch'},
 resumeUrl:'https://drive.google.com/drive/folders/16waoSPGUuhGGt1OAd1MnvDTV2zlOU_b4?usp=sharing'
 };

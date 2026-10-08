@@ -57,6 +57,7 @@ window.ZH_TEXT={
 '5 years of UI/UX experience, focused on AI voice and hospitality SaaS products. I specialize in translating engineering constraints and real-world usage into scalable design systems.':'5 年 UI/UX 經驗，專注於 AI 語音與飯店 SaaS 產品。擅長將工程限制與真實使用情境，轉化為可擴展的設計系統。',
 'Working at the intersection of hardware and software':'橫跨軟硬體整合的工作經歷',
 'Tools':'工具',
+'I’m Luna, a UI/UX designer with 5 years of experience, taking projects end to end from research to launch.':'我是 Luna，5 年經驗的 UI/UX 設計師，\n獨立完成從需求研究到上線的完整專案。',
 'What I bring':'我能為團隊帶來的',
 'to the team.':'四種能力。',
 'Each strength comes from a shipped project. Use the arrow to open the full case study.':'每一項能力都來自已上線的專案，點箭頭就能看完整案例。',
