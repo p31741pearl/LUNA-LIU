@@ -7,7 +7,7 @@
 </head>
 <body>
 <x-dc>
-<helmet><script src="./ds-base.js"></script><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600&family=Michroma&family=Red+Hat+Display:wght@300..700&family=Valley+Sans&display=swap"><style>body{margin:0}
+<helmet><script src="./ds-base.js"></script><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600&family=Michroma&family=Red+Hat+Display:wght@300..700&family=Valley+Sans&family=Instrument+Serif:ital@0;1&display=swap"><style>body{margin:0}
 @keyframes floatBlob{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-20px) rotate(1deg)}}
 @keyframes bgPan{0%{transform:scale(1.08) translate(0,0)}50%{transform:scale(1.16) translate(-1.5%,-1%)}100%{transform:scale(1.08) translate(0,0)}}
 @keyframes sheenSlide{0%{transform:translateX(-40%) rotate(10deg)}100%{transform:translateX(140%) rotate(10deg)}}
@@ -34,29 +34,29 @@
 @keyframes caseModalBlurFadeOut{0%{opacity:1;filter:blur(0)}100%{opacity:0;filter:blur(16px)}}
 @keyframes caseModalBackdropIn{0%{opacity:0}100%{opacity:1}}
 @keyframes caseModalBackdropOut{0%{opacity:1}100%{opacity:0}}
-</style><script src="./image-slot.js?v=20261008b"></script><script src="./data.js?v=20261008b"></script><script src="./i18n.js?v=20261008b"></script></helmet>
+</style><script src="./image-slot.js?v=20261008c"></script><script src="./data.js?v=20261008c"></script><script src="./i18n.js?v=20261008c"></script></helmet>
 <div style="background:var(--surface);font-family:var(--font-sans);min-height:100vh">
-<x-import component-from-global-scope="SiteHeader" from="./Header.jsx?v=20261008b" active="{{screen}}" onNav="{{nav}}" hint-size="100%,64px"></x-import>
+<x-import component-from-global-scope="SiteHeader" from="./Header.jsx?v=20261008c" active="{{screen}}" onNav="{{nav}}" hint-size="100%,64px"></x-import>
 <sc-if value="{{isHome}}" hint-placeholder-val="{{true}}">
-<x-import component-from-global-scope="PortfolioHero" from="./Hero.jsx?v=20261008b" onNav="{{nav}}" hint-size="100%,480px"></x-import>
-<x-import component-from-global-scope="LunaProjectGrid" from="./ProjectGrid.jsx?v=20261008b" onOpen="{{openProject}}" hint-size="100%,700px"></x-import>
-<x-import component-from-global-scope="WhatIBring" from="./WhatIBring.jsx?v=20261008b" hint-size="100%,260px"></x-import>
-<x-import component-from-global-scope="Contact" from="./Contact.jsx?v=20261008b" hint-size="100%,320px"></x-import>
+<x-import component-from-global-scope="PortfolioHero" from="./Hero.jsx?v=20261008c" onNav="{{nav}}" hint-size="100%,480px"></x-import>
+<x-import component-from-global-scope="LunaProjectGrid" from="./ProjectGrid.jsx?v=20261008c" onOpen="{{openProject}}" compact="1" hint-size="100%,700px"></x-import>
+<x-import component-from-global-scope="WhatIBring" from="./WhatIBring.jsx?v=20261008c" onOpen="{{openProject}}" hint-size="100%,260px"></x-import>
+<x-import component-from-global-scope="Contact" from="./Contact.jsx?v=20261008c" hint-size="100%,320px"></x-import>
 </sc-if>
 <sc-if value="{{isWork}}" hint-placeholder-val="{{false}}">
-<x-import component-from-global-scope="LunaProjectGrid" from="./ProjectGrid.jsx?v=20261008b" onOpen="{{openProject}}" hint-size="100%,700px"></x-import>
+<x-import component-from-global-scope="LunaProjectGrid" from="./ProjectGrid.jsx?v=20261008c" onOpen="{{openProject}}" hint-size="100%,700px"></x-import>
 </sc-if>
 <sc-if value="{{isCase}}" hint-placeholder-val="{{false}}">
 <div style="position:fixed;inset:0;z-index:1100;overscroll-behavior:none;background:rgba(20,20,22,0.45);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);animation:{{backdropAnim}}" onClick="{{backToWork}}">
 <div style="position:absolute;top:56px;left:0;right:0;bottom:0;background:{{caseBg}};overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;border-radius:20px 20px 0 0;animation:{{modalAnim}}" onClick="{{stopPropagation}}">
-<x-import component-from-global-scope="PortfolioCaseStudy" from="./CaseStudy.jsx?v=20261008b" project="{{project}}" onBack="{{backToWork}}" onOpenOther="{{openProject}}" hint-size="100%,800px"></x-import>
+<x-import component-from-global-scope="PortfolioCaseStudy" from="./CaseStudy.jsx?v=20261008c" project="{{project}}" onBack="{{backToWork}}" onOpenOther="{{openProject}}" hint-size="100%,800px"></x-import>
 </div>
 </div>
 </sc-if>
 <sc-if value="{{isAbout}}" hint-placeholder-val="{{false}}">
-<x-import component-from-global-scope="SiteAbout" from="./About.jsx?v=20261008b" hint-size="100%,500px"></x-import>
+<x-import component-from-global-scope="SiteAbout" from="./About.jsx?v=20261008c" hint-size="100%,500px"></x-import>
 </sc-if>
-<x-import component-from-global-scope="SiteFooter" from="./Footer.jsx?v=20261008b" hint-size="100%,72px"></x-import>
+<x-import component-from-global-scope="SiteFooter" from="./Footer.jsx?v=20261008c" hint-size="100%,72px"></x-import>
 </div>
 
 </x-dc>
