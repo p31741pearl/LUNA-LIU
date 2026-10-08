@@ -18,9 +18,9 @@ return React.createElement('section',{id:'core-capabilities-section',style:{posi
 React.createElement('div',{style:{maxWidth:1120,margin:'0 auto',width:'100%'}},
 React.createElement('div',{style:{display:'flex',justifyContent:'space-between',alignItems:'flex-end',flexWrap:'wrap',gap:'20px 48px',marginBottom:narrow?32:56}},
 React.createElement('div',null,
-React.createElement('h2',{style:{margin:0,fontSize:headSize,lineHeight:1.12,letterSpacing:'-0.03em',fontWeight:600,color:'var(--ink-900)'}},
+React.createElement('h2',{style:{margin:0,fontSize:headSize,lineHeight:1.12,color:'var(--ink-900)',...(zh?{letterSpacing:'-0.03em',fontWeight:600}:{fontFamily:"'Valley Sans',var(--font-sans,sans-serif)",fontWeight:400,letterSpacing:'0.02em'})}},
 React.createElement('span',{style:{display:'block'}},window.t('What I bring')),
-React.createElement('span',{style:{display:'block',fontWeight:400,fontStyle:zh?'normal':'italic',letterSpacing:zh?'0':'-0.01em',fontFamily:zh?"'Noto Serif TC','Songti TC',serif":"'Instrument Serif',Georgia,serif"}},window.t('to the team.')))
+React.createElement('span',{style:{display:'block',fontWeight:400,...(zh?{fontFamily:"'Noto Serif TC','Songti TC',serif"}:{})}},window.t('to the team.')))
 )
 ),
 React.createElement('div',{ref:gridRef,style:{display:'grid',gridTemplateColumns:narrow?'minmax(0,1fr)':'repeat(2,minmax(0,1fr))',gap:w<860?32:40}},
