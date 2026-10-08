@@ -212,6 +212,6 @@ order:['tms-ds','guestweb','17backstage','ai-butler','aca-ai','1177pay'],
 pairs:true,
 headline:'Clarity between\npeople and AI.',
 tagline:'Luna・UI/UX Designer・AI SaaS Products',
-resumeUrl:'https://drive.google.com/drive/folders/1XALJ8GZUo-nuZVn3wBFxr7idXlIw1IAG?usp=sharing'
+resumeUrl:'https://drive.google.com/drive/folders/16waoSPGUuhGGt1OAd1MnvDTV2zlOU_b4?usp=sharing'
 };
 })();
