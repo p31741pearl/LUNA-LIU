@@ -1,8 +1,8 @@
 const items=[
-{n:'01',title:'Systems Thinking',desc:'Distill requirements into scalable rules'},
-{n:'02',title:'User Research',desc:'Interview users, sales, and support; observe on site'},
-{n:'04',title:'Cross-team Collaboration',desc:'Define specs together with PMs and engineers'},
-{n:'05',title:'AI-Powered Workflow',desc:'AI in research and design systems; built a web-to-Figma plugin'}
+{n:'01',title:'Systems Thinking',desc:'Distill requirements into scalable rules',proof:'GuestWeb: turned each hotel’s custom requests into configurable specs, so new brands launch without new development'},
+{n:'02',title:'User Research',desc:'Interview users, sales, and support; observe on site',proof:'AI Voice Agent: call logs showed room service was a top request, and the redesign took AI-completed orders from 0% to 95%'},
+{n:'04',title:'Cross-team Collaboration',desc:'Define specs together with PMs and engineers',proof:'1177 Merchant Back Office: explained the reasoning behind the redesign, and leadership adopted the guideline company-wide'},
+{n:'05',title:'AI-Powered Workflow',desc:'AI in research and design systems; built a web-to-Figma plugin',proof:'TMS: used Figma MCP and Claude Code to turn specs into a tokenized component library and a one-week prototype'}
 ];
 function WhatIBring(){
 const [w,setW]=React.useState(window.innerWidth);
@@ -20,7 +20,8 @@ items.map((it,i)=>React.createElement('div',{key:it.n,style:{opacity:shown?1:0,t
 React.createElement('div',{style:{width:128,height:128,margin:'0 auto 20px'}},React.createElement('image-slot',{id:'cap-icon-'+it.n,fetchpriority:'low',bare:'',hires:'',fit:'contain',placeholder:'Icon',style:{display:'block',width:'100%',height:'100%'}})),
 React.createElement('div',{style:{fontSize:18,fontWeight:600,letterSpacing:'-0.01em',marginBottom:12}},window.t(it.title)),
 React.createElement('div',{style:{height:1,background:'var(--border)',marginBottom:16}}),
-React.createElement('div',{style:{fontSize:14,lineHeight:1.6,color:'#4A4A4F'}},window.t(it.desc))
+React.createElement('div',{style:{fontSize:14,lineHeight:1.6,color:'#4A4A4F'}},window.t(it.desc)),
+it.proof&&React.createElement('div',{style:{marginTop:16,padding:'12px 14px',borderRadius:10,background:'rgba(255,255,255,0.7)',fontSize:13,lineHeight:1.6,color:'#4A4A4F',textAlign:'left'}},React.createElement('span',{style:{display:'block',fontSize:12,fontWeight:600,color:'#A66A00',marginBottom:4}},window.t('In practice')),window.t(it.proof))
 ))
 )
 )

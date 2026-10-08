@@ -244,7 +244,7 @@ const fontSize='clamp(34px,4.6vw,62px)';
 const name=window.SITE_VARIANT.headline;
 const tags=['AI Voice','Smart Hardware','SaaS'];
 const sharedTextStyle={position:'relative',margin:0,fontSize,fontWeight:400,fontFamily:"'Valley Sans',var(--font-sans,sans-serif)",letterSpacing:'0.02em',lineHeight:1.35,whiteSpace:'pre-line',maxWidth:'20ch'};
-return React.createElement('div',{ref:titleRef,style:{position:'relative',zIndex:2,maxWidth:'100%',width:'fit-content',marginTop:-260,willChange:'filter,opacity'}},
+return React.createElement('div',{ref:titleRef,style:{position:'relative',zIndex:2,maxWidth:'100%',width:'fit-content',marginTop:'clamp(-200px, -14vw, -40px)',willChange:'filter,opacity'}},
 React.createElement('h1',{ref:h1Ref,style:{...sharedTextStyle,color:'#241D18'}},name),
 React.createElement('h1',{'aria-hidden':true,style:{...sharedTextStyle,position:'absolute',left:0,top:0,color:'transparent',backgroundImage:'radial-gradient(circle 120px at 9% 18%, rgba(170,175,182,0.9), rgba(170,175,182,0.35) 55%, transparent 100%)',WebkitBackgroundClip:'text',backgroundClip:'text',pointerEvents:'none'}},name)
 );
@@ -279,14 +279,14 @@ window.addEventListener('scroll',onScroll,{passive:true});
 return ()=>window.removeEventListener('scroll',onScroll);
 },[]);
 if(!ready) return React.createElement('section',{style:{minHeight:480}});
-return React.createElement('section',{ref:ref,style:{position:'sticky',top:0,overflow:'hidden',padding:'calc(clamp(48px,10vw,72px) + 64px) clamp(20px,6vw,56px) clamp(48px,10vw,72px)',display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center',textAlign:'center',height:'calc(min(80vh, 720px) + 64px)',minHeight:480,gap:0,background:'#EFF0F2',zIndex:0}},
+return React.createElement('section',{ref:ref,style:{position:'sticky',top:0,overflow:'hidden',padding:'calc(clamp(48px,10vw,72px) + 64px) clamp(20px,6vw,56px) clamp(48px,10vw,72px)',display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center',textAlign:'center',height:'min(48vh, 440px, 80vw)',minHeight:300,gap:0,background:'#EFF0F2',zIndex:0}},
 React.createElement(MemoSilk,null),
 false&&sphereBox&&React.createElement('div',{ref:sphereRef,style:{position:'fixed',left:sphereBox.left,top:sphereBox.top,width:sphereBox.width,height:sphereBox.height,opacity:sphereBox.opacity,zIndex:1,pointerEvents:'none',transition:'opacity 0.2s linear'}},
 React.createElement(NetworkSphere,{tilt,progress:sphereBox.progress})
 ),
 React.createElement(MemoStars,null),
 React.createElement(Title,{tilt,titleRef,h1Ref}),
-React.createElement('p',{ref:pRef,style:{position:'relative',zIndex:1,fontSize:'clamp(20px,2vw,28px)',lineHeight:1.5,fontFamily:"'Albert Sans',var(--font-sans,sans-serif)",color:'rgba(36,29,24,0.7)',margin:0,marginTop:16,willChange:'filter,opacity'}},window.SITE_VARIANT.tagline),
+React.createElement('p',{ref:pRef,style:{position:'relative',zIndex:1,fontSize:'clamp(20px,2vw,28px)',lineHeight:1.5,fontFamily:"'Albert Sans',var(--font-sans,sans-serif)",color:'rgba(36,29,24,0.7)',margin:0,marginTop:16,willChange:'filter,opacity'}},window.SITE_VARIANT.tagline,React.createElement('span',{style:{display:'block',marginTop:14,fontSize:'clamp(14px,1.2vw,16px)',lineHeight:1.6,color:'rgba(36,29,24,0.6)',fontFamily:"'Albert Sans',var(--font-sans,sans-serif)"}},window.t('5 years of hands-on product design · End-to-end projects, from research to launch').split(/\s*[·・]\s*/).map((part,i)=>React.createElement(React.Fragment,{key:i},i>0&&window.innerWidth>=560&&React.createElement('span',{'aria-hidden':true,style:{margin:'0 8px'}},'・'),React.createElement('span',{style:{display:window.innerWidth>=560?'inline-block':'block'}},part))))),
 );
 }
 function StarTwinkleOverlay(){

@@ -14,7 +14,7 @@ const stats=[{value:'8+',label:'Hotel brand partners'},{value:'4',label:'Countri
 function SiteAbout(){
 const {Badge}=window.LunaLiuDesignSystem_29754e;
 const skills=['User research','Design system planning (spec breakdown, component taxonomy)','Cross-functional collaboration (with engineers / PMs / clients)','Using AI tools to rapidly prototype and iterate','Hardware × software experience design (smart speakers, in-room smart devices)','Data-driven conversation flow optimization (call log analysis, data interpretation)'];
-const tools=['Figma','HTML / CSS','Adobe'];
+const tools=['Figma','Figma MCP','Claude Code','HTML / CSS','Adobe'];
 const languages=['Mandarin · Native','English · Fluent reading for competitive research'];
 const [narrow,setNarrow]=React.useState(window.innerWidth<860);
 React.useEffect(()=>{const f=()=>setNarrow(window.innerWidth<860);window.addEventListener('resize',f);return()=>window.removeEventListener('resize',f);},[]);
@@ -24,8 +24,8 @@ return React.createElement('section',{style:{padding:narrow?'64px 24px':'80px 48
 narrow?React.createElement('div',{style:{display:'flex',alignItems:'center',justifyContent:'space-between',gap:24}},title,photoEl):photoEl,
 React.createElement('div',{style:{minWidth:0}},
 narrow?null:title,
-React.createElement('p',{style:{margin:'0 0 36px',fontSize:17,lineHeight:1.7,color:'var(--text)',textWrap:'pretty'}},window.t(window.SITE_VARIANT.aboutIntro||'5 years of UI/UX experience, focused on AI voice and hospitality SaaS products. I specialize in translating engineering constraints and real-world usage into scalable design systems.')),
-React.createElement('h3',{style:{fontSize:20,fontWeight:600,letterSpacing:'-0.01em',margin:'0 0 20px'}},window.t('Working at the intersection of hardware and software')),
+React.createElement('p',{style:{margin:'0 0 36px',fontSize:17,lineHeight:1.7,color:'var(--text)',textWrap:'pretty'}},window.t(window.SITE_VARIANT.aboutIntro||'5 years of UI/UX experience across design systems, back offices and AI products. I take projects end to end on my own, from research to launch, and bring AI into my daily workflow to get from idea to prototype faster.')),
+React.createElement('h3',{style:{fontSize:20,fontWeight:600,letterSpacing:'-0.01em',margin:'0 0 20px'}},window.t(window.SITE_VARIANT.careerHeading||'Experience')),
 React.createElement('div',{style:{display:'flex',flexDirection:'column',gap:20,marginBottom:48}},career.map(c=>React.createElement('div',{key:c.co,style:{display:'grid',gridTemplateColumns:narrow?'minmax(0,1fr)':'96px minmax(0,1fr)',gap:narrow?4:20}},
 React.createElement('div',{style:{fontFamily:"'Albert Sans',var(--font-sans,sans-serif)",fontSize:14,color:'#A66A00',paddingTop:2}},window.t(c.y)),
 React.createElement('div',{style:{fontSize:16,lineHeight:1.6,color:'var(--text)',textWrap:'pretty'}},React.createElement('span',{style:{fontWeight:600,display:'block',marginBottom:2}},c.co),window.t((window.SITE_VARIANT.career||{})[c.co]||c.d))

@@ -1,5 +1,5 @@
 window.PROJECTS_DATA=[
-{id:'ai-butler',highlight:'AI conversation flow, UI design system refresh, and motion for small-screen devices',coverNatural:true,projectType:'Hardware–Software Integration · Interaction Design',timeline:'2023 – Now',platform:'Android App',timelineFirst:true,coverHeadline:'From a single sensory experience to a scalable system.',labels:['Hardware–Software Integration','Interaction Design'],tag:'Smart Speaker',pairTag:'Voice Interaction Design',year:'Flagship Project',title:'AVA Smart Speaker Interaction System',
+{id:'ai-butler',highlight:'Redesigned the in-room smart speaker’s call flow and UI; 7 hotels renewed or upgraded within a month of launch',coverNatural:true,projectType:'Hardware–Software Integration · Interaction Design',timeline:'2023 – Now',platform:'Android App',timelineFirst:true,coverHeadline:'From a single sensory experience to a scalable system.',labels:['Hardware–Software Integration','Interaction Design'],tag:'Smart Speaker',pairTag:'Voice Interaction Design',year:'Flagship Project',title:'AVA Smart Speaker Interaction System',
 scope:'Hardware–software integration design, requirements translation, animation production, cross-team coordination',collaborators:'PM · Frontend & backend engineers',
 oneLiner:'An all-in-one AI voice butler for hotel rooms — from conversation design and multi-feature user flows to interaction animations, creating a consistent, intuitive hardware–software experience.',
 blocks:[
@@ -12,7 +12,7 @@ blocks:[
 {heading:'Results',type:'text-image',items:[{noImage:true,title:'Hotel Feedback',text:'“Now housekeeping requests get a fast response, restaurant reservations are easy to arrange, and guest preferences are recorded automatically — all thanks to the leading AI technology of the Aiello Voice Assistant.” — M Social Hotel Phuket, Thailand.'}]},
 {heading:'Reflection',type:'text',items:['Crafting one sensory experience and systematizing everyday needs look like opposite skills, but both answer the same question: what does the user actually need right now?','Next time, I would track how often guests repeat themselves or interrupt the device after launch, to measure how much the clearer states helped.']}
 ]},
-{id:'aca-ai',highlight:'0% → 95% of phone orders completed by AI',coverRatio:'2/1',projectType:'UX Design · Data Analysis',timeline:'2026 – Now',platform:'Phone',timelineFirst:true,labels:['Voice Interaction Design','Conversation Flow Design'],tag:'AI Phone Agent',pairTag:'Conversation Flow Design',tag3:'Test Scenario Planning',year:'Flow Optimization',title:'AI Voice Agent for Hotel In-Room Dining',
+{id:'aca-ai',highlight:'Redesigned the AI conversation flow for hotel phone orders; orders completed by AI rose from 0% to 95%',coverRatio:'2/1',projectType:'UX Design · Data Analysis',timeline:'2026 – Now',platform:'Phone',timelineFirst:true,labels:['Voice Interaction Design','Conversation Flow Design'],tag:'AI Phone Agent',pairTag:'Conversation Flow Design',tag3:'Test Scenario Planning',year:'Flow Optimization',title:'AI Voice Agent for Hotel In-Room Dining',
 scope:'Data analysis, requirements translation, VUI flow planning',collaborators:'PM · Backend engineers',
 oneLiner:'I analyzed thousands of real phone calls, then broke down and rebuilt human agents’ ordering logic into service guidelines an AI can execute reliably — so every call sounds like it’s being handled by a seasoned agent.',
 blocks:[
@@ -54,7 +54,7 @@ blocks:[
 {heading:'Results & Impact',type:'text',items:['Conversations became smoother with fewer unnecessary questions, making calls easier for guests. Clear guidelines also made implementation easier and shortened regression testing.']},
 {heading:'Reflection',type:'text',items:['Voice design has to start from real data. Many problems only show up when you read through real conversations, not through reasoning alone.']}
 ]},
-{id:'guestweb',highlight:'SaaS product: AI-assisted research, design system, and admin back office',projectType:'UX Research · Design System · Web UI Design',platform:'Web (guest-facing in-room interface + hotel admin back office)',timeline:'2024 – Now',coverHeadline:'One system, endless styles',labels:['UX Research','Design System','Web UI Design'],tag:'Multi-brand Website',pairTag:'Content Management System',year:'Systems Thinking',title:'GuestWeb Hotel Digital Concierge',
+{id:'guestweb',highlight:'One system that lets every hotel launch a branded guest website; one hotel reached about NT$270K in monthly F&B revenue after launch',projectType:'UX Research · Design System · Web UI Design',platform:'Web (guest-facing in-room interface + hotel admin back office)',timeline:'2024 – Now',coverHeadline:'One system, endless styles',labels:['UX Research','Design System','Web UI Design'],tag:'Multi-brand Website',pairTag:'Content Management System',year:'Systems Thinking',title:'GuestWeb Hotel Digital Concierge',
 scope:'Design system lead · Requirements translation · Cross-team coordination',collaborators:'PM · Frontend & backend engineers · Hotel brand contacts',
 oneLiner:'A hotel-branded front desk web page guests open by scanning a QR code, managed by hotels through a SaaS back office — a digital concierge system where multiple brands share one architecture while each keeps its own style.',
 blocks:[
@@ -85,7 +85,7 @@ blocks:[
 {heading:'Reflection',type:'text',items:['Custom home pages and menus also have to match each hotel’s ordering system data. Design isn’t only about how screens look; the data underneath has to line up.']},
 {type:'text-image',items:[{imgId:'guestweb-3-1b'}]},
 ]},
-{id:'tms-ds',coverNatural:true,timeline:'2024 – Now',highlight:'Back-office design system specs, an AI-tokenized component library, and sales enablement',projectType:'Design System · AI Workflow · Sales Enablement',platform:'Web back office',timelineFirst:true,coverHeadline:'A scalable, easy-to-maintain admin back-office component library shared by design and engineering',labels:['Design System','AI Workflow','Sales Enablement'],title:'TMS Back-Office Design System',
+{id:'tms-ds',coverNatural:true,timeline:'2024 – Now',highlight:'Built a design system for a back office that had none, then turned it into a one-week proposal prototype that helped win a new client',projectType:'Design System · AI Workflow · Sales Enablement',platform:'Web back office',timelineFirst:true,coverHeadline:'A scalable, easy-to-maintain admin back-office component library shared by design and engineering',labels:['Design System','AI Workflow','Sales Enablement'],title:'TMS Back-Office Design System',
 scope:'Design system lead · AI-built component library · Proposal prototype',collaborators:'PM · Frontend engineers · Sales',
 oneLiner:'I rebuilt the back office’s scattered components into a design system defined by real usage, based on the live product rather than old mockups, then used AI to turn it into a working code library. It let us deliver a clickable proposal in one week and win a major Japanese hotel group.',
 blocks:[
@@ -126,7 +126,7 @@ blocks:[
 {heading:'Final Product',pin:2,type:'text-image',items:[{imgId:'nexus-final',natural:true}]},
 {heading:'Reflection',type:'text',items:['NEXUS taught me to design hardware and software as one experience. The lights, the touchscreen and the desktop settings all answer one question: what does the streamer need to know right now?','If I did it again, I would test hotkeys in real streams, not only design reviews, to confirm the dimmed off state stays readable under real lighting.']}
 ]},
-{id:'1177pay',highlight:'Consumer app improvements: bills, donations, and card binding',coverNatural:true,projectType:'UI Design · B2C Mobile Payment',timeline:'2021 – 2023',platform:'Mobile App',timelineFirst:true,coverHeadline:'Making bill payment quick and easy, starting from the very first payment.',labels:['UI Design','B2C Mobile Payment'],title:'1177PAY Mobile Payment App',
+{id:'1177pay',highlight:'Improved bill payment, donations and card binding in a consumer payment app, plus widgets and loading motion',coverNatural:true,projectType:'UI Design · B2C Mobile Payment',timeline:'2021 – 2023',platform:'Mobile App',timelineFirst:true,coverHeadline:'Making bill payment quick and easy, starting from the very first payment.',labels:['UI Design','B2C Mobile Payment'],title:'1177PAY Mobile Payment App',
 scope:'Bill details, donation page, card-binding flow, widget, loading animation, flowcharts, Design Guideline maintenance',collaborators:'PO · Other designers',
 blocks:[
 {heading:'Background',type:'text',items:['1177PAY is a mobile payment app. Users link credit cards, bank accounts and e-invoice barcodes to pay quickly, and get bills and payment confirmations through push notifications.','Goal: make paying bills fast, and turn first-time users of the company’s payment services into loyal app members.','Several designers worked on the app. I owned bill details, the donation page, the card-binding flow, and details like the widget and loading animation.']},
@@ -150,7 +150,7 @@ blocks:[
 {heading:'Reflection',type:'text',items:['In a payment product, trust is built in the details: a familiar bank logo on each card, a clear state at every checkpoint, and reminders that arrive before users have to think about their bills.']},
 {heading:'Final Product',pin:2,type:'text-image',items:[{imgId:'pay-feature-pay',natural:true},{imgId:'pay-feature-push',imgId2:'pay-feature-scan',natural:true}]}
 ]},
-{id:'17backstage',highlight:'Built a design system; proposal adopted company-wide',coverNatural:true,projectType:'UI Design · B2B Back Office',timeline:'2021 – 2023',platform:'Web back office',timelineFirst:true,coverHeadline:'Turning a templated back office into a clear, consistent system for small merchants.',labels:['UI Design','B2B Back Office','Redesign'],title:'1177 Tech Merchant Back Office',
+{id:'17backstage',highlight:'Redesigned the merchant back office with a new design guideline; leadership adopted it across every product line',coverNatural:true,projectType:'UI Design · B2B Back Office',timeline:'2021 – 2023',platform:'Web back office',timelineFirst:true,coverHeadline:'Turning a templated back office into a clear, consistent system for small merchants.',labels:['UI Design','B2B Back Office','Redesign'],title:'1177 Tech Merchant Back Office',
 scope:'Redesign proposal, layout and interaction design, Design Guideline, wireframes, mockups and handoff',collaborators:'Company leadership · Product manager · Frontend engineers',
 blocks:[
 {heading:'Background',type:'text',title:'Small merchants needed a simpler way to accept payments',items:['1177 Tech provides third-party payment collection, letting merchants accept credit cards, convenience-store payments and virtual-account transfers on their own online store platforms.','The back office was an MVP for small merchants and charities that need to collect payments but don’t want to apply for a card terminal or LINE Pay. The goal: quick to sign up, intuitive to use.','The first version was built on a template, and leadership found it hard to use. As the company’s only UI designer, I led the redesign.']},
@@ -184,6 +184,7 @@ if(focus==='hardware'||focus==='automotive'){
 const hw={
 order:['ai-butler','nexus','guestweb','aca-ai'],
 pairs:true,
+careerHeading:'Working at the intersection of hardware and software',
 aboutIntro:'UI/UX designer with 5 years of experience, focused on products where hardware and software meet: from a live-streaming controller’s touchscreen and lighting to an AI smart speaker in hotel rooms. I start from the device’s environment, the context it is used in and the people who use it, then turn engineering constraints into clear, scalable design systems.',
 career:{'Aiello':'Designing the AVA in-room smart speaker’s on-device interface, AI voice conversation experience and IoT controls (TV, lighting), plus AI phone ordering and hospitality SaaS products','AVerMedia':'Design internship | Live Streamer NEXUS controller: dynamic UI for the touchscreen and desktop software, boot animation, LED lighting scripts, icon library and app icon'},
 headline:'Clarity between\npeople and devices.',
@@ -199,12 +200,14 @@ order:['tms-ds','guestweb','17backstage','ai-butler','aca-ai','1177pay'],
 pairs:true,
 headline:'Design systems that\nscale with the product.',
 tagline:'Luna・UI/UX Designer・Design Systems & AI Workflow',
+career:{'Aiello':'Design systems, back offices and AI voice products for hospitality SaaS, taking projects end to end from research to launch'},
 resumeUrl:'https://drive.google.com/drive/folders/16waoSPGUuhGGt1OAd1MnvDTV2zlOU_b4?usp=sharing'
 };
 if(focus==='ai') return {
 order:['aca-ai','ai-butler','tms-ds','guestweb','17backstage','1177pay'],
 headline:'Designing AI that\nlistens, then acts.',
 tagline:'Luna・UI/UX Designer・Conversational AI & Smart Devices',
+aboutIntro:'5 years of UI/UX experience, focused on AI voice and hospitality SaaS products. I specialize in translating engineering constraints and real-world usage into scalable design systems.',
 resumeUrl:'https://drive.google.com/drive/folders/1kColvmaOikbEV8f8Nej0tayngMJpFT3f?usp=sharing'
 };
 return {
@@ -212,6 +215,7 @@ order:['tms-ds','guestweb','17backstage','ai-butler','aca-ai','1177pay'],
 pairs:true,
 headline:'Clarity between\npeople and AI.',
 tagline:'Luna・UI/UX Designer・AI SaaS Products',
+career:{'Aiello':'Design systems, back offices and AI voice products for hospitality SaaS, taking projects end to end from research to launch'},
 resumeUrl:'https://drive.google.com/drive/folders/16waoSPGUuhGGt1OAd1MnvDTV2zlOU_b4?usp=sharing'
 };
 })();
