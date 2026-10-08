@@ -270,7 +270,8 @@ React.useEffect(()=>{
 const onScroll=()=>{
 const p=Math.max(0,Math.min(1,window.scrollY/320));
 const blur=(p*10).toFixed(1);
-const op=(1-p*0.7).toFixed(2);
+const cap=document.getElementById('core-capabilities-section');const vh=window.innerHeight||800;const capTop=cap?cap.getBoundingClientRect().top:Infinity;const hide=Math.max(0,Math.min(1,(vh-capTop)/(vh*0.35)));
+const op=((1-p*0.7)*(1-hide)).toFixed(2);
 if(titleRef.current){titleRef.current.style.filter='blur('+blur+'px)';titleRef.current.style.opacity=op;}
 if(pRef.current){pRef.current.style.filter='blur('+blur+'px)';pRef.current.style.opacity=op;}
 };
