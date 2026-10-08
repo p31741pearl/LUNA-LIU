@@ -18,12 +18,10 @@ return React.createElement('section',{id:'core-capabilities-section',style:{posi
 React.createElement('div',{style:{maxWidth:1120,margin:'0 auto',width:'100%'}},
 React.createElement('div',{style:{display:'flex',justifyContent:'space-between',alignItems:'flex-end',flexWrap:'wrap',gap:'20px 48px',marginBottom:narrow?32:56}},
 React.createElement('div',null,
-React.createElement('div',{style:{fontSize:12,fontWeight:600,letterSpacing:'0.08em',textTransform:'uppercase',color:'var(--ink-900)',marginBottom:14}},window.t('Core Strengths')),
 React.createElement('h2',{style:{margin:0,fontSize:headSize,lineHeight:1.12,letterSpacing:'-0.03em',fontWeight:600,color:'var(--ink-900)'}},
 React.createElement('span',{style:{display:'block'}},window.t('What I bring')),
 React.createElement('span',{style:{display:'block',fontWeight:400,fontStyle:zh?'normal':'italic',letterSpacing:zh?'0':'-0.01em',fontFamily:zh?"'Noto Serif TC','Songti TC',serif":"'Instrument Serif',Georgia,serif"}},window.t('to the team.')))
-),
-React.createElement('p',{style:{margin:0,maxWidth:340,fontSize:15,lineHeight:1.6,color:'var(--text-muted)'}},window.t('Each strength comes from a shipped project. Use the arrow to open the full case study.'))
+)
 ),
 React.createElement('div',{ref:gridRef,style:{display:'grid',gridTemplateColumns:narrow?'minmax(0,1fr)':'repeat(2,minmax(0,1fr))',gap:16}},
 items.map((it,i)=>React.createElement('div',{key:it.n,onClick:()=>open(it.project),onMouseEnter:()=>setHover(i),onMouseLeave:()=>setHover(null),style:{cursor:'pointer',position:'relative',overflow:'hidden',minWidth:0,minHeight:narrow?0:300,display:'flex',flexDirection:'column',borderRadius:20,background:'#FCFBF9',border:'1px solid rgba(36,29,24,0.06)',padding:narrow?'24px 22px':'30px 32px',boxShadow:hover===i?'0 18px 40px -24px rgba(36,29,24,0.28)':'0 1px 0 rgba(36,29,24,0.02)',opacity:shown?1:0,transform:shown?(hover===i?'translateY(-3px)':'translateY(0)'):'translateY(12px)',transition:'opacity 0.7s cubic-bezier(0.16,1,0.3,1) '+(i*0.08)+'s, transform 0.4s cubic-bezier(0.16,1,0.3,1), box-shadow 0.3s'}},
