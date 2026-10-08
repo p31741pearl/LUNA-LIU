@@ -14,7 +14,7 @@ React.useEffect(()=>{const el=gridRef.current;if(!el)return;const io=new Interse
 const [hover,setHover]=React.useState(null);
 const open=id=>{const p=(window.PROJECTS_DATA||[]).find(x=>x.id===id);if(p&&onOpen)onOpen(p);};
 const headSize='clamp(34px,4.4vw,52px)';
-return React.createElement('section',{id:'core-capabilities-section',style:{position:'relative',zIndex:2,background:'#F7F5F1',padding:narrow?'64px 24px 72px':'96px 48px 104px'}},
+return React.createElement('section',{id:'core-capabilities-section',style:{position:'relative',zIndex:2,background:'linear-gradient(to bottom, rgba(247,245,241,0) 0%, #F7F5F1 22%, #F7F5F1 78%, #FFFFFF 100%)',padding:narrow?'64px 24px 72px':'96px 48px 104px'}},
 React.createElement('div',{style:{maxWidth:1120,margin:'0 auto',width:'100%'}},
 React.createElement('div',{style:{display:'flex',justifyContent:'space-between',alignItems:'flex-end',flexWrap:'wrap',gap:'20px 48px',marginBottom:narrow?32:56}},
 React.createElement('div',null,
