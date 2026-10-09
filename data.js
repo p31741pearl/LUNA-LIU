@@ -182,7 +182,7 @@ window.SITE_VARIANT=(()=>{
 const focus=new URLSearchParams(window.location.search).get('focus');
 if(focus==='hardware'||focus==='automotive'){
 const hw={
-order:['ai-butler','nexus','guestweb','aca-ai'],
+order:['ai-butler','nexus','guestweb','aca-ai','tms-ds','17backstage','1177pay'],
 pairs:true,
 careerHeading:'Working at the intersection of hardware and software',
 aboutIntro:'UI/UX designer with 5 years of experience, focused on products where hardware and software meet: from a live-streaming controller’s touchscreen and lighting to an AI smart speaker in hotel rooms. I start from the device’s environment, the context it is used in and the people who use it, then turn engineering constraints into clear, scalable design systems.',
@@ -193,7 +193,7 @@ heroLine:'I’m Luna, a UI/UX designer with 5 years of experience, designing whe
 resumeUrl:'https://drive.google.com/drive/folders/1U047kGSj6b7uZfmoTVgLbatRQR5mA4kY?usp=sharing'
 };
 // ?focus=automotive: the hardware variant with a motion-focused tagline, for in-vehicle / embedded UI roles.
-return focus==='automotive'?{...hw,order:hw.order.concat(['17backstage','1177pay']),resumeUrl:'https://drive.google.com/drive/folders/1AvHO931eBC_5MsxLfNGtAgOee26VIhp2?usp=sharing',tagline:'Luna・UI/UX Designer・Hardware–Software UI & Motion',heroLine:'I’m Luna, a UI/UX designer with 5 years of experience in hardware–software interfaces and motion design.'}:hw;
+return focus==='automotive'?{...hw,resumeUrl:'https://drive.google.com/drive/folders/1AvHO931eBC_5MsxLfNGtAgOee26VIhp2?usp=sharing',tagline:'Luna・UI/UX Designer・Hardware–Software UI & Motion',heroLine:'I’m Luna, a UI/UX designer with 5 years of experience in hardware–software interfaces and motion design.'}:hw;
 }
 // ?focus=system: leads with design-system work (TMS, GuestWeb, merchant back office) for design-system roles.
 if(focus==='system') return {
