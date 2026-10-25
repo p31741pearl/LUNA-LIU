@@ -7,6 +7,9 @@ window.ZH_TEXT={
 // ---- Site variant (data.js) ----
 // The hero headline stays in English on purpose, so it has no entry here.
 'Luna・UI/UX Designer・Conversational AI & Smart Devices':'Luna・UI/UX 設計師・對話式 AI 與智慧裝置',
+'Luna・UI/UX Designer・AI Products & Rapid Prototyping':'Luna・UI/UX 設計師・AI 產品與快速原型',
+'I’m Luna, a UI/UX designer with 5 years of experience, turning user research into AI products and working prototypes.':'我是 Luna，5 年經驗的 UI/UX 設計師，\n把使用者研究轉化為 AI 產品與可操作的原型。',
+'AI products, multi-role back-office tools and design systems, from user research to working HTML prototypes and launch':'負責 AI 產品、多角色管理後台與設計系統，從使用者研究、可操作的 HTML 原型到上線',
 'Luna・UI/UX Designer・Design Systems & AI Workflow':'Luna・UI/UX 設計師・設計系統 × AI 工作流程',
 'Luna・UI/UX Designer・AI SaaS Products':'Luna・UI/UX 設計師・AI SaaS 產品',
 

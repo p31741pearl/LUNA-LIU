@@ -205,6 +205,16 @@ heroLine:'I’m Luna, a UI/UX designer with 5 years of experience, building desi
 career:{'Aiello':'Design systems, back offices and AI voice products for hospitality SaaS, taking projects end to end from research to launch'},
 resumeUrl:'https://drive.google.com/drive/folders/16waoSPGUuhGGt1OAd1MnvDTV2zlOU_b4?usp=sharing'
 };
+// ?focus=prototype: leads with rapid prototyping, research-driven AI work and multi-role tools, for enterprise / internal-product UX roles.
+if(focus==='prototype') return {
+order:['tms-ds','aca-ai','guestweb','ai-butler','17backstage','1177pay'],
+pairs:true,
+headline:'From research to\nworking prototypes.',
+tagline:'Luna・UI/UX Designer・AI Products & Rapid Prototyping',
+heroLine:'I’m Luna, a UI/UX designer with 5 years of experience, turning user research into AI products and working prototypes.',
+career:{'Aiello':'AI products, multi-role back-office tools and design systems, from user research to working HTML prototypes and launch'},
+resumeUrl:'resume/Luna_Liu_Resume_Prototype.pdf'
+};
 if(focus==='ai') return {
 order:['aca-ai','ai-butler','tms-ds','guestweb','17backstage','1177pay'],
 headline:'Designing AI that\nlistens, then acts.',
