@@ -213,7 +213,7 @@ headline:'From research to\nworking prototypes.',
 tagline:'Luna・UI/UX Designer・AI Products & Rapid Prototyping',
 heroLine:'I’m Luna, a UI/UX designer with 5 years of experience, turning user research into AI products and working prototypes.',
 career:{'Aiello':'AI products, multi-role back-office tools and design systems, from user research to working HTML prototypes and launch'},
-resumeUrl:'https://drive.google.com/drive/folders/16waoSPGUuhGGt1OAd1MnvDTV2zlOU_b4?usp=sharing'
+resumeUrl:'resume/Luna_Liu_Resume_Prototype.pdf'
 };
 if(focus==='ai') return {
 order:['aca-ai','ai-butler','tms-ds','guestweb','17backstage','1177pay'],
