@@ -1,3 +1,13 @@
+// Splits case-study text into paragraphs; a "How might we" / 「我們如何」 paragraph renders as an accented sub-heading.
+const HMW_RE=/^(How might we|我們如何)/;
+function caseText(s,style){
+const parts=String(s).split('\n\n');
+if(parts.length<2||!parts.some(p=>HMW_RE.test(p)))return React.createElement('p',{style},s);
+const acc=window.__csDark?'#E3A33B':'#A66A00';
+return React.createElement('div',{style},parts.map((p,i)=>HMW_RE.test(p)
+?React.createElement('div',{key:i,style:{margin:i?'18px 0':'0 0 18px',paddingLeft:14,borderLeft:'3px solid '+acc,fontSize:17,fontWeight:600,lineHeight:1.55,color:'var(--text)'}},p)
+:React.createElement('div',{key:i,style:{marginBottom:i<parts.length-1?14:0}},p)));
+}
 function splitLead(text){
 const m=text.match(/^(.*?[：;;。])/);
 if(m&&m[1].length<text.length) return [m[1],text.slice(m[1].length)];
@@ -65,14 +75,14 @@ b.type==='text-image'&&b.items.map((it,j)=>{const nx=b.items[j+1];const imgOnly=
 it.sideImgId?React.createElement('div',{style:{display:'flex',flexWrap:'wrap',gap:24,alignItems:'flex-start',marginBottom:16}},
 React.createElement('div',{style:{flex:'1 1 280px',minWidth:0}},
 it.title&&React.createElement('div',{style:{fontSize:(it.small||it.title.startsWith('\u2022'))?16:19,fontWeight:600,color:'var(--text)',marginBottom:it.compact?0:8,lineHeight:it.compact?1.25:1.5}},it.title),
-it.text&&React.createElement('p',{style:{fontSize:16,lineHeight:1.7,color:'var(--text)',marginBottom:0,whiteSpace:'pre-line'}},it.text)
+it.text&&caseText(it.text,{fontSize:16,lineHeight:1.7,color:'var(--text)',marginBottom:0,whiteSpace:'pre-line'})
 ),
 React.createElement('div',{style:{flex:'1 1 240px',minWidth:0,borderRadius:'var(--radius-lg,16px)',overflow:'hidden'}},
 React.createElement('image-slot',{id:'block-'+it.sideImgId,shape:'rect',fit:'contain','natural-ratio':'',placeholder:'Add illustration'})
 )
 ):React.createElement(React.Fragment,null,
 it.title&&React.createElement('div',{style:{fontSize:(it.small||it.title.startsWith('\u2022'))?16:19,fontWeight:600,color:'var(--text)',marginBottom:it.compact?0:8,lineHeight:it.compact?1.25:1.5}},it.title),
-it.text&&React.createElement('p',{style:{fontSize:16,lineHeight:1.7,color:'var(--text)',marginBottom:16,whiteSpace:'pre-line'}},it.text)
+it.text&&caseText(it.text,{fontSize:16,lineHeight:1.7,color:'var(--text)',marginBottom:16,whiteSpace:'pre-line'})
 ),
 it.extraImgId&&React.createElement('div',{style:{display:'flex',gap:16,marginBottom:16,alignItems:'stretch',height:340,maxWidth:'100%'}},
 React.createElement('div',{style:{flex:'1 1 0',minWidth:0,borderRadius:'var(--radius-lg,16px)',overflow:'hidden',height:'100%'}},
