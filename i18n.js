@@ -220,7 +220,7 @@ window.ZH_TEXT={
 'Flagship Project':'代表作品',
 'AVA Smart Speaker Interaction System':'AVA 智慧音箱互動系統',
 // AVA case rewrite v2 (2026-11)
-'Making the AI readable at a glance from across the room; 7 hotels renewed or upgraded within a month':'讓房客隔著距離一眼看懂 AI，上線一個月 7 家飯店續約或升級',
+'Helping guests understand the AI quickly; 7 hotels renewed or upgraded within a month':'讓房客快速理解 AI，上線一個月 7 家飯店續約或升級',
 'I led the redesign of an in-room AI smart speaker, so guests know what the AI is doing without a tutorial, and gave the most visible spot on the home screen to what hotels want to promote.':'我主導飯店房間 AI 智慧音箱的介面改版，讓房客不用教學也知道 AI 現在的狀態，並把首頁最顯眼的位置，讓給飯店想推的內容。',
 'Led the in-room smart speaker redesign; 7 hotels renewed or upgraded within a month of launch':'主導飯店 AI 智慧音箱改版，上線一個月內 7 家飯店續約或升級',
 '• Led the speaker’s interface redesign, finding the real problem through surveys, sales feedback and usability tests\n• Chose to hint the AI’s state with text and animation in the real flow, instead of a long tutorial\n• Redesigned the home screen from usage data across hotels, giving the most visible spot to hotel content\n• Unified each TV vendor’s control logic with engineers, the PM and the Japanese sales team\n• Produced every interaction, meditation and holiday animation from scratch in After Effects':'• 主導智慧音箱的介面改版，從問卷、業務回饋和易用性測試找出真正的問題\n• 決定在真實流程中用文字和動畫暗示 AI 的狀態，取代冗長的教學\n• 用多家飯店的使用數據改版首頁，把最顯眼的位置讓給飯店想推的內容\n• 和工程師、PM、日本業務一起，整合各家電視廠商的控制邏輯\n• 用 After Effects 從頭製作所有互動、冥想和節慶動畫',
