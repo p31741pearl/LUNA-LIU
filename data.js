@@ -151,11 +151,10 @@ aboutIntro:'UI/UX designer with 5 years of experience, focused on products where
 career:{'Aiello':'Designing the AVA in-room smart speaker’s on-device interface, AI voice conversation experience and IoT controls (TV, lighting), plus AI phone ordering and hospitality SaaS products','AVerMedia':'Design internship | Live Streamer NEXUS controller: dynamic UI for the touchscreen and desktop software, boot animation, LED lighting scripts, icon library and app icon'},
 headline:'Clarity between\npeople and devices.',
 tagline:'Luna・UI/UX Designer・Hardware–Software Experiences',
-heroLine:'I’m Luna, a UI/UX designer with 5 years of experience, designing where hardware and software meet.',
-resumeUrl:'https://drive.google.com/drive/folders/1U047kGSj6b7uZfmoTVgLbatRQR5mA4kY?usp=sharing'
+heroLine:'I’m Luna, a UI/UX designer with 5 years of experience, designing where hardware and software meet.'
 };
 // ?focus=automotive: the hardware variant with a motion-focused tagline, for in-vehicle / embedded UI roles.
-return focus==='automotive'?{...hw,resumeUrl:'https://drive.google.com/drive/folders/1AvHO931eBC_5MsxLfNGtAgOee26VIhp2?usp=sharing',tagline:'Luna・UI/UX Designer・Hardware–Software UI & Motion',heroLine:'I’m Luna, a UI/UX designer with 5 years of experience in hardware–software interfaces and motion design.'}:hw;
+return focus==='automotive'?{...hw,tagline:'Luna・UI/UX Designer・Hardware–Software UI & Motion',heroLine:'I’m Luna, a UI/UX designer with 5 years of experience in hardware–software interfaces and motion design.'}:hw;
 }
 // ?focus=system: leads with design-system work (TMS, GuestWeb, merchant back office) for design-system roles.
 if(focus==='system') return {
@@ -164,8 +163,7 @@ pairs:true,
 headline:'Design systems that\nscale with the product.',
 tagline:'Luna・UI/UX Designer・Design Systems & AI Workflow',
 heroLine:'I’m Luna, a UI/UX designer with 5 years of experience, building design systems and AI workflows that scale with the product.',
-career:{'Aiello':'Design systems, back offices and AI voice products for hospitality SaaS, taking projects end to end from research to launch'},
-resumeUrl:'https://drive.google.com/drive/folders/16waoSPGUuhGGt1OAd1MnvDTV2zlOU_b4?usp=sharing'
+career:{'Aiello':'Design systems, back offices and AI voice products for hospitality SaaS, taking projects end to end from research to launch'}
 };
 // ?focus=prototype: leads with rapid prototyping, research-driven AI work and multi-role tools, for enterprise / internal-product UX roles.
 if(focus==='prototype') return {
@@ -174,16 +172,14 @@ pairs:true,
 headline:'From research to\nworking prototypes.',
 tagline:'Luna・UI/UX Designer・AI Products & Rapid Prototyping',
 heroLine:'I’m Luna, a UI/UX designer with 5 years of experience, turning user research into AI products and working prototypes.',
-career:{'Aiello':'AI products, multi-role back-office tools and design systems, from user research to working HTML prototypes and launch'},
-resumeUrl:'resume/Luna_Liu_Resume_Prototype.pdf'
+career:{'Aiello':'AI products, multi-role back-office tools and design systems, from user research to working HTML prototypes and launch'}
 };
 if(focus==='ai') return {
 order:['aca-ai','ai-butler','tms-ds','guestweb'],
 headline:'Designing AI that\nlistens, then acts.',
 tagline:'Luna・UI/UX Designer・Conversational AI & Smart Devices',
 heroLine:'I’m Luna, a UI/UX designer with 5 years of experience, designing conversational AI and smart devices people can rely on.',
-aboutIntro:'5 years of UI/UX experience, focused on AI voice and hospitality SaaS products. I specialize in translating engineering constraints and real-world usage into scalable design systems.',
-resumeUrl:'https://drive.google.com/drive/folders/1kColvmaOikbEV8f8Nej0tayngMJpFT3f?usp=sharing'
+aboutIntro:'5 years of UI/UX experience, focused on AI voice and hospitality SaaS products. I specialize in translating engineering constraints and real-world usage into scalable design systems.'
 };
 return {
 order:['aca-ai','guestweb','ai-butler','tms-ds'],
@@ -191,7 +187,6 @@ pairs:true,
 headline:'Clarity between\npeople and AI.',
 tagline:'Luna・UI/UX Designer・AI SaaS Products',
 heroLine:'I’m Luna, a UI/UX designer with 5 years of experience, taking projects end to end from research to launch.',
-career:{'Aiello':'Design systems, back offices and AI voice products for hospitality SaaS, taking projects end to end from research to launch'},
-resumeUrl:'https://drive.google.com/drive/folders/16waoSPGUuhGGt1OAd1MnvDTV2zlOU_b4?usp=sharing'
+career:{'Aiello':'Design systems, back offices and AI voice products for hospitality SaaS, taking projects end to end from research to launch'}
 };
 })();

@@ -42,8 +42,7 @@ React.createElement('div',null,
 React.createElement('div',{style:{fontSize:16,fontWeight:600,marginBottom:4}},window.t(s.title)),
 React.createElement('div',{style:{fontSize:14,lineHeight:1.6,color:'var(--text-muted)'}},window.t(s.desc))
 )
-))),
-React.createElement('a',{href:window.SITE_VARIANT.resumeUrl,target:'_blank',rel:'noopener noreferrer',style:{display:'inline-block',fontSize:14,fontWeight:500,color:'#FFFFFF',background:'var(--ink-900)',padding:'8px 18px',borderRadius:999,textDecoration:'none',lineHeight:1.2}},window.t('Resume'))
+)))
 )
 );
 }
