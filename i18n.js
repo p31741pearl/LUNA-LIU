@@ -237,6 +237,8 @@ window.ZH_TEXT={
 'AVA Smart Speaker Interaction System':'AVA 智慧音箱互動系統',
 'PM · Frontend & backend engineers':'PM · 前後端工程師',
 // GuestWeb rewrite (2026-11)
+'Defining the Ordering Flow and Menu Structure with the PM':'和 PM 一起定義點餐流程與菜單架構',
+'For in-room dining, I worked with the PM to map the guest flow from scanning the QR code to confirming an order, and listed what each page must show. Together we defined a four-level menu structure: menu, category, item and customization group. This kept the guest flow simple and gave the back office a clear structure to manage.':'設計客房點餐時，我和 PM 一起整理房客從掃描 QR code 到確認訂單的流程，並列出每一頁需要呈現的資訊。我們也一起定義了「菜單、分類、品項、客製題組」四層的菜單架構，讓房客的點餐流程保持簡單，後台也有清楚的結構可以管理。',
 'A hotel service web page guests open by scanning a QR code. I designed its design system, guest pages and back office, so every hotel can launch a page in its own brand style without engineers.':'房客掃 QR code 打開的飯店服務網頁。我負責設計系統、手機網頁和後台，讓每家飯店不靠工程師，就能快速上線自己品牌的網頁。',
 'Responsible for UI/UX: competitive research, design system, and guest web and back-office interface design':'負責 UI/UX：競品研究、設計系統、手機網頁與後台介面設計',
 'I worked on three things: a design system that restyles the whole interface from one brand color, a system that serves very different types of hotels, and a back office that hotel staff without a design background can use with ease.':'我在 GuestWeb 做了三件事：建立只要一個品牌色就能換好整套介面的設計系統、讓同一套系統服務不同類型的飯店，以及設計沒有設計背景的飯店人員也能輕鬆上手的後台。',
