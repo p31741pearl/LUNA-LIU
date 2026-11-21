@@ -1,12 +1,14 @@
 // Splits case-study text into paragraphs; a "How might we" / 「我們如何」 paragraph renders as an accented sub-heading.
 const HMW_RE=/^(How might we|我們如何)/;
+// Inline **bold** markup inside case-study text.
+function inl(s){const parts=String(s).split(/\*\*(.+?)\*\*/);return parts.length<2?s:parts.map((p,i)=>i%2?React.createElement('strong',{key:i,style:{fontWeight:600,color:'var(--text)'}},p):p);}
 function caseText(s,style){
 const parts=String(s).split('\n\n');
-if(parts.length<2||!parts.some(p=>HMW_RE.test(p)))return React.createElement('p',{style},s);
+if(parts.length<2||!parts.some(p=>HMW_RE.test(p)))return React.createElement('p',{style},inl(s));
 const acc=window.__csDark?'#E3A33B':'#A66A00';
 return React.createElement('div',{style},parts.map((p,i)=>HMW_RE.test(p)
 ?React.createElement('div',{key:i,style:{margin:i?'18px 0':'0 0 18px',paddingLeft:14,borderLeft:'3px solid '+acc,fontSize:17,fontWeight:600,lineHeight:1.55,color:'var(--text)'}},p)
-:React.createElement('div',{key:i,style:{marginBottom:i<parts.length-1?14:0}},p)));
+:React.createElement('div',{key:i,style:{marginBottom:i<parts.length-1?14:0}},inl(p))));
 }
 function splitLead(text){
 const m=text.match(/^(.*?[：;;。])/);
@@ -47,7 +49,7 @@ React.createElement('image-slot',{id:'block-'+t.imgId,shape:'rect',fit:'contain'
 ),
 React.createElement('p',{style:{fontSize:16,lineHeight:1.7,color:'var(--text)',margin:0,flex:1}},text)
 );
-return React.createElement('p',{key:j,style:{fontSize:16,lineHeight:1.7,color:'var(--text)',marginBottom:12,whiteSpace:'pre-line'}},text);
+return React.createElement('p',{key:j,style:{fontSize:16,lineHeight:1.7,color:'var(--text)',marginBottom:12,whiteSpace:'pre-line'}},inl(text));
 }),
 b.type==='bullets'&&React.createElement('ul',{style:{margin:0,paddingLeft:20,display:'flex',flexDirection:'column',gap:12}},b.items.map((t,j)=>{
 const [lead,rest]=splitLead(t);
@@ -235,6 +237,7 @@ React.createElement('div',{style:{minWidth:0}},
 React.createElement('image-slot',{key:'cv'+(narrow?1:0),id:'modal-cover-'+project.id,shape:'rect','natural-ratio':(project.coverNatural||narrow)?'':undefined,placeholder:'Add a lifestyle photo for '+project.title})
 ),
 project.coverHeadline&&React.createElement('div',{style:{fontSize:'clamp(26px,3vw,36px)',fontWeight:600,letterSpacing:'-0.03em',lineHeight:1.25,color:'var(--ink-900)',marginTop:-8,marginBottom:40,textWrap:'pretty'}},project.coverHeadline),
+project.coverSub&&React.createElement('div',{style:{fontSize:17,lineHeight:1.7,color:'var(--text-muted)',marginTop:-28,marginBottom:40,maxWidth:760}},project.coverSub),
 // Results and the finished product come first, so the page opens on outcomes and visuals before the story.
 project.blocks.map((b,i)=>[b,i]).sort((x,y)=>((x[0].pin||9)-(y[0].pin||9))||(x[1]-y[1])).map(([b,i])=>CaseBlock(b,i,project.id)),
 onOpenOther&&React.createElement('div',{style:{marginTop:24,paddingTop:40,borderTop:'1px solid var(--border)'}},
