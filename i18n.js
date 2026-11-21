@@ -47,7 +47,7 @@ window.ZH_TEXT={
 'Vietnam':'越南',
 '2023 – Now':'2023 – 至今',
 'Designer for AI voice and hospitality SaaS, covering smart speakers, phone ordering, and mobile web':'AI 語音與飯店 SaaS 設計師，負責智慧音箱、電話點餐與行動網頁',
-'Financial back-office tools, a mobile payment app, the corporate website, and an internal EIP; built a design system spanning product lines':'負責金融後台工具、行動支付 App、企業官網與內部 EIP，並建立跨產品線的設計系統',
+'B2B back-office tools, a consumer app, the corporate website and an internal EIP; built a design system shared across product lines':'負責 B2B 後台工具、消費者 App、企業官網與內部 EIP，並建立跨產品線共用的設計系統',
 'Designed boot-up lighting and device panel motion for a live-streaming mixer, bridging software UI and hardware LEDs':'為直播混音器設計開機燈效與裝置面板動態，串連軟體介面與硬體 LED',
 'Hotel brand partners':'合作飯店品牌',
 'Countries / regions served':'服務國家／地區',
