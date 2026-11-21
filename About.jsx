@@ -7,7 +7,7 @@ const steps=[
 const countries=['Taiwan','Singapore','Thailand','Vietnam'];
 const career=[
 {y:'2023 – Now',co:'Aiello',d:'Designer for AI voice and hospitality SaaS, covering smart speakers, phone ordering, and mobile web'},
-{y:'2021–2023',co:'1177 Tech',d:'Financial back-office tools, a mobile payment app, the corporate website, and an internal EIP; built a design system spanning product lines'},
+{y:'2021–2023',co:'1177 Tech',d:'B2B back-office tools, a consumer app, the corporate website and an internal EIP; built a design system shared across product lines'},
 {y:'2020',co:'AVerMedia',d:'Designed boot-up lighting and device panel motion for a live-streaming mixer, bridging software UI and hardware LEDs'}
 ];
 const stats=[{value:'8+',label:'Hotel brand partners'},{value:'4',label:'Countries / regions served'}];

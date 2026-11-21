@@ -172,7 +172,7 @@ window.SITE_VARIANT=(()=>{
 const focus=new URLSearchParams(window.location.search).get('focus');
 if(focus==='hardware'||focus==='automotive'){
 const hw={
-order:['ai-butler','nexus','guestweb','aca-ai','tms-ds','17backstage','1177pay'],
+order:['ai-butler','nexus','guestweb','aca-ai','tms-ds'],
 pairs:true,
 careerHeading:'Working at the intersection of hardware and software',
 aboutIntro:'UI/UX designer with 5 years of experience, focused on products where hardware and software meet: from a live-streaming controller’s touchscreen and lighting to an AI smart speaker in hotel rooms. I start from the device’s environment, the context it is used in and the people who use it, then turn engineering constraints into clear, scalable design systems.',
@@ -187,7 +187,7 @@ return focus==='automotive'?{...hw,resumeUrl:'https://drive.google.com/drive/fol
 }
 // ?focus=system: leads with design-system work (TMS, GuestWeb, merchant back office) for design-system roles.
 if(focus==='system') return {
-order:['tms-ds','guestweb','17backstage','ai-butler','aca-ai','1177pay'],
+order:['tms-ds','guestweb','ai-butler','aca-ai'],
 pairs:true,
 headline:'Design systems that\nscale with the product.',
 tagline:'Luna・UI/UX Designer・Design Systems & AI Workflow',
@@ -197,7 +197,7 @@ resumeUrl:'https://drive.google.com/drive/folders/16waoSPGUuhGGt1OAd1MnvDTV2zlOU
 };
 // ?focus=prototype: leads with rapid prototyping, research-driven AI work and multi-role tools, for enterprise / internal-product UX roles.
 if(focus==='prototype') return {
-order:['tms-ds','aca-ai','guestweb','ai-butler','17backstage','1177pay'],
+order:['tms-ds','aca-ai','guestweb','ai-butler'],
 pairs:true,
 headline:'From research to\nworking prototypes.',
 tagline:'Luna・UI/UX Designer・AI Products & Rapid Prototyping',
@@ -206,7 +206,7 @@ career:{'Aiello':'AI products, multi-role back-office tools and design systems, 
 resumeUrl:'resume/Luna_Liu_Resume_Prototype.pdf'
 };
 if(focus==='ai') return {
-order:['aca-ai','ai-butler','tms-ds','guestweb','17backstage','1177pay'],
+order:['aca-ai','ai-butler','tms-ds','guestweb'],
 headline:'Designing AI that\nlistens, then acts.',
 tagline:'Luna・UI/UX Designer・Conversational AI & Smart Devices',
 heroLine:'I’m Luna, a UI/UX designer with 5 years of experience, designing conversational AI and smart devices people can rely on.',
@@ -214,7 +214,7 @@ aboutIntro:'5 years of UI/UX experience, focused on AI voice and hospitality Saa
 resumeUrl:'https://drive.google.com/drive/folders/1kColvmaOikbEV8f8Nej0tayngMJpFT3f?usp=sharing'
 };
 return {
-order:['tms-ds','guestweb','17backstage','ai-butler','aca-ai','1177pay'],
+order:['tms-ds','guestweb','ai-butler','aca-ai'],
 pairs:true,
 headline:'Clarity between\npeople and AI.',
 tagline:'Luna・UI/UX Designer・AI SaaS Products',
