@@ -16,7 +16,6 @@ window.ZH_TEXT={
 // ---- Header / Footer / Contact ----
 'Work':'作品',
 'About':'關於我',
-'Resume':'履歷',
 '© 2026 Luna Liu. All rights reserved.':'© 2026 Luna Liu. 版權所有。',
 '03 / Contact':'03 / 聯絡',
 'Let’s talk.':'聊聊吧。',

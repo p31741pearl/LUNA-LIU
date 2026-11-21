@@ -48,12 +48,12 @@
 @keyframes caseModalBackdropOut{0%{opacity:1}100%{opacity:0}}
 </style><script src="./image-slot.js?v=20261025c"></script><script src="./data.js?v=20261025c"></script><script src="./i18n.js?v=20261025c"></script></helmet>
 <div style="background:var(--surface);font-family:var(--font-sans);min-height:100vh">
-<x-import component-from-global-scope="SiteHeader" from="./Header.jsx?v=20261025c" active="{{screen}}" onNav="{{nav}}" hint-size="100%,64px"></x-import>
+<x-import component-from-global-scope="SiteHeader" from="./Header.jsx?v=20261122a" active="{{screen}}" onNav="{{nav}}" hint-size="100%,64px"></x-import>
 <sc-if value="{{isHome}}" hint-placeholder-val="{{true}}">
 <x-import component-from-global-scope="PortfolioHero" from="./Hero.jsx?v=20261025c" onNav="{{nav}}" hint-size="100%,480px"></x-import>
 <x-import component-from-global-scope="LunaProjectGrid" from="./ProjectGrid.jsx?v=20261025c" onOpen="{{openProject}}" compact="1" hint-size="100%,700px"></x-import>
 <x-import component-from-global-scope="WhatIBring" from="./WhatIBring.jsx?v=20261121a" onOpen="{{openProject}}" hint-size="100%,260px"></x-import>
-<x-import component-from-global-scope="Contact" from="./Contact.jsx?v=20261025c" hint-size="100%,320px"></x-import>
+<x-import component-from-global-scope="Contact" from="./Contact.jsx?v=20261122a" hint-size="100%,320px"></x-import>
 </sc-if>
 <sc-if value="{{isWork}}" hint-placeholder-val="{{false}}">
 <x-import component-from-global-scope="LunaProjectGrid" from="./ProjectGrid.jsx?v=20261025c" onOpen="{{openProject}}" hint-size="100%,700px"></x-import>
@@ -66,7 +66,7 @@
 </div>
 </sc-if>
 <sc-if value="{{isAbout}}" hint-placeholder-val="{{false}}">
-<x-import component-from-global-scope="SiteAbout" from="./About.jsx?v=20261121a" hint-size="100%,500px"></x-import>
+<x-import component-from-global-scope="SiteAbout" from="./About.jsx?v=20261122a" hint-size="100%,500px"></x-import>
 </sc-if>
 <x-import component-from-global-scope="SiteFooter" from="./Footer.jsx?v=20261025c" hint-size="100%,72px"></x-import>
 </div>

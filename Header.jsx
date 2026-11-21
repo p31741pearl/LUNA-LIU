@@ -12,8 +12,7 @@ React.createElement('span',{'data-site-moon':'','aria-hidden':true,style:{positi
 'Luna Liu'),
 React.createElement('nav',{style:{display:'flex',alignItems:'center',gap:tiny?10:narrow?14:32,flexShrink:0}},
 links.map(l=>React.createElement('span',{key:l,onClick:()=>onNav(l),style:{fontSize:14,fontWeight:500,whiteSpace:'nowrap',cursor:'pointer',color:active===l?'var(--text)':'var(--text-muted)',transition:'color var(--dur-fast) var(--ease-expo-out)'}},window.t(l))),
-React.createElement('a',{href:window.langSwitchUrl(),lang:window.SITE_LANG==='zh'?'en':'zh-Hant',style:{fontSize:14,fontWeight:500,whiteSpace:'nowrap',color:'var(--text-muted)',textDecoration:'none'}},window.SITE_LANG==='zh'?'EN':'中文'),
-React.createElement('a',{href:window.SITE_VARIANT.resumeUrl,target:'_blank',rel:'noopener noreferrer',style:{fontSize:14,fontWeight:500,color:'#FFFFFF',background:'var(--ink-900)',padding:tiny?'8px 12px':narrow?'8px 14px':'8px 18px',borderRadius:999,textDecoration:'none',lineHeight:1.2,whiteSpace:'nowrap'}},window.t('Resume'))
+React.createElement('a',{href:window.langSwitchUrl(),lang:window.SITE_LANG==='zh'?'en':'zh-Hant',style:{fontSize:14,fontWeight:500,whiteSpace:'nowrap',color:'var(--text-muted)',textDecoration:'none'}},window.SITE_LANG==='zh'?'EN':'中文')
 )
 ),
 React.createElement('div',{style:{height:home?0:64}})
