@@ -184,7 +184,7 @@ aboutIntro:'5 years of UI/UX experience, focused on AI voice and hospitality Saa
 resumeUrl:'https://drive.google.com/drive/folders/1kColvmaOikbEV8f8Nej0tayngMJpFT3f?usp=sharing'
 };
 return {
-order:['tms-ds','guestweb','ai-butler','aca-ai'],
+order:['aca-ai','guestweb','ai-butler','tms-ds'],
 pairs:true,
 headline:'Clarity between\npeople and AI.',
 tagline:'Luna・UI/UX Designer・AI SaaS Products',
